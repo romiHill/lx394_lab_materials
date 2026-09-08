@@ -1,0 +1,176 @@
+---
+title: "Data Types"
+subtitle: "Lab 02" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: today
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Today
+
+1.  Data Types
+2.  Setting up Python
+
+# Closed Book Discussion: Data Types
+
+1.  
+
+> What are some data types in Python? Give an example.
+>
+> I'll start: integer, for example, `5`.
+
+2.  
+
+> What kinds of operations can we perform on them?
+>
+> I'll give an example. We can **add** two integers `5 + 5` returns `10`
+
+3.  
+
+> What are some operations you can perform on `list`s?
+
+# Exercises: Data Types
+
+Open a `.py` file to answer the following questions!
+
+## Variables and Datatypes
+
+> Provide Python code that saves a variable with the data types. Then, print the variable.
+>
+> `int`
+>
+> `float`
+>
+> `str`
+>
+> `list`
+>
+> `bool`
+>
+> `None`
+
+## Types
+
+> Before you run the code in Python, what is the expected output of these commands? Once you've thought about it, run the code.
+
+```{python}
+#| eval: FALSE
+type(10.5)
+```
+
+```{python}
+#| eval: FALSE
+type(10)
+```
+
+```{python}
+#| eval: FALSE
+type("7.3")
+```
+
+```{python}
+#| eval: FALSE
+type(8 + 38.1)
+```
+
+```{python}
+#| eval: FALSE
+type([10, 5])
+```
+
+```{python}
+#| eval: FALSE
+type("hello")
+```
+
+```{python}
+#| eval: FALSE
+type(print("hello"))
+```
+
+3.  
+
+> What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
+>
+> 1.  What happens when you multiply a `list` with an `int`?
+> 2.  What happens when you add a `list` with an `int`?
+> 3.  What happens when you multiply a `str` with an `int`?
+> 4.  What happens when you add a `str` with an `int`?
+> 5.  What happens when you add a `str` with an `list`?
+
+For example:
+
+```{python}
+#| eval: FALSE
+my_lst * 20
+```
+
+**The take away message here:** When you apply an operator to two different data types, the output might not be obvious! You can read more about the reason why this happens here:
+
+But if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can **type cast** to make explicit what you're trying to do!
+
+# Functions
+
+Recall functions:
+
+```{python}
+def frequency(corpus, word):
+    return corpus.count(word) / len(corpus)
+```
+
+> What are some of the components of a function?
+
+> Write a function that outputs the following
+
+```{python}
+#| echo: FALSE
+def print_hello(name):
+    return 'Hello ' + name + '!'
+```
+
+```{python}
+print_hello('Romi')
+```
+
+I'll give you the start. Hint: you need to use an operator.
+
+```{python}
+#| eval: FALSE
+def print_hello():
+    pass # replace pass with your return statement
+```
+
+# Putting it together: Functions and Palindrones
+
+> Based on the code provided below, write a function that returns `True` when `x` and `y` are anagrams of each other
+
+```{python}
+def is_anagram(x: str, y: str) -> bool:
+    """
+    Check whether two strings are palidrones of each other. 
+    An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces, capitalization, and punctuation. 
+    """
+    pass
+```
+
+```{python}
+def is_palindrone(x: str) -> bool:
+    """
+    Check whether a word is a palindrone
+    A palindrone is a word that is spelt the same backwards and forward 
+    """
+    return set(x) == set(y)
+```
+
+```{python}
+is_anagram('racecar', 'fdsa')
+```

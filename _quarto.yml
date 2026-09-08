@@ -1,0 +1,15 @@
+project:
+  type: website
+
+website:
+  title: "LX 394 Course Materials"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: lab/lab01.qmd 
+        text: Lab 01
+
+format:
+  html:
+    theme: cosmo
