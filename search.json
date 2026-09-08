@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "LX 394: Lab Materials",
+    "section": "",
+    "text": "This site hosts the lab materials for LX394. Use the menu above to select the Lab Materials.\n\nLab section: Wednesdays 3:35pm - 4:25pm, PSY B51\nOffice Hours: Mondays 3:45pm - 4:45pm, Room 138M, 111 Cummington Mall\nSophie’s Office Hours: Thursdays 11:00–12:00, Room 138S, 111 Cummington Mall\n\nSee the Syllabus for important dates and homework."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "LX 394: Lab Materials",
+    "section": "",
+    "text": "This site hosts the lab materials for LX394. Use the menu above to select the Lab Materials.\n\nLab section: Wednesdays 3:35pm - 4:25pm, PSY B51\nOffice Hours: Mondays 3:45pm - 4:45pm, Room 138M, 111 Cummington Mall\nSophie’s Office Hours: Thursdays 11:00–12:00, Room 138S, 111 Cummington Mall\n\nSee the Syllabus for important dates and homework."
+  },
+  {
+    "objectID": "lab/lab02.html",
+    "href": "lab/lab02.html",
+    "title": "Data Types",
+    "section": "",
+    "text": "Data Types\nSetting up Python"
+  },
+  {
+    "objectID": "lab/lab02.html#variables-and-datatypes",
+    "href": "lab/lab02.html#variables-and-datatypes",
+    "title": "Data Types",
+    "section": "3.1 Variables and Datatypes",
+    "text": "3.1 Variables and Datatypes\n\nProvide Python code that saves a variable with the data types. Then, print the variable.\nint\nfloat\nstr\nlist\nbool\nNone"
+  },
+  {
+    "objectID": "lab/lab02.html#types",
+    "href": "lab/lab02.html#types",
+    "title": "Data Types",
+    "section": "3.2 Types",
+    "text": "3.2 Types\n\nBefore you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\n\ntype(10)\n\n\ntype(\"7.3\")\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\n\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example:\n\nmy_lst * 20\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! You can read more about the reason why this happens here:\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
+  },
+  {
+    "objectID": "lab/lab01.html",
+    "href": "lab/lab01.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Introductions & Logistics\nHow to Use Python\n\nPython on the SCC\nPython in the Command Line\nInstalling Python through miniconda"
+  },
+  {
+    "objectID": "lab/lab01.html#demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1",
+    "href": "lab/lab01.html#demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1",
+    "title": "Getting Started",
+    "section": "4.1 Demo: Let’s access the SCC! Under log in nodes, choose “_scc1”",
+    "text": "4.1 Demo: Let’s access the SCC! Under log in nodes, choose “_scc1”\n\n\n\nAccess SCC through login node\n\n\n\nYou can interact with the command line with the following bash commands. There are many others! It’s a powerful way to interact with your computer.\n\n\nBash Commands\n\n\n\n\n\n\n\nCommand\nWhat it does\nExample\n\n\n\n\ncd\nChanges directory\ncd /projectnb/lx394sh/username\n\n\nls\nList contents of directory\nls\nls projectnb/lx394sh/username\n\n\npwd\nPrint working directory\npwd\n\n\nmkdir\nCreate a directory in current location\nmkdir my_dir_name\n\n\n\n\nLet’s navigate to your student folders in the SCC!\nYou can use Python in the terminal as an “interactive interpreter”."
+  },
+  {
+    "objectID": "lab/lab01.html#demo-using-python-on-the-scc",
+    "href": "lab/lab01.html#demo-using-python-on-the-scc",
+    "title": "Getting Started",
+    "section": "4.2 Demo: Using Python on the SCC!",
+    "text": "4.2 Demo: Using Python on the SCC!\n\nWe will use the VSCode server to access Python\nGo back to https://scc-ondemand1.bu.edu, and click “interactive apps”, and “VS Code Server”\n\n\n\n\nAccess VS Code Server\n\n\n\nFrom here, it is important that you you change the working directory to projectnblx394sh/students/your_username. Leave everything else the same.\n\n\n\n\nSet working directory in VS Code Server\n\n\n\nThis is a good back up if you want to use Python, but haven’t set it up locally yet"
+  },
+  {
+    "objectID": "lab/lab01.html#introducing-anaconda",
+    "href": "lab/lab01.html#introducing-anaconda",
+    "title": "Getting Started",
+    "section": "5.1 Introducing Anaconda",
+    "text": "5.1 Introducing Anaconda\n\nDistribution\n\nA pre-packaged bundle of software that includes the Python interpreter, the standard library, and a variety of additional tools, packages, or utilities\nDesigned to make installing and using Python easier\n\nAnaconda\n\nA popular open-source Python distribution\nIncludes conda (package and environment manager), a vast collection of pre-installed scientific computing packages and the Anaconda Navigator\nCan download the full distribution or “miniconda”\n\n\n\n\n\nAnaconda vs. Miniconda"
+  },
+  {
+    "objectID": "lab/lab01.html#instructions",
+    "href": "lab/lab01.html#instructions",
+    "title": "Getting Started",
+    "section": "5.2 Instructions",
+    "text": "5.2 Instructions\n\nDownload Anaconda/Miniconda here: Getting Started with Anaconda\n\n\n5.2.1 Our Recommendation (need at least 10GB of Space)\n\nOur strong recommendation is to install the full Anaconda Distribution, if you have the space.\n\nIt will be the easiest to manage, because there is an interface you can use with the “Anaconda Navigator”\nChoose the following settings, and follow these instructions: Instruction: Install Python and Related Software\n\n\n\n\n\nInstalling Full Distribution of Anaconda\n\n\n\n\n5.2.2 If you don’t have 10GB of free space…\n\nWe need to install miniconda, which is a lightweight version of Anaconda\n\nUnlike the full distribution, miniconda does not come with Jupyter Notebook, an IDE, or most extra packages pre-installed. We have to install those ourselves.\n\n\n\n5.2.2.1 Step 1: Install Miniconda\n\nmacOSWindows\n\n\n\nGo to Miniconda Installer and download the installer for macOS\n\nIf you’re not sure whether your Mac has an Apple Silicon (M1/M2/M3/M4) or Intel chip, check the Apple menu &gt; About This Mac\n\nOpen the downloaded .pkg file and follow the installer prompts (defaults are fine)\nOpen Terminal (search for it with Spotlight, Cmd + Space) and type:\nconda --version\n\nIf you see a version number printed, the install worked!\n\n\n\n\n\nGo to Miniconda Installer and download the 64-bit installer for Windows\nRun the downloaded .exe file\n\nWhen prompted, we recommend selecting “Just Me” (not “All Users”)\nOn the Advanced Options screen, it’s okay to leave “Add Miniconda3 to my PATH environment variable” unchecked. Instead, we’ll use the Anaconda Prompt (installed automatically) to run conda commands\n\nOpen the Anaconda Prompt from the Start Menu (search “Anaconda Prompt”) — this is the command line you’ll use for the rest of these steps, instead of the regular Command Prompt or PowerShell\nIn the Anaconda Prompt, type:\nconda --version\n\nIf you see a version number printed, the install worked!\n\n\n\n\n\n\n\n5.2.2.2 Step 2: Install Jupyter\n\nIn your Terminal (macOS) or Anaconda Prompt (Windows), type:\nconda install jupyter\n\nType y and press Enter when prompted to proceed\n\nTest that it installed correctly:\njupyter notebook --version\n\n\n\n5.2.2.3 Step 3: Install VS Code\n\nmacOSWindows\n\n\n\nDownload VS Code from code.visualstudio.com\nOpen the downloaded .zip file, then drag Visual Studio Code.app into your Applications folder\nOpen VS Code from Applications or Spotlight\n\n\n\n\nDownload VS Code from code.visualstudio.com\nRun the downloaded installer\n\nOn the “Select Additional Tasks” screen, we recommend checking “Add to PATH” — this lets you open VS Code from the Anaconda Prompt by typing code\n\nOpen VS Code once installation finishes\n\n\n\n\n\n\n5.2.2.4 Step 4: Set Up VS Code for Python\n\nOpen VS Code, and click the Extensions icon in the left sidebar (it looks like four squares)\nSearch for and install:\n\nPython (published by Microsoft)\nJupyter (published by Microsoft)\n\nOpen or create a .ipynb (Jupyter Notebook) in VS Code\nIn the top-right corner, click “Select Kernel” (for a notebook) or check the bottom-right corner for the Python interpreter (for a script)\n\nChoose your base conda environment — it should appear in the list as a conda environment\nIf you don’t see it, click “Select Another Kernel” &gt; “Python Environments” and look for base\n\nYou’re ready to go! Try running a simple cell, e.g. print(\"hello world\"), to confirm everything works"
+  }
+]
