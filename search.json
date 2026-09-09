@@ -18,21 +18,35 @@
     "href": "lab/lab02.html",
     "title": "Data Types",
     "section": "",
-    "text": "Data Types"
+    "text": "Downloading Homework 1\nFolders, Files, and Folder Structure\nData Types\nFunctions"
   },
   {
     "objectID": "lab/lab02.html#variables-and-datatypes",
     "href": "lab/lab02.html#variables-and-datatypes",
     "title": "Data Types",
-    "section": "3.1 Variables and Datatypes",
-    "text": "3.1 Variables and Datatypes\n\nProvide Python code that saves a variable with the data types. Then, print the variable.\n\n\nint\nfloat\nstr\nlist\nbool\nNone"
+    "section": "5.1 Variables and Datatypes",
+    "text": "5.1 Variables and Datatypes\n\nProvide Python code that saves a variable of the following the data types. Then, print the variable. Give a different name to each variable.\n\n\nint\nfloat\nstr\nlist\nbool\nNone\n\nFor example:\n\nx = 5\nprint(x)\n\n5"
   },
   {
     "objectID": "lab/lab02.html#types",
     "href": "lab/lab02.html#types",
     "title": "Data Types",
-    "section": "3.2 Types",
-    "text": "3.2 Types\n\nBefore you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\n\ntype(10)\n\n\ntype(\"7.3\")\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example:\n\nmy_lst * 20\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this here.\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
+    "section": "5.2 Types",
+    "text": "5.2 Types\n\nBefore you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\n\ntype(10)\n\n\ntype(\"7.3\")\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example, what happens when you run the following code?\n\nmy_lst * 20\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this here.\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
+  },
+  {
+    "objectID": "in_session_materials/lab01.html",
+    "href": "in_session_materials/lab01.html",
+    "title": "LX 394 Course Materials",
+    "section": "",
+    "text": "print('hello')\n\nhello"
+  },
+  {
+    "objectID": "in_session_materials/lab02.html",
+    "href": "in_session_materials/lab02.html",
+    "title": "LX 394 Course Materials",
+    "section": "",
+    "text": "def is_anagram(x: str, y: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are palidrones of each other. \n    An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces, capitalization, and punctuation.\n    \"\"\"\n    x = x.lower().replace(' ', '')\n    print(set(x))\n    y = y.lower().replace(' ', '')\n    print(set(y))\n\n    return set(x) == set(y)\n\nis_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')\n\n{'m', 'a', 'v', 'd', 'l', 'o', 'i', 'n', 'e', 's', 't', 'r'}\n{'m', 'v', 'd', 'l', 'o', 'i', 'n', 'e', 's', 't', 'r'}\n\n\nFalse"
   },
   {
     "objectID": "lab/lab01.html",
