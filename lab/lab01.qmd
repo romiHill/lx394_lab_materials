@@ -61,7 +61,7 @@ To write/run Python, we need:
 
 # Installing Python with Miniconda
 
-![Set working directory in VS Code Server](/images/working_directory_vs_code.png){alt="Set working directory in VS Code Server"}
+![Set working directory in VS Code Server](/images/working_directory_vs_code.png)
 
 - By the end of today, we will hopefully be able to run Python "locally" on your computer
 
@@ -89,7 +89,7 @@ To write/run Python, we need:
 
   - Can download the full distribution or "miniconda"
 
-![Anaconda vs. Miniconda](/images/anaconda_vs_miniconda.png){alt="Anaconda vs. Miniconda"}
+![Anaconda vs. Miniconda](/images/anaconda_vs_miniconda.png)
 
 ## Instructions
 
@@ -103,7 +103,7 @@ To write/run Python, we need:
 
   - Choose the following settings, and follow these instructions: [Instruction: Install Python and Related Software](https://docs.google.com/document/d/1ZKuW9xVi-6akkrV_i3egY4kc_6aBc5frYb1dbWrXbPQ/edit?usp=sharing)
 
-![Installing Full Distribution of Anaconda](/images/installing_anaconda.png){alt="Installing Full Distribution of Anaconda"}
+![Installing Full Distribution of Anaconda](/images/installing_anaconda.png)
 
 ### If you don't have 10GB of free space...
 
@@ -242,5 +242,3 @@ To write/run Python, we need:
 ![Set working directory in VS Code Server](/images/working_directory_vs_code.png)
 
 - This is a good back up if you want to use Python, but haven't set it up locally yet
-
-#
