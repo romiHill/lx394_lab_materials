@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Romi Hill">
-<meta name="dcterms.date" content="2026-09-08">
+<meta name="dcterms.date" content="2026-09-09">
 
 <title>Getting Started – LX 394 Course Materials</title>
 <style>
@@ -158,19 +158,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#today" id="toc-today" class="nav-link active" data-scroll-target="#today"><span class="header-section-number">1</span> Today</a></li>
   <li><a href="#introductions-logistics" id="toc-introductions-logistics" class="nav-link" data-scroll-target="#introductions-logistics"><span class="header-section-number">2</span> Introductions &amp; Logistics</a></li>
   <li><a href="#how-to-use-python" id="toc-how-to-use-python" class="nav-link" data-scroll-target="#how-to-use-python"><span class="header-section-number">3</span> How to Use Python</a></li>
-  <li><a href="#introducing-the-scc" id="toc-introducing-the-scc" class="nav-link" data-scroll-target="#introducing-the-scc"><span class="header-section-number">4</span> Introducing the SCC</a>
+  <li><a href="#installing-python-with-miniconda" id="toc-installing-python-with-miniconda" class="nav-link" data-scroll-target="#installing-python-with-miniconda"><span class="header-section-number">4</span> Installing Python with Miniconda</a>
   <ul class="collapse">
-  <li><a href="#demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1" id="toc-demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1" class="nav-link" data-scroll-target="#demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1"><span class="header-section-number">4.1</span> <strong>Demo:</strong> Let’s access the SCC! Under log in nodes, choose “_scc1”</a></li>
-  <li><a href="#demo-using-python-on-the-scc" id="toc-demo-using-python-on-the-scc" class="nav-link" data-scroll-target="#demo-using-python-on-the-scc"><span class="header-section-number">4.2</span> <strong>Demo:</strong> Using Python on the SCC!</a></li>
+  <li><a href="#introducing-anaconda" id="toc-introducing-anaconda" class="nav-link" data-scroll-target="#introducing-anaconda"><span class="header-section-number">4.1</span> Introducing Anaconda</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions"><span class="header-section-number">4.2</span> Instructions</a>
+  <ul class="collapse">
+  <li><a href="#our-recommendation-need-at-least-10gb-of-space" id="toc-our-recommendation-need-at-least-10gb-of-space" class="nav-link" data-scroll-target="#our-recommendation-need-at-least-10gb-of-space"><span class="header-section-number">4.2.1</span> Our Recommendation (need at least 10GB of Space)</a></li>
+  <li><a href="#if-you-dont-have-10gb-of-free-space" id="toc-if-you-dont-have-10gb-of-free-space" class="nav-link" data-scroll-target="#if-you-dont-have-10gb-of-free-space"><span class="header-section-number">4.2.2</span> If you don’t have 10GB of free space…</a></li>
   </ul></li>
-  <li><a href="#installing-python-with-miniconda" id="toc-installing-python-with-miniconda" class="nav-link" data-scroll-target="#installing-python-with-miniconda"><span class="header-section-number">5</span> Installing Python with Miniconda</a>
-  <ul class="collapse">
-  <li><a href="#introducing-anaconda" id="toc-introducing-anaconda" class="nav-link" data-scroll-target="#introducing-anaconda"><span class="header-section-number">5.1</span> Introducing Anaconda</a></li>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions"><span class="header-section-number">5.2</span> Instructions</a>
-  <ul class="collapse">
-  <li><a href="#our-recommendation-need-at-least-10gb-of-space" id="toc-our-recommendation-need-at-least-10gb-of-space" class="nav-link" data-scroll-target="#our-recommendation-need-at-least-10gb-of-space"><span class="header-section-number">5.2.1</span> Our Recommendation (need at least 10GB of Space)</a></li>
-  <li><a href="#if-you-dont-have-10gb-of-free-space" id="toc-if-you-dont-have-10gb-of-free-space" class="nav-link" data-scroll-target="#if-you-dont-have-10gb-of-free-space"><span class="header-section-number">5.2.2</span> If you don’t have 10GB of free space…</a></li>
   </ul></li>
+  <li><a href="#introducing-the-scc" id="toc-introducing-the-scc" class="nav-link" data-scroll-target="#introducing-the-scc"><span class="header-section-number">5</span> Introducing the SCC</a>
+  <ul class="collapse">
+  <li><a href="#demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1" id="toc-demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1" class="nav-link" data-scroll-target="#demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1"><span class="header-section-number">5.1</span> <strong>Demo:</strong> Let’s access the SCC! Under log in nodes, choose “_scc1”</a></li>
+  <li><a href="#demo-using-python-on-the-scc" id="toc-demo-using-python-on-the-scc" class="nav-link" data-scroll-target="#demo-using-python-on-the-scc"><span class="header-section-number">5.2</span> <strong>Demo:</strong> Using Python on the SCC!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 8, 2026</p>
+      <p class="date">September 9, 2026</p>
     </div>
   </div>
   
@@ -269,8 +269,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 </section>
-<section id="introducing-the-scc" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Introducing the SCC</h1>
+<section id="installing-python-with-miniconda" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Installing Python with Miniconda</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/working_directory_vs_code.png" class="img-fluid figure-img"></p>
+<figcaption>Set working directory in VS Code Server</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>By the end of today, we will hopefully be able to run Python “locally” on your computer</p>
+<ul>
+<li><p>This means you have Python installed on your computer</p></li>
+<li><p>You can use Python interactively through the command line on your computer</p></li>
+<li><p>The code runs on your own CPU/resources, and it reads/writes any files which are on your computer. This means you can use it without the internet and don’t need to rely on BU’s servers/your internet connection/etc</p></li>
+</ul></li>
+<li><p>We will install Python using “Anaconda”, and use VSCode as an IDE</p></li>
+</ul>
+<section id="introducing-anaconda" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introducing-anaconda"><span class="header-section-number">4.1</span> Introducing Anaconda</h2>
+<ul>
+<li><p>Distribution</p>
+<ul>
+<li><p>A pre-packaged bundle of software that includes the Python interpreter, the standard library, and a variety of additional tools, packages, or utilities</p></li>
+<li><p>Designed to make installing and using Python easier</p></li>
+</ul></li>
+<li><p>Anaconda</p>
+<ul>
+<li><p>A popular open-source Python distribution</p></li>
+<li><p>Includes conda (package and environment manager), a vast collection of pre-installed scientific computing packages and the Anaconda Navigator</p></li>
+<li><p>Can download the full distribution or “miniconda”</p></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/anaconda_vs_miniconda.png" class="img-fluid figure-img"></p>
+<figcaption>Anaconda vs.&nbsp;Miniconda</figcaption>
+</figure>
+</div>
+</section>
+<section id="instructions" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="instructions"><span class="header-section-number">4.2</span> Instructions</h2>
+<ul>
+<li>Download Anaconda/Miniconda here: <a href="https://www.anaconda.com/docs/getting-started/installation">Getting Started with Anaconda</a></li>
+</ul>
+<section id="our-recommendation-need-at-least-10gb-of-space" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="our-recommendation-need-at-least-10gb-of-space"><span class="header-section-number">4.2.1</span> Our Recommendation (need at least 10GB of Space)</h3>
+<ul>
+<li><p>Our strong recommendation is to install the full Anaconda Distribution, if you have the space.</p>
+<ul>
+<li><p>It will be the easiest to manage, because there is an interface you can use with the “Anaconda Navigator”</p></li>
+<li><p>Choose the following settings, and follow these instructions: <a href="https://docs.google.com/document/d/1ZKuW9xVi-6akkrV_i3egY4kc_6aBc5frYb1dbWrXbPQ/edit?usp=sharing">Instruction: Install Python and Related Software</a></p></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/installing_anaconda.png" class="img-fluid figure-img"></p>
+<figcaption>Installing Full Distribution of Anaconda</figcaption>
+</figure>
+</div>
+</section>
+<section id="if-you-dont-have-10gb-of-free-space" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="if-you-dont-have-10gb-of-free-space"><span class="header-section-number">4.2.2</span> If you don’t have 10GB of free space…</h3>
+<ul>
+<li><p>We need to install <strong>miniconda</strong>, which is a lightweight version of Anaconda</p>
+<ul>
+<li>Unlike the full distribution, miniconda does <strong>not</strong> come with Jupyter Notebook, an IDE, or most extra packages pre-installed. We have to install those ourselves.</li>
+</ul></li>
+</ul>
+<section id="step-1-install-miniconda" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="step-1-install-miniconda"><span class="header-section-number">4.2.2.1</span> Step 1: Install Miniconda</h4>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ul>
+<li><p>Go to <a href="https://www.anaconda.com/download/success?reg=skipped">Miniconda Installer</a> and download the installer for macOS</p>
+<ul>
+<li>If you’re not sure whether your Mac has an Apple Silicon (M1/M2/M3/M4) or Intel chip, check the Apple menu &gt; About This Mac</li>
+</ul></li>
+<li><p>Open the downloaded <code>.pkg</code> file and follow the installer prompts (defaults are fine)</p></li>
+<li><p>Open <strong>Terminal</strong> (search for it with Spotlight, Cmd + Space) and type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>If you see a version number printed, the install worked!</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li><p>Go to <a href="https://www.anaconda.com/download/success?reg=skipped">Miniconda Installer</a> and download the <strong>64-bit</strong> installer for Windows</p></li>
+<li><p>Run the downloaded <code>.exe</code> file</p>
+<ul>
+<li>When prompted, we recommend selecting <strong>“Just Me”</strong> (not “All Users”)</li>
+<li>On the <strong>Advanced Options</strong> screen, it’s okay to leave “Add Miniconda3 to my PATH environment variable” unchecked. Instead, we’ll use the <strong>Anaconda Prompt</strong> (installed automatically) to run conda commands</li>
+</ul></li>
+<li><p>Open the <strong>Anaconda Prompt</strong> from the Start Menu (search “Anaconda Prompt”) — this is the command line you’ll use for the rest of these steps, instead of the regular Command Prompt or PowerShell</p></li>
+<li><p>In the Anaconda Prompt, type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>If you see a version number printed, the install worked!</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-install-jupyter" class="level4" data-number="4.2.2.2">
+<h4 data-number="4.2.2.2" class="anchored" data-anchor-id="step-2-install-jupyter"><span class="header-section-number">4.2.2.2</span> Step 2: Install Jupyter</h4>
+<ul>
+<li><p>In your Terminal (macOS) or Anaconda Prompt (Windows), type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Type <code>y</code> and press Enter when prompted to proceed</li>
+</ul></li>
+<li><p>Test that it installed correctly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul>
+</section>
+<section id="step-3-install-vs-code" class="level4" data-number="4.2.2.3">
+<h4 data-number="4.2.2.3" class="anchored" data-anchor-id="step-3-install-vs-code"><span class="header-section-number">4.2.2.3</span> Step 3: Install VS Code</h4>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ul>
+<li>Download VS Code from <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
+<li>Open the downloaded <code>.zip</code> file, then drag <code>Visual Studio Code.app</code> into your <strong>Applications</strong> folder</li>
+<li>Open VS Code from Applications or Spotlight</li>
+</ul>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ul>
+<li>Download VS Code from <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
+<li>Run the downloaded installer
+<ul>
+<li>On the “Select Additional Tasks” screen, we recommend checking <strong>“Add to PATH”</strong> — this lets you open VS Code from the Anaconda Prompt by typing <code>code</code></li>
+</ul></li>
+<li>Open VS Code once installation finishes</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-set-up-vs-code-for-python" class="level4" data-number="4.2.2.4">
+<h4 data-number="4.2.2.4" class="anchored" data-anchor-id="step-4-set-up-vs-code-for-python"><span class="header-section-number">4.2.2.4</span> Step 4: Set Up VS Code for Python</h4>
+<ul>
+<li>Open VS Code, and click the <strong>Extensions</strong> icon in the left sidebar (it looks like four squares)</li>
+<li>Search for and install:
+<ul>
+<li><strong>Python</strong> (published by Microsoft)</li>
+<li><strong>Jupyter</strong> (published by Microsoft)</li>
+</ul></li>
+<li>Open or create a <code>.ipynb</code> (Jupyter Notebook) in VS Code</li>
+<li>In the top-right corner, click <strong>“Select Kernel”</strong> (for a notebook) or check the bottom-right corner for the Python interpreter (for a script)
+<ul>
+<li>Choose your <strong>base</strong> conda environment — it should appear in the list as a conda environment</li>
+<li>If you don’t see it, click “Select Another Kernel” &gt; “Python Environments” and look for <code>base</code></li>
+</ul></li>
+<li>You’re ready to go! Try running a simple cell, e.g.&nbsp;<code>print("hello world")</code>, to confirm everything works</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="introducing-the-scc" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Introducing the SCC</h1>
 <ul>
 <li>SCC: Shared Computing Cluster
 <ul>
@@ -281,8 +445,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The server has a file system, and we can upload files to it</li>
 <li>This is a good backup to get Python running on your computer if the installation doesn’t work. This is also how you access BU’s powerful computers, so you will become familiar with it if you continue on with computational linguistics.</li>
 </ul>
-<section id="demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1"><span class="header-section-number">4.1</span> <strong>Demo:</strong> Let’s access the SCC! Under log in nodes, choose “_scc1”</h2>
+<section id="demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="demo-lets-access-the-scc-under-log-in-nodes-choose-_scc1"><span class="header-section-number">5.1</span> <strong>Demo:</strong> Let’s access the SCC! Under log in nodes, choose “_scc1”</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/access_scc.png" class="img-fluid figure-img"></p>
@@ -335,8 +499,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>You can use Python in the terminal as an “interactive interpreter”.</li>
 </ul>
 </section>
-<section id="demo-using-python-on-the-scc" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="demo-using-python-on-the-scc"><span class="header-section-number">4.2</span> <strong>Demo:</strong> Using Python on the SCC!</h2>
+<section id="demo-using-python-on-the-scc" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="demo-using-python-on-the-scc"><span class="header-section-number">5.2</span> <strong>Demo:</strong> Using Python on the SCC!</h2>
 <ul>
 <li><p>We will use the VSCode server to access Python</p></li>
 <li><p>Go back to <a href="">https://scc-ondemand1.bu.edu</a>, and click “interactive apps”, and “VS Code Server”</p></li>
@@ -359,172 +523,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>This is a good back up if you want to use Python, but haven’t set it up locally yet</li>
 </ul>
-</section>
-</section>
-<section id="installing-python-with-miniconda" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Installing Python with Miniconda</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/working_directory_vs_code.png" class="img-fluid figure-img"></p>
-<figcaption>Set working directory in VS Code Server</figcaption>
-</figure>
-</div>
-<ul>
-<li><p>By the end of today, we will hopefully be able to run Python “locally” on your computer</p>
-<ul>
-<li><p>This means you have Python installed on your computer</p></li>
-<li><p>You can use Python interactively through the command line on your computer</p></li>
-<li><p>The code runs on your own CPU/resources, and it reads/writes any files which are on your computer. This means you can use it without the internet and don’t need to rely on BU’s servers/your internet connection/etc</p></li>
-</ul></li>
-<li><p>We will install Python using “Anaconda”, and use VSCode as an IDE</p></li>
-</ul>
-<section id="introducing-anaconda" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="introducing-anaconda"><span class="header-section-number">5.1</span> Introducing Anaconda</h2>
-<ul>
-<li><p>Distribution</p>
-<ul>
-<li><p>A pre-packaged bundle of software that includes the Python interpreter, the standard library, and a variety of additional tools, packages, or utilities</p></li>
-<li><p>Designed to make installing and using Python easier</p></li>
-</ul></li>
-<li><p>Anaconda</p>
-<ul>
-<li><p>A popular open-source Python distribution</p></li>
-<li><p>Includes conda (package and environment manager), a vast collection of pre-installed scientific computing packages and the Anaconda Navigator</p></li>
-<li><p>Can download the full distribution or “miniconda”</p></li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/anaconda_vs_miniconda.png" class="img-fluid figure-img"></p>
-<figcaption>Anaconda vs.&nbsp;Miniconda</figcaption>
-</figure>
-</div>
-</section>
-<section id="instructions" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="instructions"><span class="header-section-number">5.2</span> Instructions</h2>
-<ul>
-<li>Download Anaconda/Miniconda here: <a href="https://www.anaconda.com/docs/getting-started/installation">Getting Started with Anaconda</a></li>
-</ul>
-<section id="our-recommendation-need-at-least-10gb-of-space" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="our-recommendation-need-at-least-10gb-of-space"><span class="header-section-number">5.2.1</span> Our Recommendation (need at least 10GB of Space)</h3>
-<ul>
-<li><p>Our strong recommendation is to install the full Anaconda Distribution, if you have the space.</p>
-<ul>
-<li><p>It will be the easiest to manage, because there is an interface you can use with the “Anaconda Navigator”</p></li>
-<li><p>Choose the following settings, and follow these instructions: <a href="https://docs.google.com/document/d/1ZKuW9xVi-6akkrV_i3egY4kc_6aBc5frYb1dbWrXbPQ/edit?usp=sharing">Instruction: Install Python and Related Software</a></p></li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/installing_anaconda.png" class="img-fluid figure-img"></p>
-<figcaption>Installing Full Distribution of Anaconda</figcaption>
-</figure>
-</div>
-</section>
-<section id="if-you-dont-have-10gb-of-free-space" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="if-you-dont-have-10gb-of-free-space"><span class="header-section-number">5.2.2</span> If you don’t have 10GB of free space…</h3>
-<ul>
-<li><p>We need to install <strong>miniconda</strong>, which is a lightweight version of Anaconda</p>
-<ul>
-<li>Unlike the full distribution, miniconda does <strong>not</strong> come with Jupyter Notebook, an IDE, or most extra packages pre-installed. We have to install those ourselves.</li>
-</ul></li>
-</ul>
-<section id="step-1-install-miniconda" class="level4" data-number="5.2.2.1">
-<h4 data-number="5.2.2.1" class="anchored" data-anchor-id="step-1-install-miniconda"><span class="header-section-number">5.2.2.1</span> Step 1: Install Miniconda</h4>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<ul>
-<li><p>Go to <a href="https://www.anaconda.com/download/success?reg=skipped">Miniconda Installer</a> and download the installer for macOS</p>
-<ul>
-<li>If you’re not sure whether your Mac has an Apple Silicon (M1/M2/M3/M4) or Intel chip, check the Apple menu &gt; About This Mac</li>
-</ul></li>
-<li><p>Open the downloaded <code>.pkg</code> file and follow the installer prompts (defaults are fine)</p></li>
-<li><p>Open <strong>Terminal</strong> (search for it with Spotlight, Cmd + Space) and type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>If you see a version number printed, the install worked!</li>
-</ul></li>
-</ul>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<ul>
-<li><p>Go to <a href="https://www.anaconda.com/download/success?reg=skipped">Miniconda Installer</a> and download the <strong>64-bit</strong> installer for Windows</p></li>
-<li><p>Run the downloaded <code>.exe</code> file</p>
-<ul>
-<li>When prompted, we recommend selecting <strong>“Just Me”</strong> (not “All Users”)</li>
-<li>On the <strong>Advanced Options</strong> screen, it’s okay to leave “Add Miniconda3 to my PATH environment variable” unchecked. Instead, we’ll use the <strong>Anaconda Prompt</strong> (installed automatically) to run conda commands</li>
-</ul></li>
-<li><p>Open the <strong>Anaconda Prompt</strong> from the Start Menu (search “Anaconda Prompt”) — this is the command line you’ll use for the rest of these steps, instead of the regular Command Prompt or PowerShell</p></li>
-<li><p>In the Anaconda Prompt, type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>If you see a version number printed, the install worked!</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="step-2-install-jupyter" class="level4" data-number="5.2.2.2">
-<h4 data-number="5.2.2.2" class="anchored" data-anchor-id="step-2-install-jupyter"><span class="header-section-number">5.2.2.2</span> Step 2: Install Jupyter</h4>
-<ul>
-<li><p>In your Terminal (macOS) or Anaconda Prompt (Windows), type:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Type <code>y</code> and press Enter when prompted to proceed</li>
-</ul></li>
-<li><p>Test that it installed correctly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-</section>
-<section id="step-3-install-vs-code" class="level4" data-number="5.2.2.3">
-<h4 data-number="5.2.2.3" class="anchored" data-anchor-id="step-3-install-vs-code"><span class="header-section-number">5.2.2.3</span> Step 3: Install VS Code</h4>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<ul>
-<li>Download VS Code from <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
-<li>Open the downloaded <code>.zip</code> file, then drag <code>Visual Studio Code.app</code> into your <strong>Applications</strong> folder</li>
-<li>Open VS Code from Applications or Spotlight</li>
-</ul>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<ul>
-<li>Download VS Code from <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
-<li>Run the downloaded installer
-<ul>
-<li>On the “Select Additional Tasks” screen, we recommend checking <strong>“Add to PATH”</strong> — this lets you open VS Code from the Anaconda Prompt by typing <code>code</code></li>
-</ul></li>
-<li>Open VS Code once installation finishes</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="step-4-set-up-vs-code-for-python" class="level4" data-number="5.2.2.4">
-<h4 data-number="5.2.2.4" class="anchored" data-anchor-id="step-4-set-up-vs-code-for-python"><span class="header-section-number">5.2.2.4</span> Step 4: Set Up VS Code for Python</h4>
-<ul>
-<li>Open VS Code, and click the <strong>Extensions</strong> icon in the left sidebar (it looks like four squares)</li>
-<li>Search for and install:
-<ul>
-<li><strong>Python</strong> (published by Microsoft)</li>
-<li><strong>Jupyter</strong> (published by Microsoft)</li>
-</ul></li>
-<li>Open or create a <code>.ipynb</code> (Jupyter Notebook) in VS Code</li>
-<li>In the top-right corner, click <strong>“Select Kernel”</strong> (for a notebook) or check the bottom-right corner for the Python interpreter (for a script)
-<ul>
-<li>Choose your <strong>base</strong> conda environment — it should appear in the list as a conda environment</li>
-<li>If you don’t see it, click “Select Another Kernel” &gt; “Python Environments” and look for <code>base</code></li>
-</ul></li>
-<li>You’re ready to go! Try running a simple cell, e.g.&nbsp;<code>print("hello world")</code>, to confirm everything works</li>
-</ul>
 
 
-</section>
-</section>
 </section>
 </section>
 
@@ -602,7 +602,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/romiHill\.github\.io\/lx394_lab_materials\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
