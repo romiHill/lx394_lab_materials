@@ -59,57 +59,9 @@ To write/run Python, we need:
 2.  A **Code Editor**, also known as an **Integrated Development Environment** or **IDE**
     - Popular examples include Visual Studio Code, Spyder, PyCharm
 
-# Introducing the SCC
-
-- SCC: Shared Computing Cluster
-  - Connect with another computer, i.e. "server"
-- Access through here: [https://scc-ondemand1.bu.edu]()
-- We can only interact with the server through the command line
-- The server has a file system, and we can upload files to it
-- This is a good backup to get Python running on your computer if the installation doesn't work. This is also how you access BU's powerful computers, so you will become familiar with it if you continue on with computational linguistics.
-
-## **Demo:** Let's access the SCC! Under log in nodes, choose "\_scc1"
-
-![Access SCC through login node](/images/access_scc.png)
-
-- You can interact with the command line with the following `bash` commands. There are many others! It's a powerful way to interact with your computer.
-
-+--------------+----------------------------------------+----------------------------------+
-| Command      | What it does                           | Example                          |
-+==============+========================================+==================================+
-| `cd`         | Changes directory                      | `cd /projectnb/lx394sh/username` |
-+--------------+----------------------------------------+----------------------------------+
-| `ls`         | List contents of directory             | `ls`                             |
-|              |                                        |                                  |
-|              |                                        | `ls projectnb/lx394sh/username`  |
-+--------------+----------------------------------------+----------------------------------+
-| `pwd`        | Print working directory                | `pwd`                            |
-+--------------+----------------------------------------+----------------------------------+
-| `mkdir`      | Create a directory in current location | `mkdir my_dir_name`              |
-+--------------+----------------------------------------+----------------------------------+
-
-: Bash Commands
-
-- Let's navigate to your student folders in the SCC!
-- You can use Python in the terminal as an "interactive interpreter".
-
-## **Demo:** Using Python on the SCC!
-
-- We will use the VSCode server to access Python
-
-- Go back to [https://scc-ondemand1.bu.edu](), and click "interactive apps", and "VS Code Server"
-
-![Access VS Code Server](/images/vscode_server.png)
-
-- From here, it is [***important that you you change the `working directory`***]{.underline} to `projectnblx394sh/students/your_username`. Leave everything else the same.
-
-![Set working directory in VS Code Server](/images/working_directory_vs_code.png)
-
-- This is a good back up if you want to use Python, but haven't set it up locally yet
-
 # Installing Python with Miniconda
 
-![Set working directory in VS Code Server](/images/working_directory_vs_code.png)
+![Set working directory in VS Code Server](/images/working_directory_vs_code.png){alt="Set working directory in VS Code Server"}
 
 - By the end of today, we will hopefully be able to run Python "locally" on your computer
 
@@ -137,7 +89,7 @@ To write/run Python, we need:
 
   - Can download the full distribution or "miniconda"
 
-![Anaconda vs. Miniconda](/images/anaconda_vs_miniconda.png)
+![Anaconda vs. Miniconda](/images/anaconda_vs_miniconda.png){alt="Anaconda vs. Miniconda"}
 
 ## Instructions
 
@@ -151,7 +103,7 @@ To write/run Python, we need:
 
   - Choose the following settings, and follow these instructions: [Instruction: Install Python and Related Software](https://docs.google.com/document/d/1ZKuW9xVi-6akkrV_i3egY4kc_6aBc5frYb1dbWrXbPQ/edit?usp=sharing)
 
-![Installing Full Distribution of Anaconda](/images/installing_anaconda.png)
+![Installing Full Distribution of Anaconda](/images/installing_anaconda.png){alt="Installing Full Distribution of Anaconda"}
 
 ### If you don't have 10GB of free space...
 
@@ -242,3 +194,53 @@ To write/run Python, we need:
   - Choose your **base** conda environment — it should appear in the list as a conda environment
   - If you don't see it, click "Select Another Kernel" \> "Python Environments" and look for `base`
 - You're ready to go! Try running a simple cell, e.g. `print("hello world")`, to confirm everything works
+
+# Introducing the SCC
+
+- SCC: Shared Computing Cluster
+  - Connect with another computer, i.e. "server"
+- Access through here: [https://scc-ondemand1.bu.edu]()
+- We can only interact with the server through the command line
+- The server has a file system, and we can upload files to it
+- This is a good backup to get Python running on your computer if the installation doesn't work. This is also how you access BU's powerful computers, so you will become familiar with it if you continue on with computational linguistics.
+
+## **Demo:** Let's access the SCC! Under log in nodes, choose "\_scc1"
+
+![Access SCC through login node](/images/access_scc.png)
+
+- You can interact with the command line with the following `bash` commands. There are many others! It's a powerful way to interact with your computer.
+
++--------------+----------------------------------------+----------------------------------+
+| Command      | What it does                           | Example                          |
++==============+========================================+==================================+
+| `cd`         | Changes directory                      | `cd /projectnb/lx394sh/username` |
++--------------+----------------------------------------+----------------------------------+
+| `ls`         | List contents of directory             | `ls`                             |
+|              |                                        |                                  |
+|              |                                        | `ls projectnb/lx394sh/username`  |
++--------------+----------------------------------------+----------------------------------+
+| `pwd`        | Print working directory                | `pwd`                            |
++--------------+----------------------------------------+----------------------------------+
+| `mkdir`      | Create a directory in current location | `mkdir my_dir_name`              |
++--------------+----------------------------------------+----------------------------------+
+
+: Bash Commands
+
+- Let's navigate to your student folders in the SCC!
+- You can use Python in the terminal as an "interactive interpreter".
+
+## **Demo:** Using Python on the SCC!
+
+- We will use the VSCode server to access Python
+
+- Go back to [https://scc-ondemand1.bu.edu](), and click "interactive apps", and "VS Code Server"
+
+![Access VS Code Server](/images/vscode_server.png)
+
+- From here, it is [***important that you you change the `working directory`***]{.underline} to `projectnblx394sh/students/your_username`. Leave everything else the same.
+
+![Set working directory in VS Code Server](/images/working_directory_vs_code.png)
+
+- This is a good back up if you want to use Python, but haven't set it up locally yet
+
+#
