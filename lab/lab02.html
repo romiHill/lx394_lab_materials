@@ -162,8 +162,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#variables-and-datatypes" id="toc-variables-and-datatypes" class="nav-link" data-scroll-target="#variables-and-datatypes"><span class="header-section-number">3.1</span> Variables and Datatypes</a></li>
   <li><a href="#types" id="toc-types" class="nav-link" data-scroll-target="#types"><span class="header-section-number">3.2</span> Types</a></li>
   </ul></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">4</span> Functions</a></li>
-  <li><a href="#putting-it-together-functions-and-palindrones" id="toc-putting-it-together-functions-and-palindrones" class="nav-link" data-scroll-target="#putting-it-together-functions-and-palindrones"><span class="header-section-number">5</span> Putting it together: Functions and Palindrones</a></li>
+  <li><a href="#type-casting" id="toc-type-casting" class="nav-link" data-scroll-target="#type-casting"><span class="header-section-number">4</span> Type Casting</a></li>
+  <li><a href="#operations-on-lists" id="toc-operations-on-lists" class="nav-link" data-scroll-target="#operations-on-lists"><span class="header-section-number">5</span> Operations on Lists</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">6</span> Functions</a></li>
+  <li><a href="#putting-it-together-functions-and-palindrones" id="toc-putting-it-together-functions-and-palindrones" class="nav-link" data-scroll-target="#putting-it-together-functions-and-palindrones"><span class="header-section-number">7</span> Putting it together: Functions and Palindrones</a></li>
   </ul>
 </nav>
     </div>
@@ -206,142 +208,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="1"><span class="header-section-number">1</span> Today</h1>
 <ol type="1">
 <li>Data Types</li>
-<li>Setting up Python</li>
 </ol>
 </section>
 <section id="closed-book-discussion-data-types" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Closed Book Discussion: Data Types</h1>
 <ol type="1">
-<li></li>
+<li><p>What are some data types in Python? Give an example. I’ll start: integer, for example, <code>5</code>.</p></li>
+<li><p>What kinds of operations can we perform on them? I’ll give an example. We can <strong>add</strong> two integers <code>5 + 5</code> returns <code>10</code></p></li>
+<li><p>What are some operations you can perform on <code>list</code>s?</p></li>
 </ol>
-<blockquote class="blockquote">
-<p>What are some data types in Python? Give an example.</p>
-<p>I’ll start: integer, for example, <code>5</code>.</p>
-</blockquote>
-<ol start="2" type="1">
-<li></li>
-</ol>
-<blockquote class="blockquote">
-<p>What kinds of operations can we perform on them?</p>
-<p>I’ll give an example. We can <strong>add</strong> two integers <code>5 + 5</code> returns <code>10</code></p>
-</blockquote>
-<ol start="3" type="1">
-<li></li>
-</ol>
-<blockquote class="blockquote">
-<p>What are some operations you can perform on <code>list</code>s?</p>
-</blockquote>
 </section>
 <section id="exercises-data-types" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Exercises: Data Types</h1>
 <p>Open a <code>.py</code> file to answer the following questions!</p>
 <section id="variables-and-datatypes" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="variables-and-datatypes"><span class="header-section-number">3.1</span> Variables and Datatypes</h2>
-<blockquote class="blockquote">
-<p>Provide Python code that saves a variable with the data types. Then, print the variable.</p>
-<p><code>int</code></p>
-<p><code>float</code></p>
-<p><code>str</code></p>
-<p><code>list</code></p>
-<p><code>bool</code></p>
-<p><code>None</code></p>
-</blockquote>
+<ol start="4" type="1">
+<li>Provide Python code that saves a variable with the data types. Then, print the variable.</li>
+</ol>
+<ul>
+<li><code>int</code></li>
+<li><code>float</code></li>
+<li><code>str</code></li>
+<li><code>list</code></li>
+<li><code>bool</code></li>
+<li><code>None</code></li>
+</ul>
 </section>
 <section id="types" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="types"><span class="header-section-number">3.2</span> Types</h2>
-<blockquote class="blockquote">
-<p>Before you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.</p>
-</blockquote>
-<div id="b1cdeb21" class="cell" data-execution_count="1">
+<ol start="5" type="1">
+<li>Before you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.</li>
+</ol>
+<div id="fe46f10d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="fl">10.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2d141877" class="cell" data-execution_count="2">
+<div id="dbc264f7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a9770a3d" class="cell" data-execution_count="3">
+<div id="1e2fcaec" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">"7.3"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4d685d9f" class="cell" data-execution_count="4">
+<div id="bb87d845" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">8</span> <span class="op">+</span> <span class="fl">38.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e3f55b18" class="cell" data-execution_count="5">
+<div id="4aa6aa4e" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>([<span class="dv">10</span>, <span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="dff67523" class="cell" data-execution_count="6">
+<div id="84f4ef5a" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">"hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5be43150" class="cell" data-execution_count="7">
+<div id="8faaaa96" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="bu">print</span>(<span class="st">"hello"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<ol start="3" type="1">
-<li></li>
-</ol>
-<blockquote class="blockquote">
-<p>What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!</p>
+<ol start="6" type="1">
+<li>What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
 <ol type="1">
 <li>What happens when you multiply a <code>list</code> with an <code>int</code>?</li>
 <li>What happens when you add a <code>list</code> with an <code>int</code>?</li>
 <li>What happens when you multiply a <code>str</code> with an <code>int</code>?</li>
 <li>What happens when you add a <code>str</code> with an <code>int</code>?</li>
 <li>What happens when you add a <code>str</code> with an <code>list</code>?</li>
+</ol></li>
 </ol>
-</blockquote>
 <p>For example:</p>
-<div id="4aca0137" class="cell" data-execution_count="8">
+<div id="de6ad1d9" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_lst <span class="op">*</span> <span class="dv">20</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>The take away message here:</strong> When you apply an operator to two different data types, the output might not be obvious! You can read more about the reason why this happens here:</p>
+<p><strong>The take away message here:</strong> When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this <a href="https://www.geeksforgeeks.org/python/type-conversion-in-python/">here</a>.</p>
 <p>But if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can <strong>type cast</strong> to make explicit what you’re trying to do!</p>
 </section>
 </section>
-<section id="functions" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Functions</h1>
-<p>Recall functions:</p>
-<div id="3032bb57" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> frequency(corpus, word):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> corpus.count(word) <span class="op">/</span> <span class="bu">len</span>(corpus)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="type-casting" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Type Casting</h1>
+<p>You can also <strong>explicitly</strong> convert data types.</p>
+<p>What do the following operations do?</p>
+<div id="0ca61354" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="op">-</span><span class="fl">7.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<blockquote class="blockquote">
-<p>What are some of the components of a function?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Write a function that outputs the following</p>
-</blockquote>
-<div id="845135bd" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>print_hello(<span class="st">'Romi'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="81c34ef8" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="st">'hello'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="dcd92750" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="0dfc9ca7" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span>(<span class="bu">str</span>(<span class="fl">7.5</span>) <span class="op">+</span> <span class="bu">str</span>(<span class="dv">13</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="operations-on-lists" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Operations on Lists</h1>
+</section>
+<section id="functions" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Functions</h1>
+<p>Recall functions:</p>
+<div id="266f76de" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> frequency(corpus, word):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> corpus.count(word) <span class="op">/</span> <span class="bu">len</span>(corpus)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="6" type="1">
+<li><p>What are some of the components of a function?</p></li>
+<li><p>Write a function that outputs the following</p></li>
+</ol>
+<div id="081eb682" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>print_hello(<span class="st">'Romi'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'Hello Romi!'</code></pre>
 </div>
 </div>
 <p>I’ll give you the start. Hint: you need to use an operator.</p>
-<div id="9834d542" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hello():</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass with your return statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3ca85aaa" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hello():</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass with your return statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="putting-it-together-functions-and-palindrones" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Putting it together: Functions and Palindrones</h1>
+<section id="putting-it-together-functions-and-palindrones" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Putting it together: Functions and Palindrones</h1>
 <blockquote class="blockquote">
 <p>Based on the code provided below, write a function that returns <code>True</code> when <code>x</code> and <code>y</code> are anagrams of each other</p>
 </blockquote>
-<div id="33127b16" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_anagram(x: <span class="bu">str</span>, y: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether two strings are palidrones of each other. </span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">    An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces, capitalization, and punctuation. </span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b4ce6b95" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_anagram(x: <span class="bu">str</span>, y: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether two strings are palidrones of each other. </span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">    An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces, capitalization, and punctuation. </span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b00b1199" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_palindrone(x: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether a word is a palindrone</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">    A palindrone is a word that is spelt the same backwards and forward </span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">set</span>(x) <span class="op">==</span> <span class="bu">set</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="be67f665" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_palindrone(x: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether a word is a palindrone</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">    A palindrone is a word that is spelt the same backwards and forward </span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">set</span>(x) <span class="op">==</span> <span class="bu">set</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="75ef1f3f" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'racecar'</span>, <span class="st">'fdsa'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="8115b632" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'racecar'</span>, <span class="st">'fdsa'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

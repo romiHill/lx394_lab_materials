@@ -18,21 +18,21 @@
     "href": "lab/lab02.html",
     "title": "Data Types",
     "section": "",
-    "text": "Data Types\nSetting up Python"
+    "text": "Data Types"
   },
   {
     "objectID": "lab/lab02.html#variables-and-datatypes",
     "href": "lab/lab02.html#variables-and-datatypes",
     "title": "Data Types",
     "section": "3.1 Variables and Datatypes",
-    "text": "3.1 Variables and Datatypes\n\nProvide Python code that saves a variable with the data types. Then, print the variable.\nint\nfloat\nstr\nlist\nbool\nNone"
+    "text": "3.1 Variables and Datatypes\n\nProvide Python code that saves a variable with the data types. Then, print the variable.\n\n\nint\nfloat\nstr\nlist\nbool\nNone"
   },
   {
     "objectID": "lab/lab02.html#types",
     "href": "lab/lab02.html#types",
     "title": "Data Types",
     "section": "3.2 Types",
-    "text": "3.2 Types\n\nBefore you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\n\ntype(10)\n\n\ntype(\"7.3\")\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\n\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example:\n\nmy_lst * 20\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! You can read more about the reason why this happens here:\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
+    "text": "3.2 Types\n\nBefore you run the code in Python, what is the expected output of these commands? Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\n\ntype(10)\n\n\ntype(\"7.3\")\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example:\n\nmy_lst * 20\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this here.\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
   },
   {
     "objectID": "lab/lab01.html",
