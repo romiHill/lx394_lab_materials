@@ -18,25 +18,14 @@ editor: visual
 # Today
 
 1.  Data Types
-2.  Setting up Python
 
 # Closed Book Discussion: Data Types
 
-1.  
+1.  What are some data types in Python? Give an example. I'll start: integer, for example, `5`.
 
-> What are some data types in Python? Give an example.
->
-> I'll start: integer, for example, `5`.
+2. What kinds of operations can we perform on them? I'll give an example. We can **add** two integers `5 + 5` returns `10`
 
-2.  
-
-> What kinds of operations can we perform on them?
->
-> I'll give an example. We can **add** two integers `5 + 5` returns `10`
-
-3.  
-
-> What are some operations you can perform on `list`s?
+3.  What are some operations you can perform on `list`s?
 
 # Exercises: Data Types
 
@@ -44,23 +33,17 @@ Open a `.py` file to answer the following questions!
 
 ## Variables and Datatypes
 
-> Provide Python code that saves a variable with the data types. Then, print the variable.
->
-> `int`
->
-> `float`
->
-> `str`
->
-> `list`
->
-> `bool`
->
-> `None`
+4. Provide Python code that saves a variable with the data types. Then, print the variable.
+- `int`
+- `float`
+- `str`
+- `list`
+- `bool`
+- `None`
 
 ## Types
 
-> Before you run the code in Python, what is the expected output of these commands? Once you've thought about it, run the code.
+5. Before you run the code in Python, what is the expected output of these commands? Once you've thought about it, run the code.
 
 ```{python}
 #| eval: FALSE
@@ -97,15 +80,12 @@ type("hello")
 type(print("hello"))
 ```
 
-3.  
-
-> What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
->
-> 1.  What happens when you multiply a `list` with an `int`?
-> 2.  What happens when you add a `list` with an `int`?
-> 3.  What happens when you multiply a `str` with an `int`?
-> 4.  What happens when you add a `str` with an `int`?
-> 5.  What happens when you add a `str` with an `list`?
+6. What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
+    1.  What happens when you multiply a `list` with an `int`?
+    2.  What happens when you add a `list` with an `int`?
+    3.  What happens when you multiply a `str` with an `int`?
+    4.  What happens when you add a `str` with an `int`?
+    5.  What happens when you add a `str` with an `list`?
 
 For example:
 
@@ -114,9 +94,41 @@ For example:
 my_lst * 20
 ```
 
-**The take away message here:** When you apply an operator to two different data types, the output might not be obvious! You can read more about the reason why this happens here:
+**The take away message here:** When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this [here](https://www.geeksforgeeks.org/python/type-conversion-in-python/). 
 
 But if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can **type cast** to make explicit what you're trying to do!
+
+# Type Casting
+
+You can also **explicitly** convert data types. 
+
+What do the following operations do? 
+
+
+```{python}
+#| eval: FALSE
+int(-7.3)
+```
+
+```{python}
+#| eval: FALSE
+list('hello')
+```
+
+```{python}
+#| eval: FALSE
+set([1, 2, 3, 4, 5])
+```
+
+```{python}
+#| eval: FALSE
+set(str(7.5) + str(13))
+```
+
+# Operations on Lists
+
+
+
 
 # Functions
 
@@ -127,9 +139,9 @@ def frequency(corpus, word):
     return corpus.count(word) / len(corpus)
 ```
 
-> What are some of the components of a function?
+6. What are some of the components of a function?
 
-> Write a function that outputs the following
+7. Write a function that outputs the following
 
 ```{python}
 #| echo: FALSE

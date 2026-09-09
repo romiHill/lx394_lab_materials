@@ -204,6 +204,8 @@ To write/run Python, we need:
 - The server has a file system, and we can upload files to it
 - This is a good backup to get Python running on your computer if the installation doesn't work. This is also how you access BU's powerful computers, so you will become familiar with it if you continue on with computational linguistics.
 
+![](/images/scc_nodes.png)
+
 ## **Demo:** Let's access the SCC! Under log in nodes, choose "\_scc1"
 
 ![Access SCC through login node](/images/access_scc.png)
