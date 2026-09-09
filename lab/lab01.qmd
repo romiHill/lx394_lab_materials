@@ -59,9 +59,7 @@ To write/run Python, we need:
 2.  A **Code Editor**, also known as an **Integrated Development Environment** or **IDE**
     - Popular examples include Visual Studio Code, Spyder, PyCharm
 
-# Installing Python with Miniconda
-
-![Set working directory in VS Code Server](/images/working_directory_vs_code.png)
+# Installing Python with Anaconda
 
 - By the end of today, we will hopefully be able to run Python "locally" on your computer
 
@@ -199,7 +197,7 @@ To write/run Python, we need:
 
 - SCC: Shared Computing Cluster
   - Connect with another computer, i.e. "server"
-- Access through here: [https://scc-ondemand1.bu.edu]()
+- Access through here: (<https://scc-ondemand1.bu.edu>)
 - We can only interact with the server through the command line
 - The server has a file system, and we can upload files to it
 - This is a good backup to get Python running on your computer if the installation doesn't work. This is also how you access BU's powerful computers, so you will become familiar with it if you continue on with computational linguistics.
