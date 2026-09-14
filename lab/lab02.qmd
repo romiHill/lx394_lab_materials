@@ -17,23 +17,35 @@ editor: visual
 
 # Today
 
-1.  Data Types
+1.  Downloading Homework 1
+2.  Folders, Files, and Folder Structure
+3.  Data Types
+4.  Functions
 
-# Closed Book Discussion: Data Types
+# Downloading Homework 1
+
+The link will be made available.
+
+# Folders, Files, and Folder Structure
+
+This will be discussed in person in lab.
+
+# Warm Up: Data Types
 
 1.  What are some data types in Python? Give an example. I'll start: integer, for example, `5`.
 
-2. What kinds of operations can we perform on them? I'll give an example. We can **add** two integers `5 + 5` returns `10`
+2.  What kinds of operations can we perform on them? I'll give an example. We can **add** two integers `5 + 5` returns `10`
 
 3.  What are some operations you can perform on `list`s?
 
 # Exercises: Data Types
 
-Open a `.py` file to answer the following questions!
+Open a `.ipynb` file to answer the following questions! I also suggest leaving comments for your code, either through a Markdown Cell, or in-line comments in Python using `#`.
 
 ## Variables and Datatypes
 
-4. Provide Python code that saves a variable with the data types. Then, print the variable.
+4.  Provide Python code that saves a variable of the following the data types. Then, print the variable. Give a different name to each variable.
+
 - `int`
 - `float`
 - `str`
@@ -41,9 +53,19 @@ Open a `.py` file to answer the following questions!
 - `bool`
 - `None`
 
+For example:
+
+```{python}
+my_int = 5
+print(my_int)
+
+my_float = 0.3
+print(my_float)
+```
+
 ## Types
 
-5. Before you run the code in Python, what is the expected output of these commands? Once you've thought about it, run the code.
+5.  Before you run the code in Python, think about what the expected output of these commands is. Once you've thought about it, run the code.
 
 ```{python}
 #| eval: FALSE
@@ -80,30 +102,29 @@ type("hello")
 type(print("hello"))
 ```
 
-6. What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
+6.  What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
     1.  What happens when you multiply a `list` with an `int`?
     2.  What happens when you add a `list` with an `int`?
     3.  What happens when you multiply a `str` with an `int`?
     4.  What happens when you add a `str` with an `int`?
     5.  What happens when you add a `str` with an `list`?
 
-For example:
+For example, what happens when you run the following code?
 
 ```{python}
 #| eval: FALSE
 my_lst * 20
 ```
 
-**The take away message here:** When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this [here](https://www.geeksforgeeks.org/python/type-conversion-in-python/). 
+**The take away message here:** When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this [here](https://www.geeksforgeeks.org/python/type-conversion-in-python/).
 
 But if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can **type cast** to make explicit what you're trying to do!
 
 # Type Casting
 
-You can also **explicitly** convert data types. 
+You can also **explicitly** convert data types.
 
-What do the following operations do? 
-
+What do the following operations do?
 
 ```{python}
 #| eval: FALSE
@@ -127,8 +148,68 @@ set(str(7.5) + str(13))
 
 # Operations on Lists
 
+We can *index* lists.
 
+```{python}
+my_lst = [17, 22, 'a', 'r', True]
+```
 
+```{python}
+my_lst[2]
+```
+
+```{python}
+my_lst[0]
+```
+
+```{python}
+my_lst[-1]
+```
+
+We can *slice* lists.
+
+```{python}
+my_lst[:2]
+```
+
+```{python}
+my_lst[1:3]
+```
+
+We can specify the *steps*
+
+```{python}
+my_lst[::2]
+```
+
+We can *reverse* lists
+
+```{python}
+my_lst[::-1]
+```
+
+We can reverse and specify the number of steps
+
+```{python}
+my_lst[::-2]
+```
+
+**Challenge:** What does the following code do? Can you make sense of it?
+
+```{python}
+#| eval: FALSE
+my_lst[:1:-1]
+```
+
+```{python}
+#| eval: FALSE
+my_lst[1::-1]
+```
+
+```{python}
+#| eval: FALSE
+my_lst[3:1:-1]
+```
 
 # Functions
 
@@ -136,12 +217,20 @@ Recall functions:
 
 ```{python}
 def frequency(corpus, word):
+    """
+    Calculates the relative frequency of a word within a corpus. 
+
+    :param corpus: An NLTK Text containing a corpus
+    :param word: A word to search for in the corpus
+
+    :return: The proportion of words in corpus that match word
+    """
     return corpus.count(word) / len(corpus)
 ```
 
-6. What are some of the components of a function?
+7.  What is a function? What are some of the components of a function?
 
-7. Write a function that outputs the following
+8.  Write a function that outputs the following
 
 ```{python}
 #| echo: FALSE
@@ -157,32 +246,103 @@ I'll give you the start. Hint: you need to use an operator.
 
 ```{python}
 #| eval: FALSE
-def print_hello():
-    pass # replace pass with your return statement
+def print_hello(name):
+    pass # replace pass with your statement
 ```
 
-# Putting it together: Functions and Palindrones
+**Additional Exercise:**
 
-> Based on the code provided below, write a function that returns `True` when `x` and `y` are anagrams of each other
+Modify the code so that the *default* value is "Sophie". That is, your function should have the following output given these inputs. This should only take 9 characters to type!
 
 ```{python}
-def is_anagram(x: str, y: str) -> bool:
+#| echo: FALSE
+def print_hello(name = "Sophie"):
+    return 'Hello ' + name + '!'
+```
+
+```{python}
+print_hello()
+```
+
+```{python}
+print_hello("class of LX394")
+```
+
+# Putting it together: Functions, Palindrones, and Anagrams
+
+9.  Based on the code provided below, write a function that returns `True` when `x` and `y` are anagrams of each other, and false otherwise. Example input and expected output is provided below.
+
+*Note:* You may have noticed `: str` and `-> bool` in this sample code. It's good style to yourself/anyone else using the code that the input parameters should be a `str`, and the output should be a `bool`. However, this is not necessary. In fact, Python will still run if the output is not a `bool`, for example.
+
+```{python}
+def is_anagram(first_word: str, second_word: str) -> bool:
     """
     Check whether two strings are palidrones of each other. 
-    An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces, capitalization, and punctuation. 
+    An anagram is formed by rearranging the letters of one word to produce another.
     """
     pass
 ```
 
 ```{python}
-def is_palindrone(x: str) -> bool:
+#| echo: FALSE
+def is_anagram(first_word: str, second_word: str) -> bool:
+    return set(first_word) == set(second_word)
+```
+
+```{python}
+is_anagram('listen', 'silent')
+```
+
+```{python}
+is_anagram('listen', 'listened')
+```
+
+**Challenge question:**
+
+Modify your code so that it also ignores spaces and capitalization. For example:
+
+```{python}
+#| echo: FALSE
+def is_anagram(first_word: str, second_word: str) -> bool:
+    """
+    Check whether two strings are palidrones of each other. 
+    An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces and capitalization.
+    """
+    first_word = first_word.lower().replace(' ', '')
+    second_word = second_word.lower().replace(' ', '')
+
+    return set(first_word) == set(second_word)
+```
+
+```{python}
+is_anagram('Listen', 'siLeNt')
+```
+
+```{python}
+is_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')
+```
+
+10. Based on the code provided below, write a function that returns `True` when `x` is a palindrone. Example input and expected output is provided below.
+
+```{python}
+def is_palindrone(word: str) -> bool:
     """
     Check whether a word is a palindrone
     A palindrone is a word that is spelt the same backwards and forward 
     """
-    return set(x) == set(y)
+    pass
 ```
 
 ```{python}
-is_anagram('racecar', 'fdsa')
+#| echo: FALSE
+def is_palindrone(word: str) -> bool:
+    return word == word[::-1]
+```
+
+```{python}
+is_palindrone('racecar')
+```
+
+```{python}
+is_palindrone('hello')
 ```
