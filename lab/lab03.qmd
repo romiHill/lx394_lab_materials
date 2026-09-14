@@ -1,0 +1,16 @@
+---
+title: "Lab 03"
+subtitle: "Lab 03" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: today
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
