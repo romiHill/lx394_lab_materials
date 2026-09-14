@@ -28,7 +28,25 @@ The link will be made available.
 
 # Folders, Files, and Folder Structure
 
-This will be discussed in person in lab.
+This will be discussed in person in lab. Here are some helpful commands when we have the discussion:
+
++---------------+----------------------------------------+----------------------------------+
+| Command       | What it does                           | Example                          |
++===============+========================================+==================================+
+| `cd`          | Changes directory                      | `cd /projectnb/lx394sh/username` |
++---------------+----------------------------------------+----------------------------------+
+| `ls`          | List contents of directory             | `ls`                             |
+|               |                                        |                                  |
+|               |                                        | `ls projectnb/lx394sh/username`  |
++---------------+----------------------------------------+----------------------------------+
+| `pwd`         | Print working directory                | `pwd`                            |
++---------------+----------------------------------------+----------------------------------+
+| `mkdir`       | Create a directory in current location | `mkdir my_dir_name`              |
++---------------+----------------------------------------+----------------------------------+
+
+: Bash Commands
+
+Use `conda install PACKAGE` in your command line to install Python packages. If you're on Mac, use the "Terminal". If you're on Windows, use the "Anaconda Prompt" (available in Anaconda Navigator"
 
 # Warm Up: Data Types
 
@@ -139,12 +157,12 @@ list('hello')
 
 ```{python}
 #| eval: FALSE
-set([1, 2, 3, 4, 5])
+set([1, 2, 2, 4, 5])
 ```
 
 ```{python}
 #| eval: FALSE
-set(str(7.5) + str(13))
+set(str(7.375) + str(45))
 ```
 
 # Operations on Lists
