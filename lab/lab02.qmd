@@ -24,7 +24,7 @@ editor: visual
 
 # Downloading Homework 1
 
-The link will be made available.
+Link: <https://github.com/BU-CompLing/lx394-f26-hw1>
 
 # Folders, Files, and Folder Structure
 
@@ -47,14 +47,6 @@ This will be discussed in person in lab. Here are some helpful commands when we 
 : Bash Commands
 
 Use `conda install PACKAGE` in your command line to install Python packages. If you're on Mac, use the "Terminal". If you're on Windows, use the "Anaconda Prompt" (available in Anaconda Navigator"
-
-# Warm Up: Data Types
-
-1.  What are some data types in Python? Give an example. I'll start: integer, for example, `5`.
-
-2.  What kinds of operations can we perform on them? I'll give an example. We can **add** two integers `5 + 5` returns `10`
-
-3.  What are some operations you can perform on `list`s?
 
 # Exercises: Data Types
 
@@ -132,7 +124,7 @@ For example, what happens when you run the following code?
 
 ```{python}
 #| eval: FALSE
-my_lst * 20
+my_lst * my_int
 ```
 
 **The take away message here:** When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this [here](https://www.geeksforgeeks.org/python/type-conversion-in-python/).
