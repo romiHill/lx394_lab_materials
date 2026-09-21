@@ -3,7 +3,7 @@ title: "Getting Started"
 subtitle: "Lab 01" 
 author: "Romi Hill"
 jupyter: lx394_tf
-date: today
+date: September 9, 2026
 format: 
   html:
       theme: cosmo
