@@ -23,6 +23,8 @@ Any questions/issues/concerns?
 
 I highly recommend always putting *all* files related to this course into one folder, and always open that folder in VSCode.
 
+What is a folder? What is a file?
+
 # Markdown Language
 
 Markdown is a "mark up" language, which is a light weight language you can use to format documents. This is how "text" is displayed in `.ipynb` notebooks. You can formatting styles like headings, *italics*, **bold**, `code snippets`, and more. See <https://www.markdownguide.org/cheat-sheet/> for more information and to make your notebooks look nicer :-)
@@ -151,12 +153,7 @@ is_palindrone('hello')
 
 In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.
 
-Some relevant operations you may find useful are:
-> `**`: exponentiation, e.g. `2**3` is 8
-> `range(n)`: generates a list of numbers from 0 to n-1,
-> `%`: modulus operator, e.g. `5 % 2` is 1, because 5 divided by 2 is 2 with a remainder of 1
-> len(): returns the length of a list, string, etc
-
+Some relevant operations you may find useful are: \> `**`: exponentiation, e.g. `2**3` is 8 \> `range(n)`: generates a list of numbers from 0 to n-1, \> `%`: modulus operator, e.g. `5 % 2` is 1, because 5 divided by 2 is 2 with a remainder of 1 \> len(): returns the length of a list, string, etc
 
 I'll give you can example of the first exercise.
 
@@ -172,7 +169,6 @@ I'll give you can example of the first exercise.
 #| include: FALSE
 [i for i in range(20) if i % 2 == 0]
 ```
-
 
 2.  **Flatten a list of lists:** Given `[[1,2],[3,4],[5,6]]`, produce `[1,2,3,4,5,6]`.
 
@@ -195,7 +191,6 @@ I'll give you can example of the first exercise.
 [i**2 for i in range(50) if i % 7 == 0]
 ```
 
-
 5.  **Word lengths:** From `["apple","banana","cherry"]`, create a `dict` mapping each word → its length.
 
 ```{python}
@@ -203,7 +198,7 @@ I'll give you can example of the first exercise.
 {word: len(word) for word in ["apple","banana","cherry"]}
 ```
 
-6. **Frequency count:** From the string `"banana"`, create a `dict` mapping each letter → its frequency.
+6.  **Frequency count:** From the string `"banana"`, create a `dict` mapping each letter → its frequency.
 
 ```{python}
 #| include: FALSE
@@ -219,39 +214,31 @@ print(freq['n'])
 
 7.  **Filter dictionary:** From `{'Alice': 25, 'Bob': 17, 'Carol': 30 }`, keep only entries where age ≥ 21.
 
-
-
 ```{python}
 #| include: FALSE
 {k: v for k, v in {'Alice': 25, 'Bob': 17, 'Carol': 30 }.items() if v >= 21}
 ```
 
-
 8.  **Unique squares:** From `range(10)`, generate the set of squares.
-
 
 ```{python}
 #| include: FALSE
 {i**2 for i in range(10)}
 ```
 
-9. **Vowels in a word:** Given the `str` `"comprehension"`, create a set of vowels that appear in it.
-
+9.  **Vowels in a word:** Given the `str` `"comprehension"`, create a set of vowels that appear in it.
 
 ```{python}
 #| include: FALSE
 {letter for letter in "comprehension" if letter in "aeiou"}
 ```
 
-
 10. **Letters in two words:** Given `"python"` and `"notebook"`, make a set of letters they share.
-
 
 ```{python}
 #| include: FALSE
 {letter for letter in "python" if letter in "notebook"}
 ```
-
 
 **Extra Challenge Exercises:**
 
@@ -262,9 +249,7 @@ print(freq['n'])
 {i for i in range(51) if i % 2 == 0 and i % 3 == 0}
 ```
 
-
-12.  **Swap keys and values:** Given `{'a':1, 'b':2, 'c':3}`, produce `{1:'a', 2:'b', 3:'c'}`.
-
+12. **Swap keys and values:** Given `{'a':1, 'b':2, 'c':3}`, produce `{1:'a', 2:'b', 3:'c'}`.
 
 ```{python}
 #| include: FALSE
