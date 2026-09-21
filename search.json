@@ -14,18 +14,25 @@
     "text": "This site hosts the lab materials for LX394. Use the menu above to select the Lab Materials.\n\nLab section: Wednesdays 3:35pm - 4:25pm, PSY B51\nOffice Hours: Mondays 3:45pm - 4:45pm, Room 138M, 111 Cummington Mall\nSophie’s Office Hours: Thursdays 11:00–12:00, Room 138S, 111 Cummington Mall\n\nSee the Syllabus for important dates and homework."
   },
   {
-    "objectID": "in_session_materials/lab02.html",
-    "href": "in_session_materials/lab02.html",
-    "title": "LX 394 Course Materials",
+    "objectID": "lab/lab03.html",
+    "href": "lab/lab03.html",
+    "title": "Lab 03",
     "section": "",
-    "text": "import pickle\n# import nltk\n\n\nwith open(\"../data/wiki_vs_chatgpt_articles.p\", \"rb\") as f:\n  _dataset = pickle.load(f)\n  wiki_articles = _dataset[\"wiki\"]\n  chatgpt_articles = _dataset[\"chatgpt\"]\n\n\ntype(wiki_articles)"
+    "text": "Any questions/issues/concerns?"
   },
   {
-    "objectID": "in_session_materials/lab01.html",
-    "href": "in_session_materials/lab01.html",
-    "title": "LX 394 Course Materials",
-    "section": "",
-    "text": "print('hello')\n\nhello"
+    "objectID": "lab/lab03.html#functions",
+    "href": "lab/lab03.html#functions",
+    "title": "Lab 03",
+    "section": "4.1 Functions",
+    "text": "4.1 Functions\n\nWrite a function that outputs the following\n\n\nprint_hello('Romi')\n\nHello Romi!\n\n\nI’ll give you the start. Hint: you need to use an operator.\n\ndef print_hello(name):\n    pass # replace pass with your statement\n\nAdditional Exercise:\nModify the code so that the default value is “Sophie”. That is, your function should have the following output given these inputs. This should only take 9ish characters to type if your last code was correct!\n\nprint_hello()\n\nHello Sophie!\n\n\n\nprint_hello(\"class of LX394\")\n\nHello class of LX394!"
+  },
+  {
+    "objectID": "lab/lab03.html#putting-it-together-functions-palindrones-and-anagrams",
+    "href": "lab/lab03.html#putting-it-together-functions-palindrones-and-anagrams",
+    "title": "Lab 03",
+    "section": "4.2 Putting it together: Functions, Palindrones, and Anagrams",
+    "text": "4.2 Putting it together: Functions, Palindrones, and Anagrams\n\nBased on the code provided below, write a function that returns True when x and y are anagrams of each other, and false otherwise. Example input and expected output is provided below.\n\nNote: You may have noticed : str and -&gt; bool in this sample code. It’s good style to yourself/anyone else using the code that the input parameters should be a str, and the output should be a bool. However, this is not necessary. In fact, Python will still run if the output is not a bool, for example.\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are palidrones of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    pass\n\n\nis_anagram('listen', 'silent')\n\nTrue\n\n\n\nis_anagram('listen', 'listened')\n\nFalse\n\n\nChallenge question:\nModify your code so that it also ignores spaces and capitalization. For example:\n\nis_anagram('Listen', 'siLeNt')\n\nTrue\n\n\n\nis_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')\n\nTrue\n\n\n\nBased on the code provided below, write a function that returns True when x is a palindrone. Example input and expected output is provided below.\n\n\ndef is_palindrone(word: str) -&gt; bool:\n    \"\"\"\n    Check whether a word is a palindrone\n    A palindrone is a word that is spelt the same backwards and forward \n    \"\"\"\n    pass\n\n\ndef is_palindrone(word: str) -&gt; bool:\n    return word == word[::-1]\n\n\nis_palindrone('racecar')\n\n\nis_palindrone('hello')"
   },
   {
     "objectID": "lab/lab02.html",

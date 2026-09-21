@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>HW 1: ChatGPT vs.&nbsp;Wikipedia – LX 394 Course Materials</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">LX 394 Course Materials</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lab/lab01.html"> 
+<span class="menu-text">Lab 01</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../lab/lab02.html"> 
+<span class="menu-text">Lab 02</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">HW 1: ChatGPT vs.&nbsp;Wikipedia</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this homework assignment, you will study the statistical characteristics of ChatGPT-generated text by conducting a <em>keyword analysis</em> (<a href="https://www.abebooks.com/first-edition/Frequency-Analysis-English-Vocabulary-Grammar-Based/32179496983/bd">Hofland and Johansson, 1989</a> and others) of a ChatGPT-generated corpus, using an analogous corpus of Wikipedia articles as a reference. When we conduct a keyword analysis, we try to find <em>token types</em> (i.e., lexical items) that distinguish a <em>target text</em> from a <em>reference text</em>. In class, we saw that “delve” was a keyword for ChatGPT-generated text; in this assignment, you will systematically identify other keywords that distinguish <a href="https://www.sciencedirect.com/science/article/pii/S294971912300047X">Singh et al.’s (2024)</a> ChatGPT corpus from their Wikipedia corpus.</p>
+<section id="important-read-before-starting" class="level2">
+<h2 class="anchored" data-anchor-id="important-read-before-starting">Important: Read Before Starting</h2>
+<p>In the following exercises, you will need to implement (i.e., write code for) functions defined in the <code>hw1.py</code> file. <strong>Please write all your code in this file.</strong> You should not submit this notebook with your solutions, and we will not grade it if you do. Please be aware that code written in a Jupyter notebook may run differently when copied into a <code>.py</code> file.</p>
+<p>The outputs shown in this notebook are the outputs that you should get <strong>when all problems have been completed correctly</strong>. You may obtain different results if you attempt to run the code cells before you have completed the problem set, or if you have completed one or more problems incorrectly. <strong>Obtaining the outputs shown in this notebook does not guarantee that your code is correct.</strong></p>
+<p>To begin, please run the following import statements.</p>
+<div id="1d76aa21-a002-4777-8707-1c1301db8a6d" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> importlib</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.probability <span class="im">import</span> FreqDist</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.text <span class="im">import</span> Text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="problem-1-python-exercises-8-points-in-total-1-point-extra-credit" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-python-exercises-8-points-in-total-1-point-extra-credit">Problem 1: Python Exercises (8 Points in Total + 1 Point Extra Credit)</h2>
+<p>In these exercises, you will learn and practice Python concepts needed in order to conduct the keyword analysis of the ChatGPT corpus in Problem 2.</p>
+<section id="problem-1a-understand-modules-written-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1a-understand-modules-written-1-point">Problem 1a: Understand Modules (Written, 1 Point)</h3>
+<p>The file <code>hw1.py</code> contains a collection of function definitions, most of which are incomplete. For this assignment, you will <em>implement</em> (i.e., write the code for) the incomplete functions in this file.</p>
+<p>The code contained in a <code>.py</code> file is called a <em>module</em>. Modules can be imported, just like packages, by using an <code>import</code> statement followed by the module’s filename, excluding the <code>.py</code> suffix.</p>
+<div id="950dc87b-a4a8-4d1f-9827-3016840741b7" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the code for this assignment</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hw1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>What does the following code do?</p>
+<div id="9042283a-c2e2-4fda-8c00-cb7e8e4d45f0" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hw1.hello_world()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you wanted to call the function <code>foo_bar</code> defined in the <code>hw1</code> module (i.e., the <code>hw1.py</code> file), how would you do so?</p>
+</section>
+<section id="problem-1b-understand-module-reloading-written-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1b-understand-module-reloading-written-1-point">Problem 1b: Understand Module Reloading (Written, 1 Point)</h3>
+<p>Please edit the function <code>my_name</code> in the <code>hw1</code> module by replacing the <code>_</code> with your name. Once you have done so, please save your changes, and then call the <code>my_name</code> function using the code cell below. What happens? Are your changes reflected when the <code>my_name</code> function is called again?</p>
+<div id="a0b20ab1-3654-4bb5-87b3-dba5654928a2" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>hw1.my_name()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello world!
+My name is _.</code></pre>
+</div>
+</div>
+<p>If you wanted to call the edited version of your <code>my_name</code> function from this notebook without restarting it, how would you do so?</p>
+<p><strong>Hint:</strong> Please read this <a href="https://stackoverflow.com/questions/1254370/reimport-a-module-while-interactive">Stack Overflow post</a>, and then examine the <code>import</code> statements at the top of this notebook.</p>
+</section>
+<section id="problem-1c-understand-type-hints-written-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1c-understand-type-hints-written-2-points">Problem 1c: Understand Type Hints (Written, 2 Points)</h3>
+<p>The function <code>add_str</code> takes two strings, both representing numbers, and returns the two numbers’ sum as a string. For example:</p>
+<div id="3823579e-d9ef-40af-9fcf-7d1f012808e4" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hw1.add_str(<span class="st">"1"</span>, <span class="st">"1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>'2.0'</code></pre>
+</div>
+</div>
+<p>In the definition for <code>add_str</code>, the two parameters <code>a</code> and <code>b</code> are followed by <code>: str</code>, and there is a <code>-&gt; str</code> just before the <code>:</code>. These pieces of code are called <em>type hints</em>. What are type hints? Are they requirements, or just suggestions? What would the definition for the <code>my_name</code> function look like if you were to add type hints to it?</p>
+<p><strong>Hints:</strong> - Read this <a href="https://pyrefly.org/en/docs/python-typing-for-beginners/">tutorial on type hints</a>. - Try running the following code:</p>
+<div id="68ca76cc-08e7-4cdb-aea8-9f88051779de" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code that ignores type hints</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>hw1.add_str(<span class="dv">1</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Important:</strong> For all coding problems on all assignments, you are expected to comply with the type hints provided to you in order to receive full credit.</p>
+</section>
+<section id="problem-1d-understand-dict-methods-written-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1d-understand-dict-methods-written-1-point">Problem 1d: Understand Dict Methods (Written, 1 Point)</h3>
+<p>A <code>dict</code> is a data type that is like a <code>list</code>, except that each item has a <em>key</em> (i.e., a name) rather than a position. For example:</p>
+<div id="8e6eed08-b09c-43a8-9392-f988877927e9" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dict</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get item "b"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d[<span class="st">"b"</span>])</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify item "c"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"c"</span>] <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new item with key "d"</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>d[<span class="st">"d"</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2
+{'a': 1, 'b': 2, 'c': 5}
+{'a': 1, 'b': 2, 'c': 5, 'd': 10}</code></pre>
+</div>
+</div>
+<p>Each <code>dict</code> comes with the functions <code>keys</code>, <code>values</code>, and <code>items</code>. Functions that come with an object of a certain type are called <em>methods</em>. What do these methods do?</p>
+<div id="0ebab24d-c3a9-461f-8cd1-76a62c4578a7" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d.keys())</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d.values())</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(d.items())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>dict_keys(['a', 'b', 'c', 'd'])
+dict_values([1, 2, 5, 10])
+dict_items([('a', 1), ('b', 2), ('c', 5), ('d', 10)])</code></pre>
+</div>
+</div>
+<p>What happens if you cast a <code>dict</code> to a <code>list</code> or a <code>set</code>?</p>
+<div id="adcad98c-b0ed-421d-86dd-f69a4b779850" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>['a', 'b', 'c', 'd']</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1e-practice-dict-comprehension-code-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1e-practice-dict-comprehension-code-1-point">Problem 1e: Practice Dict Comprehension (Code, 1 Point)</h3>
+<p>Recall from class, and from <a href="https://bu-compling.github.io/lx394-f26-syllabus/book/book_chapter1/">Chapter 1, Subsection 4.2 of the textbook</a>, that we can build <code>list</code>s and <code>set</code>s from other <code>list</code>s and <code>set</code>s using <em>comprehension</em>. For example:</p>
+<div id="808dd2e7-7735-462f-9050-332cdb2f8b28" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>{i <span class="op">+</span> <span class="dv">1</span> <span class="cf">for</span> i <span class="kw">in</span> x}  <span class="co"># The set containing 1 plus each item in x</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>{2, 3, 4, 6}</code></pre>
+</div>
+</div>
+<p>Comprehension can also be applied to <code>dict</code>s. For example:</p>
+<div id="780a86b9-d1c0-44ae-a635-a6348159db24" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>{k: v <span class="op">+</span> <span class="dv">1</span> <span class="cf">for</span> k, v <span class="kw">in</span> d.items()}  <span class="co"># The dict containing 1 plus each item in d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>{'a': 2, 'b': 3, 'c': 4}</code></pre>
+</div>
+</div>
+<p>Using comprehension, please implement the function <code>swap_keys_values</code> in the <code>hw1</code> module, which takes a <code>dict</code> as input and returns a new <code>dict</code> that maps each of the values in the original <code>dict</code> to its corresponding key. For example:</p>
+<div id="6c0c8b02-f2d6-46be-b856-75a32c9e8f0e" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> hw1.swap_keys_values(d)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(e)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(e[<span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1: 'a', 2: 'b', 3: 'c'}
+a</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1f-understand-freqdists-written-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1f-understand-freqdists-written-1-point">Problem 1f: Understand FreqDists (Written, 1 Point)</h3>
+<p>NLTK has a data type called <code>FreqDist</code>. Please read <a href="https://bu-compling.github.io/lx394-f26-syllabus/book/book_chapter1/#sec-computing-with-language-simple-statistics">Chapter 1, Section 3 of the textbook</a> to learn about <code>FreqDist</code>s.</p>
+<p>Just as a <code>Text</code> is really just a special kind of <code>list</code>, a <code>FreqDist</code> is really just a special kind of <code>dict</code>. A <code>FreqDist</code> is designed to map token types to the number of times they occur within a corpus. For example:</p>
+<div id="336b392a-e546-4992-b4af-96a6378e0fb9" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dict with counts for a hypothetical corpus</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>counts <span class="op">=</span> {<span class="st">"the"</span>: <span class="dv">60</span>,   <span class="co"># "the" occurs 60 times in this corpus</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>          <span class="st">"of"</span>: <span class="dv">30</span>,    <span class="co"># "of"  occurs 30 times in this corpus</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>          <span class="st">"and"</span>: <span class="dv">20</span>}   <span class="co"># "and" occurs 20 times in this corpus</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn the dict into a FreqDist</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>FreqDist(counts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>FreqDist({'the': 60, 'of': 30, 'and': 20})</code></pre>
+</div>
+</div>
+<p>A <code>FreqDist</code> can be <em>constructed</em> (i.e., created) from a corpus, represented as a <code>list</code> or <code>Text</code>:</p>
+<div id="83a36fc8-1e86-4d8e-835e-2a428c8e6174" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>corpus <span class="op">=</span> [<span class="st">"The"</span>, <span class="st">"cat"</span>, <span class="st">"on"</span>, <span class="st">"the"</span>, <span class="st">"boat"</span>, <span class="st">"smiled"</span>, <span class="st">"at"</span>, <span class="st">"the"</span>, <span class="st">"dog"</span>, <span class="st">"."</span>]</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>FreqDist(corpus)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>FreqDist({'the': 2, 'The': 1, 'cat': 1, 'on': 1, 'boat': 1, 'smiled': 1, 'at': 1, 'dog': 1, '.': 1})</code></pre>
+</div>
+</div>
+<p>A <code>FreqDist</code> can also be obtained by calling the <code>vocab</code> method of a <code>Text</code>:</p>
+<div id="3d9b03ed-ae17-4af4-9796-831988b64d5a" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Text(corpus).vocab()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>FreqDist({'the': 2, 'The': 1, 'cat': 1, 'on': 1, 'boat': 1, 'smiled': 1, 'at': 1, 'dog': 1, '.': 1})</code></pre>
+</div>
+</div>
+<p>What happens if you add two <code>FreqDist</code>s? For example:</p>
+<div id="a51ac2ec-a6bc-47eb-9f8e-a481beffa21d" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>dist1 <span class="op">=</span> FreqDist({<span class="st">"the"</span>: <span class="dv">60</span>, <span class="st">"of"</span>: <span class="dv">30</span>, <span class="st">"and"</span>: <span class="dv">20</span>})</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>dist2 <span class="op">=</span> FreqDist({<span class="st">"and"</span>: <span class="dv">1</span>, <span class="st">"in"</span>: <span class="dv">3</span>})</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>dist1 <span class="op">+</span> dist2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>FreqDist({'the': 60, 'of': 30, 'and': 21, 'in': 3})</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1g-unintended-uses-of-freqdists-written-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1g-unintended-uses-of-freqdists-written-1-point">Problem 1g: Unintended Uses of FreqDists (Written, 1 Point)</h3>
+<p>Because <code>FreqDist</code>s are intended to contain counts of words within a corpus, most of the <code>FreqDist</code> methods are written under the assumption that a <code>FreqDist</code>s values will always be <code>int</code>s. However, we don’t necessarily have to use <code>FreqDist</code>s for their intended purpose. Let’s say you wanted a <code>FreqDist</code> to contain <code>float</code> values instead of <code>int</code> values. Is this allowed?</p>
+<p><strong>Hint:</strong> Try creating a new <code>FreqDist</code> or modifying an existing one.</p>
+<div id="7e6e7ced-034a-41b8-bb88-a557b2355136" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feel free to write code to help you answer Problem 1g.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="problem-1h-understand-mutable-objects-written-1-point-extra-credit" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1h-understand-mutable-objects-written-1-point-extra-credit">Problem 1h: Understand Mutable Objects (Written, 1 Point Extra Credit)</h3>
+<p>In class, we saw that if you define one variable to be equal to another variable, then changing the first variable’s value doesn’t affect the second variable:</p>
+<div id="d3d143d6-79d2-4a49-bed3-a3e0d824aac3" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x=2, y=1</code></pre>
+</div>
+</div>
+<p>Now, try running the following code.</p>
+<div id="5b0d3f81-f229-4f6a-8dca-17dcf4c7f0a4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [x, [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], x]</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">7</span>  <span class="co"># Change the value of x</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Why does changing <code>x</code> change the value of <code>y</code>?</p>
+<p><strong>Hints:</strong> - Try reading about <a href="https://realpython.com/python-mutable-vs-immutable-types/">mutable vs.&nbsp;immutable data types</a>. - Compare the above code with this code:</p>
+<div id="69dd3da5-59e0-45b8-9a43-4e9213c18d52" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [x, [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], x]</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">3</span>]  <span class="co"># Change the value of x</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y=</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Note:</strong> Read this <a href="https://www.w3schools.com/python/python_string_formatting.asp">tutorial</a> if you’re curious about these fancy <code>print</code> statements.</p>
+</section>
+</section>
+<section id="problem-2-keyword-analysis-of-the-chatgpt-corpus-12-points-in-total" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-keyword-analysis-of-the-chatgpt-corpus-12-points-in-total">Problem 2: Keyword Analysis of the ChatGPT Corpus (12 Points in Total)</h2>
+<p>In this problem, you implement and execute a keyword analysis of the ChatGPT corpus. To do so, we need to understand exactly what it means for a token type to be a “keyword.” In class, we saw that “delve” is a keyword for the ChatGPT corpus, and we justified this by observing that “delve” is used somewhat often in the ChatGPT corpus, but almost never in the Wikipedia corpus.</p>
+<div id="995cb508-17a4-411d-b636-7ee322bb87dd" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Wikipedia vs. ChatGPT corpus</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"wiki_vs_chatgpt_articles.p"</span>, <span class="st">"rb"</span>) <span class="im">as</span> f:</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    _dataset <span class="op">=</span> pickle.load(f)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    wiki_articles <span class="op">=</span> _dataset[<span class="st">"wiki"</span>]</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    chatgpt_articles <span class="op">=</span> _dataset[<span class="st">"chatgpt"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="2a2e31b0-20e8-471f-9644-e4d51f68fcaa" class="cell" data-scrolled="true" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare the counts of "delve" in our two corpora</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="st">"delve"</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The token type </span><span class="ch">\"</span><span class="sc">{</span>t<span class="sc">}</span><span class="ch">\"</span><span class="ss"> occurs...</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"</span><span class="ch">\t</span><span class="sc">{</span>chatgpt_articles<span class="sc">.</span>count(t)<span class="sc">}</span><span class="ss"> time(s) in the ChatGPT corpus and</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"</span><span class="ch">\t</span><span class="sc">{</span>wiki_articles<span class="sc">.</span>count(t)<span class="sc">}</span><span class="ss"> time(s) in the Wikipedia corpus."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The token type "delve" occurs...
+    68 time(s) in the ChatGPT corpus and
+    1 time(s) in the Wikipedia corpus.</code></pre>
+</div>
+</div>
+<p>The idea that you will pursue in this problem is that we can measure the <em>keyness</em> of a token type within a corpus by comparing its frequency in that corpus with its frequency in a <em>reference corpus</em>. Once you have a method for measuring the keyness of a token type, you can identify keywords automatically by finding the token types with the highest keyness values.</p>
+<section id="problem-2a-understand-frequency-ratios-written-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2a-understand-frequency-ratios-written-1-point">Problem 2a: Understand Frequency Ratios (Written, 1 Point)</h3>
+<p>To calculate keyness, we will use <em>frequency ratios</em> as a <em>keyness metric</em> <a href="https://www.sketchengine.eu/wp-content/uploads/2015/04/2009-Simple-maths-for-keywords.pdf">(Kilgarriff, 2009)</a>. The <em>relative frequency</em> of a token type <span class="math inline">\(w\)</span> in a corpus <span class="math inline">\(c\)</span> is defined as: <span class="math display">\[\texttt{rel\_freq}(w, c) = \frac{c\texttt{.count}(w)}{\texttt{len}(c)}\]</span></p>
+<p>The <em>frequency ratio</em> of a token type <span class="math inline">\(w\)</span> in <em>target corpus</em> <span class="math inline">\(c_1\)</span> relative to <em>reference corpus</em> <span class="math inline">\(c_2\)</span> is defined as: <span class="math display">\[\texttt{freq\_ratio}(w, c_1, c_2) = \frac{\texttt{rel\_freq}(w, c_1)}{\texttt{rel\_freq}(w, c_2)}\]</span></p>
+<p>What is the frequency ratio of “delve” in the ChatGPT corpus relative to the Wikipedia corpus?</p>
+<div id="9d0e26f2-e8b3-46de-9737-45ed6f1d9855" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feel free to write code to help you answer Problem 2a.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="problem-2b-determine-applicability-of-frequency-ratios-written-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2b-determine-applicability-of-frequency-ratios-written-2-points">Problem 2b: Determine Applicability of Frequency Ratios (Written, 2 Points)</h3>
+<p><a href="https://www.sketchengine.eu/wp-content/uploads/2015/04/2009-Simple-maths-for-keywords.pdf">Kilgarriff (2009, pp.&nbsp;1–2)</a> points out four potential problems with using frequency ratios as a keyness metric. The first two problems relate to whether frequency ratios are an appropriate keyness metric for the target and reference corpora.</p>
+<p>Please read Kilgarriff’s paper, at least until you have read the first two of his four potential problems. Do you think frequency ratios are applicable to the ChatGPT and Wikipedia corpora? That is, do you think Kilgarriff’s first and second problems are relevant to this assignment? Why or why not?</p>
+<p><strong>Hint:</strong> If you don’t remember how the ChatGPT and Wikipedia corpora were created, consult <a href="https://www.sciencedirect.com/science/article/pii/S294971912300047X#sec3">Singh et al.&nbsp;(2024, Section 3)</a> or the <a href="https://github.com/BU-CompLing/lx394-f26-slides/blob/main/sep2.ipynb">Sep.&nbsp;2 slides</a>.</p>
+</section>
+<section id="problem-2c-implement-smoothing-code-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2c-implement-smoothing-code-2-points">Problem 2c: Implement Smoothing (Code, 2 Points)</h3>
+<p>Kilgarriff’s third problem is that if <span class="math inline">\(w\)</span> does not appear in the reference corpus (i.e., if <span class="math inline">\(c_2\texttt{.count}(w) = 0\)</span>), then the formula for <span class="math inline">\(\texttt{freq\_ratio}(w, c_1, c_2)\)</span> will require you to divide by zero. To mitigate this problem, you will implement a popular tactic known as <a href="https://en.wikipedia.org/wiki/Additive_smoothing"><em>add-<span class="math inline">\(k\)</span> smoothing</em></a>. When we apply add-<span class="math inline">\(k\)</span> smoothing to a corpus, we pretend that the corpus contains <span class="math inline">\(k\)</span> occurrences of each token type, in addition to what is actually in the text. The formula for relative frequency with add-<span class="math inline">\(k\)</span> smoothing is therefore: <span class="math display">\[\texttt{rel\_freq}_k(w, c) = \frac{c\texttt{.count}(w) + k}{\texttt{len}(c) + k\cdot\texttt{vocab\_size}(c)}\]</span> where <span class="math inline">\(\texttt{vocab\_size}(c) = \texttt{len}(\texttt{set}(c))\)</span>.</p>
+<p>For this problem, please implement the functions <code>joint_vocab</code> and <code>smooth</code>. The <code>joint_vocab</code> function takes two <code>FreqDists</code> and returns a set containing all the token types represented across both <code>FreqDists</code>. For example:</p>
+<div id="99ba803e-05d7-4076-871c-91dedea141bd" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dist1 <span class="op">=</span> FreqDist({<span class="st">"the"</span>: <span class="dv">60</span>, <span class="st">"of"</span>: <span class="dv">30</span>, <span class="st">"and"</span>: <span class="dv">20</span>})</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>dist2 <span class="op">=</span> FreqDist({<span class="st">"and"</span>: <span class="dv">1</span>, <span class="st">"in"</span>: <span class="dv">3</span>})</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>hw1.joint_vocab(dist1, dist2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>{'and', 'in', 'of', 'the'}</code></pre>
+</div>
+</div>
+<p>The <code>smooth</code> function takes a <code>FreqDict</code> and applies add-<span class="math inline">\(k\)</span> smoothing to it. For example:</p>
+<div id="f2dfd44c-3c2d-4223-bccc-20db13bc2e21" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying add-1 smoothing</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> hw1.joint_vocab(dist1, dist2)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>hw1.smooth(dist2, vocab)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>FreqDist({'in': 4, 'and': 2, 'of': 1, 'the': 1})</code></pre>
+</div>
+</div>
+<p><code>smooth</code> has an optional parameter <code>k</code>, with a default value of <code>1</code>, which represents the number of extra occurrences that will be added to the count of each token type in the <code>FreqDist</code>.</p>
+<div id="8123e1a0-c3e5-4042-9361-e9ddf1cc9612" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Applying add-10 smoothing</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>hw1.smooth(dist2, vocab, k<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>FreqDist({'in': 13, 'and': 11, 'of': 10, 'the': 10})</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-2d-normalize-distributions-code-1-point" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2d-normalize-distributions-code-1-point">Problem 2d: Normalize Distributions (Code, 1 Point)</h3>
+<p>If <code>c</code> is a <code>Text</code>, then <code>c.vocab()</code> returns the <em>absolute frequency distribution</em> of <code>c</code>; that is, <code>c.vocab()</code> maps each token type in <code>c</code> to its count in <code>c</code>. For example:</p>
+<div id="e536e214-f831-4cf6-a1dc-0b669ee9ea42" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>sent <span class="op">=</span> [<span class="st">"The"</span>, <span class="st">"cat"</span>, <span class="st">"on"</span>, <span class="st">"the"</span>, <span class="st">"boat"</span>, <span class="st">"smiled"</span>, <span class="st">"at"</span>, <span class="st">"the"</span>, <span class="st">"dog"</span>, <span class="st">"."</span>]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>Text(sent).vocab()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>FreqDist({'the': 2, 'The': 1, 'cat': 1, 'on': 1, 'boat': 1, 'smiled': 1, 'at': 1, 'dog': 1, '.': 1})</code></pre>
+</div>
+</div>
+<p>Please implement the function <code>normalize</code>, which converts an absolute frequency distribution into a <em>relative frequency distribution</em> that maps each token type to its relative frequency in <code>c</code>. For example:</p>
+<div id="cb73165e-ea13-434a-98ee-fcdf9d4ad3ae" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>hw1.normalize(Text(sent).vocab())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>FreqDist({'the': 0.2, 'The': 0.1, 'cat': 0.1, 'on': 0.1, 'boat': 0.1, 'smiled': 0.1, 'at': 0.1, 'dog': 0.1, '.': 0.1})</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-2e-calculate-frequency-ratios-code-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2e-calculate-frequency-ratios-code-2-points">Problem 2e: Calculate Frequency Ratios (Code, 2 Points)</h3>
+<p>Finally, please implement the function <code>freq_ratio</code>, which takes counts for a target corpus and a reference corpus and computes the frequency ratio for each token type in the joint vocabulary of both corpora with add-<span class="math inline">\(k\)</span> smoothing. For example:</p>
+<div id="6f0474a6-7add-4c8c-be1f-d08cd175eada" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>target_dist <span class="op">=</span> FreqDist({<span class="st">"the"</span>: <span class="dv">60</span>, <span class="st">"of"</span>: <span class="dv">30</span>, <span class="st">"and"</span>: <span class="dv">20</span>})</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>ref_dist <span class="op">=</span> FreqDist({<span class="st">"and"</span>: <span class="dv">1</span>, <span class="st">"in"</span>: <span class="dv">3</span>})</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>hw1.freq_ratio(target_dist, ref_dist)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>FreqDist({'the': 4.280701754385965, 'of': 2.175438596491228, 'and': 0.7368421052631579, 'in': 0.017543859649122806})</code></pre>
+</div>
+</div>
+<p><code>freq_ratio</code> has an optional parameter <code>k</code>, which determines the number of extra occurrences added to counts during add-<span class="math inline">\(k\)</span> smoothing.</p>
+<div id="d669eba2-46d9-4038-a114-defd489a59b1" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>hw1.freq_ratio(target_dist, ref_dist, k<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>FreqDist({'the': 2.0533333333333332, 'of': 1.1733333333333333, 'and': 0.8, 'in': 0.22564102564102562})</code></pre>
+</div>
+</div>
+<p><strong>Hint:</strong> Your code should call the other functions you implemented during the previous parts of this exercise.</p>
+</section>
+<section id="problem-2f-identify-chatgpt-keywords-no-submission-0-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2f-identify-chatgpt-keywords-no-submission-0-points">Problem 2f: Identify ChatGPT Keywords (No Submission, 0 Points)</h3>
+<p>Now, let’s use your code to identify keywords from the ChatGPT corpus.</p>
+<div id="71a060a8-01a9-4c39-a8ab-434f2198c118" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>freq_ratios <span class="op">=</span> hw1.freq_ratio(chatgpt_articles.vocab(), wiki_articles.vocab())</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>freq_ratios.most_common(<span class="dv">15</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>[('stunning', 366.93441316302506),
+ ('reminder', 254.4058933706665),
+ ('breathtaking', 228.30163648567634),
+ ('must-watch', 225.64696629398244),
+ ('must-visit', 195.56070412145147),
+ ('fascinating', 170.1201147843848),
+ ('must-see', 160.16510156553264),
+ ('resilience', 146.00686054316512),
+ ('preparedness', 142.68852280354773),
+ ('unforgettable', 141.58241022367525),
+ ('well-maintained', 139.8126300958793),
+ ('delves', 138.0428499680834),
+ ('teamwork', 119.460158626226),
+ ('thrilling', 114.00333656552185),
+ ('delicious', 102.64724741216456)]</code></pre>
+</div>
+</div>
+<p>If you run the above code cell after completing Problems 2c–e and get the same output, that is a good sign that your code is correct!</p>
+</section>
+<section id="problem-2g-identify-wikipedia-keywords-code-and-written-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2g-identify-wikipedia-keywords-code-and-written-2-points">Problem 2g: Identify Wikipedia Keywords (Code and Written, 2 Points)</h3>
+<p>To identify keywords from the Wikipedia corpus, we want to retrieve the token types with the <em>smallest</em> frequency ratios. To do so, please implement the function <code>least_common</code>, which retrieves the items in a <code>FreqDist</code> with the smallest values. For example:</p>
+<div id="66e110b7-685e-48aa-a775-d1778b8ca11f" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> FreqDist({<span class="st">"the"</span>: <span class="dv">60</span>, <span class="st">"of"</span>: <span class="dv">30</span>, <span class="st">"and"</span>: <span class="dv">20</span>, <span class="st">"in"</span>: <span class="dv">10</span>, <span class="st">"nltk"</span>: <span class="dv">0</span>})</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>hw1.least_common(d, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>[('nltk', 0), ('in', 10), ('and', 20)]</code></pre>
+</div>
+</div>
+<p>What are the top five keywords for the Wikipedia corpus (i.e., the five token types with the smallest frequency ratios, in ascending order of frequency ratio)?</p>
+<p><strong>Hints:</strong> Try googling <code>how to sort a dict in python</code>.</p>
+</section>
+<section id="problem-2h-limitations-of-frequency-ratios-written-2-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2h-limitations-of-frequency-ratios-written-2-points">Problem 2h: Limitations of Frequency Ratios (Written, 2 Points)</h3>
+<p>According to <a href="https://www.sketchengine.eu/wp-content/uploads/2015/04/2009-Simple-maths-for-keywords.pdf">Kilgarriff’s</a> (2009) fourth problem, what is a limitation of using frequency ratios as a keyness metric? What solution does Kilgarriff propose for this problem?</p>
+<p>How do the keywords identified for the ChatGPT corpus change if you use add-1000 smoothing instead of add-1 smoothing? Are they less rare in the Wikipedia corpus? Support your answer by including a table of the following format. The first two columns have been filled in for you; please fill in the analogous information for the remaining two columns.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Keyword (k = 1)</th>
+<th>Count in Wiki Corpus</th>
+<th>Keyword (k = 1000)</th>
+<th>Count in Wiki Corpus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>stunning</td>
+<td>2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>reminder</td>
+<td>3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>breathtaking</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>must-watch</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>must-visit</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Average</strong></td>
+<td><strong>1</strong></td>
+<td><strong>Average</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="9a8ca034-462f-4d6e-8209-4f0b21de4a38" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Feel free to write code to help you answer Problem 2h.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="problem-3-socialize-2-points-extra-credit" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-socialize-2-points-extra-credit">Problem 3: Socialize (2 Points Extra Credit)</h2>
+<section id="problem-3a-ask-for-help-no-submission-1-point-extra-credit" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3a-ask-for-help-no-submission-1-point-extra-credit">Problem 3a: Ask for Help (No Submission, 1 Point Extra Credit)</h3>
+<p>Ask at least one question relating to this assignment on <a href="https://piazza.com/class/mt2j16fdcat2so">Piazza</a>.</p>
+</section>
+<section id="problem-3b-help-a-friend-no-submission-1-point-extra-credit" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3b-help-a-friend-no-submission-1-point-extra-credit">Problem 3b: Help a Friend (No Submission, 1 Point Extra Credit)</h3>
+<p>Answer at least one question relating to this assignment on <a href="https://piazza.com/class/mt2j16fdcat2so">Piazza</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
