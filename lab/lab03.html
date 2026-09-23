@@ -143,6 +143,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../lab/lab02.html"> 
 <span class="menu-text">Lab 02</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../lab/lab03.html" aria-current="page"> 
+<span class="menu-text">Lab 03</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -162,12 +166,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#homework-1-questions" id="toc-homework-1-questions" class="nav-link active" data-scroll-target="#homework-1-questions"><span class="header-section-number">1</span> Homework 1 Questions</a></li>
   <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link" data-scroll-target="#folder-structure"><span class="header-section-number">2</span> Folder Structure</a></li>
   <li><a href="#markdown-language" id="toc-markdown-language" class="nav-link" data-scroll-target="#markdown-language"><span class="header-section-number">3</span> Markdown Language</a></li>
-  <li><a href="#exercises-from-last-time" id="toc-exercises-from-last-time" class="nav-link" data-scroll-target="#exercises-from-last-time"><span class="header-section-number">4</span> Exercises from Last Time</a>
+  <li><a href="#python-exercises" id="toc-python-exercises" class="nav-link" data-scroll-target="#python-exercises"><span class="header-section-number">4</span> Python Exercises</a></li>
+  <li><a href="#exercises-from-last-time" id="toc-exercises-from-last-time" class="nav-link" data-scroll-target="#exercises-from-last-time"><span class="header-section-number">5</span> Exercises from Last Time</a>
   <ul class="collapse">
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">4.1</span> Functions</a></li>
-  <li><a href="#putting-it-together-functions-palindrones-and-anagrams" id="toc-putting-it-together-functions-palindrones-and-anagrams" class="nav-link" data-scroll-target="#putting-it-together-functions-palindrones-and-anagrams"><span class="header-section-number">4.2</span> Putting it together: Functions, Palindrones, and Anagrams</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">5.1</span> Functions</a></li>
+  <li><a href="#putting-it-together-functions-palindrones-and-anagrams" id="toc-putting-it-together-functions-palindrones-and-anagrams" class="nav-link" data-scroll-target="#putting-it-together-functions-palindrones-and-anagrams"><span class="header-section-number">5.2</span> Putting it together: Functions, Palindrones, and Anagrams</a></li>
   </ul></li>
-  <li><a href="#python-exercises" id="toc-python-exercises" class="nav-link" data-scroll-target="#python-exercises"><span class="header-section-number">5</span> Python Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -219,117 +223,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="3"><span class="header-section-number">3</span> Markdown Language</h1>
 <p>Markdown is a “mark up” language, which is a light weight language you can use to format documents. This is how “text” is displayed in <code>.ipynb</code> notebooks. You can formatting styles like headings, <em>italics</em>, <strong>bold</strong>, <code>code snippets</code>, and more. See <a href="https://www.markdownguide.org/cheat-sheet/" class="uri">https://www.markdownguide.org/cheat-sheet/</a> for more information and to make your notebooks look nicer :-)</p>
 </section>
-<section id="exercises-from-last-time" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Exercises from Last Time</h1>
-<section id="functions" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="functions"><span class="header-section-number">4.1</span> Functions</h2>
-<ol type="1">
-<li>Write a function that outputs the following</li>
-</ol>
-<div id="1a5ecf33" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>print_hello(<span class="st">'Romi'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello Romi!</code></pre>
-</div>
-</div>
-<p>I’ll give you the start. Hint: you need to use an operator.</p>
-<div id="2b8d0fed" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hello(name):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass with your statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Additional Exercise:</strong></p>
-<p>Modify the code so that the <em>default</em> value is “Sophie”. That is, your function should have the following output given these inputs. This should only take 9ish characters to type if your last code was correct!</p>
-<div id="003ce00d" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>print_hello()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello Sophie!</code></pre>
-</div>
-</div>
-<div id="21feada2" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>print_hello(<span class="st">"class of LX394"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello class of LX394!</code></pre>
-</div>
-</div>
-</section>
-<section id="putting-it-together-functions-palindrones-and-anagrams" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="putting-it-together-functions-palindrones-and-anagrams"><span class="header-section-number">4.2</span> Putting it together: Functions, Palindrones, and Anagrams</h2>
-<ol start="2" type="1">
-<li>Based on the code provided below, write a function that returns <code>True</code> when <code>x</code> and <code>y</code> are anagrams of each other, and false otherwise. Example input and expected output is provided below.</li>
-</ol>
-<p><em>Note:</em> You may have noticed <code>: str</code> and <code>-&gt; bool</code> in this sample code. It’s good style to yourself/anyone else using the code that the input parameters should be a <code>str</code>, and the output should be a <code>bool</code>. However, this is not necessary. In fact, Python will still run if the output is not a <code>bool</code>, for example.</p>
-<div id="c112410f" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_anagram(first_word: <span class="bu">str</span>, second_word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether two strings are palidrones of each other. </span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    An anagram is formed by rearranging the letters of one word to produce another.</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="59b02029" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'listen'</span>, <span class="st">'silent'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="345435e9" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'listen'</span>, <span class="st">'listened'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>False</code></pre>
-</div>
-</div>
-<p><strong>Challenge question:</strong></p>
-<p>Modify your code so that it also ignores spaces and capitalization. For example:</p>
-<div id="dd8440aa" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'Listen'</span>, <span class="st">'siLeNt'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="a81d894d" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'Tom Marvolo Riddle'</span>, <span class="st">'I am Lord Voldemort'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>True</code></pre>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Based on the code provided below, write a function that returns <code>True</code> when <code>x</code> is a palindrone. Example input and expected output is provided below.</li>
-</ol>
-<div id="72876f67" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_palindrone(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether a word is a palindrone</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">    A palindrone is a word that is spelt the same backwards and forward </span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="d3754a94" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_palindrone(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> word <span class="op">==</span> word[::<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="d9bb666f" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>is_palindrone(<span class="st">'racecar'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="3bfe687c" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>is_palindrone(<span class="st">'hello'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-</section>
-<section id="python-exercises" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Python Exercises</h1>
+<section id="python-exercises" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Python Exercises</h1>
 <p>In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.</p>
-<p>Some relevant operations you may find useful are: &gt; <code>**</code>: exponentiation, e.g.&nbsp;<code>2**3</code> is 8 &gt; <code>range(n)</code>: generates a list of numbers from 0 to n-1, &gt; <code>%</code>: modulus operator, e.g.&nbsp;<code>5 % 2</code> is 1, because 5 divided by 2 is 2 with a remainder of 1 &gt; len(): returns the length of a list, string, etc</p>
+<p>Some relevant operations you may find useful are:</p>
+<ul>
+<li><p><code>**</code>: exponentiation, e.g.&nbsp;<code>2**3</code> is 8</p></li>
+<li><p><code>range(n)</code>: generates a list of numbers from 0 to n-1</p></li>
+<li><p><code>%</code>: modulus operator, e.g.&nbsp;<code>5 % 2</code> is 1, because 5 divided by 2 is 2 with a remainder of 1</p></li>
+<li><p><code>len()</code>: returns the length of a list, string, etc</p></li>
+</ul>
 <p>I’ll give you can example of the first exercise.</p>
 <p><strong>Squares:</strong> Create a <code>list</code> of the squares of numbers from 1 to 10.</p>
-<div id="5e6d101d" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div id="4922f858" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code></pre>
 </div>
 </div>
 <ol type="1">
 <li><p><strong>Even numbers only:</strong> From <code>range(20)</code>, build a <code>list</code> of only the even numbers.</p></li>
-<li><p><strong>Flatten a list of lists:</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, produce <code>[1,2,3,4,5,6]</code>.</p></li>
 <li><p><strong>First letters of words:</strong> Given <code>["apple", "banana", "cherry"]</code>, produce <code>["a", "b", "c"]</code>.</p></li>
 <li><p><strong>Filter &amp; transform:</strong> From <code>range(50)</code>, build a list of numbers divisible by 7, squared.</p></li>
 <li><p><strong>Word lengths:</strong> From <code>["apple","banana","cherry"]</code>, create a <code>dict</code> mapping each word → its length.</p></li>
@@ -338,14 +251,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Unique squares:</strong> From <code>range(10)</code>, generate the set of squares.</p></li>
 <li><p><strong>Vowels in a word:</strong> Given the <code>str</code> <code>"comprehension"</code>, create a set of vowels that appear in it.</p></li>
 <li><p><strong>Letters in two words:</strong> Given <code>"python"</code> and <code>"notebook"</code>, make a set of letters they share.</p></li>
-</ol>
-<p><strong>Extra Challenge Exercises:</strong></p>
-<ol start="11" type="1">
-<li><p><strong>Common factors:</strong> Build a set of all numbers ≤ 50 divisible by both 2 and 3.</p></li>
 <li><p><strong>Swap keys and values:</strong> Given <code>{'a':1, 'b':2, 'c':3}</code>, produce <code>{1:'a', 2:'b', 3:'c'}</code>.</p></li>
 </ol>
+<p><strong>Extra Challenge Exercise:</strong></p>
+<ol start="11" type="1">
+<li><p><strong>Common factors:</strong> Build a set of all numbers ≤ 50 divisible by both 2 and 3.</p></li>
+<li><p><strong>Flatten a list of lists:</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, produce <code>[1,2,3,4,5,6]</code>.</p></li>
+</ol>
+</section>
+<section id="exercises-from-last-time" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Exercises from Last Time</h1>
+<section id="functions" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="functions"><span class="header-section-number">5.1</span> Functions</h2>
+<ol type="1">
+<li>Write a function that outputs the following</li>
+</ol>
+<div id="6e4efebe" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>print_hello(<span class="st">'Romi'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello Romi!</code></pre>
+</div>
+</div>
+<p>I’ll give you the start. Hint: you need to use an operator.</p>
+<div id="6a93245d" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_hello(name):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass with your statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Additional Exercise:</strong></p>
+<p>Modify the code so that the <em>default</em> value is “Sophie”. That is, your function should have the following output given these inputs. This should only take 9ish characters to type if your last code was correct!</p>
+<div id="cac8a061" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>print_hello()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello Sophie!</code></pre>
+</div>
+</div>
+<div id="0e620d2f" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>print_hello(<span class="st">"class of LX394"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello class of LX394!</code></pre>
+</div>
+</div>
+</section>
+<section id="putting-it-together-functions-palindrones-and-anagrams" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="putting-it-together-functions-palindrones-and-anagrams"><span class="header-section-number">5.2</span> Putting it together: Functions, Palindrones, and Anagrams</h2>
+<ol start="2" type="1">
+<li>Based on the code provided below, write a function that returns <code>True</code> when <code>x</code> and <code>y</code> are anagrams of each other, and false otherwise. Example input and expected output is provided below.</li>
+</ol>
+<p><em>Note:</em> You may have noticed <code>: str</code> and <code>-&gt; bool</code> in this sample code. It’s good style to yourself/anyone else using the code that the input parameters should be a <code>str</code>, and the output should be a <code>bool</code>. However, this is not necessary. In fact, Python will still run if the output is not a <code>bool</code>, for example.</p>
+<div id="fb14ee60" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_anagram(first_word: <span class="bu">str</span>, second_word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether two strings are palidrones of each other. </span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">    An anagram is formed by rearranging the letters of one word to produce another.</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="84294673" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'listen'</span>, <span class="st">'silent'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="2aef1efc" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'listen'</span>, <span class="st">'listened'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>False</code></pre>
+</div>
+</div>
+<p><strong>Challenge question:</strong></p>
+<p>Modify your code so that it also ignores spaces and capitalization. For example:</p>
+<div id="cba45e47" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'Listen'</span>, <span class="st">'siLeNt'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="a41bb082" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>is_anagram(<span class="st">'Tom Marvolo Riddle'</span>, <span class="st">'I am Lord Voldemort'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>True</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Based on the code provided below, write a function that returns <code>True</code> when <code>x</code> is a palindrone. Example input and expected output is provided below.</li>
+</ol>
+<div id="ecbe6183" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_palindrone(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Check whether a word is a palindrone</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">    A palindrone is a word that is spelt the same backwards and forward </span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="beb1d835" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_palindrone(word: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> word <span class="op">==</span> word[::<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="79438fae" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>is_palindrone(<span class="st">'racecar'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="5aa8f31b" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>is_palindrone(<span class="st">'hello'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
