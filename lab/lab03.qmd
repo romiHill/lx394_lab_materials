@@ -29,6 +29,126 @@ What is a folder? What is a file?
 
 Markdown is a "mark up" language, which is a light weight language you can use to format documents. This is how "text" is displayed in `.ipynb` notebooks. You can formatting styles like headings, *italics*, **bold**, `code snippets`, and more. See <https://www.markdownguide.org/cheat-sheet/> for more information and to make your notebooks look nicer :-)
 
+
+
+# Python Exercises
+
+In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.
+
+Some relevant operations you may find useful are:
+
+- `**`: exponentiation, e.g. `2**3` is 8
+
+- `range(n)`: generates a list of numbers from 0 to n-1
+
+- `%`: modulus operator, e.g. `5 % 2` is 1, because 5 divided by 2 is 2 with a remainder of 1
+
+- `len()`: returns the length of a list, string, etc
+
+I'll give you can example of the first exercise.
+
+**Squares:** Create a `list` of the squares of numbers from 1 to 10.
+
+```{python}
+[i**2 for i in range(1, 10 + 1)]
+```
+
+1.  **Even numbers only:** From `range(20)`, build a `list` of only the even numbers.
+
+```{python}
+#| include: FALSE
+[i for i in range(20) if i % 2 == 0]
+```
+
+
+2.  **First letters of words:** Given `["apple", "banana", "cherry"]`, produce `["a", "b", "c"]`.
+
+```{python}
+#| include: FALSE
+[word[0] for word in ["apple", "banana", "cherry"]]
+```
+
+3.  **Filter & transform:** From `range(50)`, build a list of numbers divisible by 7, squared.
+
+```{python}
+#| include: FALSE  
+[i**2 for i in range(50) if i % 7 == 0]
+```
+
+4.  **Word lengths:** From `["apple","banana","cherry"]`, create a `dict` mapping each word → its length.
+
+```{python}
+#| include: FALSE
+{word: len(word) for word in ["apple","banana","cherry"]}
+```
+
+5.  **Frequency count:** From the string `"banana"`, create a `dict` mapping each letter → its frequency.
+
+```{python}
+#| include: FALSE
+{letter: "banana".count(letter) for letter in set("banana")}
+```
+
+```{python}
+#| include: FALSE
+from nltk import FreqDist
+freq = FreqDist("banana")
+print(freq['n'])
+```
+
+6.  **Filter dictionary:** From `{'Alice': 25, 'Bob': 17, 'Carol': 30 }`, keep only entries where age ≥ 21.
+
+```{python}
+#| include: FALSE
+{k: v for k, v in {'Alice': 25, 'Bob': 17, 'Carol': 30 }.items() if v >= 21}
+```
+
+7.  **Unique squares:** From `range(10)`, generate the set of squares.
+
+```{python}
+#| include: FALSE
+{i**2 for i in range(10)}
+```
+
+8.  **Vowels in a word:** Given the `str` `"comprehension"`, create a set of vowels that appear in it.
+
+```{python}
+#| include: FALSE
+{letter for letter in "comprehension" if letter in "aeiou"}
+```
+
+9.  **Letters in two words:** Given `"python"` and `"notebook"`, make a set of letters they share.
+
+```{python}
+#| include: FALSE
+{letter for letter in "python" if letter in "notebook"}
+```
+
+10. **Swap keys and values:** Given `{'a':1, 'b':2, 'c':3}`, produce `{1:'a', 2:'b', 3:'c'}`.
+
+```{python}
+#| include: FALSE
+{v: k for k, v in {'a':1, 'b':2, 'c':3}.items()} 
+```
+
+**Extra Challenge Exercise:**
+
+11. **Common factors:** Build a set of all numbers ≤ 50 divisible by both 2 and 3.
+
+```{python}
+#| include: FALSE
+{i for i in range(51) if i % 2 == 0 and i % 3 == 0}
+```
+
+12.  **Flatten a list of lists:** Given `[[1,2],[3,4],[5,6]]`, produce `[1,2,3,4,5,6]`.
+
+```{python}
+#| include: FALSE
+[i for sublist in [[1,2],[3,4],[5,6]] for i in sublist]
+```
+
+
+
 # Exercises from Last Time
 
 ## Functions
@@ -107,7 +227,7 @@ Modify your code so that it also ignores spaces and capitalization. For example:
 #| echo: FALSE
 def is_anagram(first_word: str, second_word: str) -> bool:
     """
-    Check whether two strings are palidrones of each other. 
+    Check whether two strings are palindrones of each other. 
     An anagram is formed by rearranging the letters of one word or phrase to produce another, ignoring spaces and capitalization.
     """
     first_word = first_word.lower().replace(' ', '')
@@ -147,111 +267,4 @@ is_palindrone('racecar')
 
 ```{python}
 is_palindrone('hello')
-```
-
-# Python Exercises
-
-In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.
-
-Some relevant operations you may find useful are: \> `**`: exponentiation, e.g. `2**3` is 8 \> `range(n)`: generates a list of numbers from 0 to n-1, \> `%`: modulus operator, e.g. `5 % 2` is 1, because 5 divided by 2 is 2 with a remainder of 1 \> len(): returns the length of a list, string, etc
-
-I'll give you can example of the first exercise.
-
-**Squares:** Create a `list` of the squares of numbers from 1 to 10.
-
-```{python}
-[i**2 for i in range(1, 10 + 1)]
-```
-
-1.  **Even numbers only:** From `range(20)`, build a `list` of only the even numbers.
-
-```{python}
-#| include: FALSE
-[i for i in range(20) if i % 2 == 0]
-```
-
-2.  **Flatten a list of lists:** Given `[[1,2],[3,4],[5,6]]`, produce `[1,2,3,4,5,6]`.
-
-```{python}
-#| include: FALSE
-[i for sublist in [[1,2],[3,4],[5,6]] for i in sublist]
-```
-
-3.  **First letters of words:** Given `["apple", "banana", "cherry"]`, produce `["a", "b", "c"]`.
-
-```{python}
-#| include: FALSE
-[word[0] for word in ["apple", "banana", "cherry"]]
-```
-
-4.  **Filter & transform:** From `range(50)`, build a list of numbers divisible by 7, squared.
-
-```{python}
-#| include: FALSE  
-[i**2 for i in range(50) if i % 7 == 0]
-```
-
-5.  **Word lengths:** From `["apple","banana","cherry"]`, create a `dict` mapping each word → its length.
-
-```{python}
-#| include: FALSE
-{word: len(word) for word in ["apple","banana","cherry"]}
-```
-
-6.  **Frequency count:** From the string `"banana"`, create a `dict` mapping each letter → its frequency.
-
-```{python}
-#| include: FALSE
-{letter: "banana".count(letter) for letter in set("banana")}
-```
-
-```{python}
-#| include: FALSE
-from nltk import FreqDist
-freq = FreqDist("banana")
-print(freq['n'])
-```
-
-7.  **Filter dictionary:** From `{'Alice': 25, 'Bob': 17, 'Carol': 30 }`, keep only entries where age ≥ 21.
-
-```{python}
-#| include: FALSE
-{k: v for k, v in {'Alice': 25, 'Bob': 17, 'Carol': 30 }.items() if v >= 21}
-```
-
-8.  **Unique squares:** From `range(10)`, generate the set of squares.
-
-```{python}
-#| include: FALSE
-{i**2 for i in range(10)}
-```
-
-9.  **Vowels in a word:** Given the `str` `"comprehension"`, create a set of vowels that appear in it.
-
-```{python}
-#| include: FALSE
-{letter for letter in "comprehension" if letter in "aeiou"}
-```
-
-10. **Letters in two words:** Given `"python"` and `"notebook"`, make a set of letters they share.
-
-```{python}
-#| include: FALSE
-{letter for letter in "python" if letter in "notebook"}
-```
-
-**Extra Challenge Exercises:**
-
-11. **Common factors:** Build a set of all numbers ≤ 50 divisible by both 2 and 3.
-
-```{python}
-#| include: FALSE
-{i for i in range(51) if i % 2 == 0 and i % 3 == 0}
-```
-
-12. **Swap keys and values:** Given `{'a':1, 'b':2, 'c':3}`, produce `{1:'a', 2:'b', 3:'c'}`.
-
-```{python}
-#| include: FALSE
-{v: k for k, v in {'a':1, 'b':2, 'c':3}.items()} 
 ```
