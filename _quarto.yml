@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "LX 394 Course Materials"
+  title: "LX 394 Lab Materials"
   navbar:
     left:
       - href: index.qmd
@@ -13,6 +13,9 @@ website:
         text: Lab 02
       - href: lab/lab03.qmd
         text: Lab 03
+    right:
+      - href: solutions/solutions.qmd
+        text: Lab Solutions
 format:
   html:
     theme: cosmo

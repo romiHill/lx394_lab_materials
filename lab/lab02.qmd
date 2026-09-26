@@ -79,17 +79,14 @@ print(my_float)
 5.  Before you run the code in Python, think about what the expected output of these commands is. Once you've thought about it, run the code.
 
 ```{python}
-#| eval: FALSE
 type(10.5)
 ```
 
 ```{python}
-#| eval: FALSE
 type(10)
 ```
 
 ```{python}
-#| eval: FALSE
 type("7.3")
 ```
 

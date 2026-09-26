@@ -29,8 +29,6 @@ What is a folder? What is a file?
 
 Markdown is a "mark up" language, which is a light weight language you can use to format documents. This is how "text" is displayed in `.ipynb` notebooks. You can formatting styles like headings, *italics*, **bold**, `code snippets`, and more. See <https://www.markdownguide.org/cheat-sheet/> for more information and to make your notebooks look nicer :-)
 
-
-
 # Python Exercises
 
 In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.
@@ -59,7 +57,6 @@ I'll give you can example of the first exercise.
 #| include: FALSE
 [i for i in range(20) if i % 2 == 0]
 ```
-
 
 2.  **First letters of words:** Given `["apple", "banana", "cherry"]`, produce `["a", "b", "c"]`.
 
@@ -140,14 +137,12 @@ print(freq['n'])
 {i for i in range(51) if i % 2 == 0 and i % 3 == 0}
 ```
 
-12.  **Flatten a list of lists:** Given `[[1,2],[3,4],[5,6]]`, produce `[1,2,3,4,5,6]`.
+12. **Flatten a list of lists:** Given `[[1,2],[3,4],[5,6]]`, produce `[1,2,3,4,5,6]`.
 
 ```{python}
 #| include: FALSE
 [i for sublist in [[1,2],[3,4],[5,6]] for i in sublist]
 ```
-
-
 
 # Exercises from Last Time
 

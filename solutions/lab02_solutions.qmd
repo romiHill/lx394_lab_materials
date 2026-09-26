@@ -1,0 +1,338 @@
+---
+title: "Data Types"
+subtitle: "Lab 02 Solutions" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: September 24 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+
+# Types
+
+1.  Before you run the code in Python, think about what the expected output of these commands is. Once you've thought about it, run the code.
+
+```{python}
+type(10.5)
+```
+
+```{python}
+type(10)
+```
+
+```{python}
+type("7.3")
+```
+
+```{python}
+type(8 + 38.1)
+```
+
+```{python}
+type([10, 5])
+```
+
+```{python}
+type("hello")
+```
+
+```{python}
+type(print("hello"))
+```
+
+2.  What happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!
+
+```{python}
+my_lst = [1, 2, 3]
+my_int = 5
+my_str = "hello"
+```
+
+1\. What happens when you multiply a \`list\` with an \`int\`?
+
+```{python}
+my_lst * my_int
+```
+
+2\. What happens when you add a \`list\` with an \`int\`?
+
+```{python}
+#| error: true
+my_lst + my_int 
+```
+
+3\. What happens when you multiply a \`str\` with an \`int\`?
+
+```{python}
+my_str * my_int
+```
+
+4\.  What happens when you add a `str` with an `int`?
+
+```{python}
+#| error: true
+my_str + my_int
+```
+
+5\.  What happens when you add a `str` with an `list`?
+
+```{python}
+#| error: true
+my_str + my_lst
+```
+
+For example, what happens when you run the following code?
+
+```{python}
+#| eval: FALSE
+my_lst * my_int
+```
+
+**The take away message here:** When you apply an operator to two different data types, the output might not be obvious! Some operations will work (though it's not always clear what the final data type will be), while others will raise an error. If it is successful, then the one of the types will be converted to the other. This is called implicit type casting. You can read more about this [here](https://www.geeksforgeeks.org/python/type-conversion-in-python/).
+
+But if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can **type cast** to make explicit what you're trying to do!
+
+# Type Casting
+
+You can also **explicitly** convert data types.
+
+What do the following operations do?
+
+```{python}
+int(-7.3)
+```
+
+```{python}
+list('hello')
+```
+
+```{python}
+set([1, 2, 2, 4, 5])
+```
+
+```{python}
+set(str(7.375) + str(45))
+```
+
+# Operations on Lists
+
+We can *index* lists.
+
+```{python}
+my_lst = [17, 22, 'a', 'r', True]
+```
+
+```{python}
+my_lst[2]
+```
+
+```{python}
+my_lst[0]
+```
+
+```{python}
+my_lst[-1]
+```
+
+We can *slice* lists.
+
+```{python}
+my_lst[:2]
+```
+
+```{python}
+my_lst[1:3]
+```
+
+We can specify the *steps*
+
+```{python}
+my_lst[::2]
+```
+
+We can *reverse* lists
+
+```{python}
+my_lst[::-1]
+```
+
+We can reverse and specify the number of steps
+
+```{python}
+my_lst[::-2]
+```
+
+# Functions
+
+Recall functions:
+
+```{python}
+def frequency(corpus, word):
+    """
+    Calculates the relative frequency of a word within a corpus. 
+
+    :param corpus: An NLTK Text containing a corpus
+    :param word: A word to search for in the corpus
+
+    :return: The proportion of words in corpus that match word
+    """
+    return corpus.count(word) / len(corpus)
+```
+
+7.  What is a function? What are some of the components of a function?
+
+8.  Write a function that outputs the following
+
+```{python}
+#| echo: FALSE
+def print_hello(name):
+    return 'Hello ' + name + '!'
+```
+
+```{python}
+print_hello('Romi')
+```
+
+I'll give you the start. Hint: you need to use an operator.
+
+**Solution:**
+
+```{python}
+#| eval: FALSE
+def print_hello(name):
+    print('Hello ' + name + '!')
+```
+
+**Additional Exercise:**
+
+Modify the code so that the *default* value is "Sophie". That is, your function should have the following output given these inputs. This should only take 9 characters to type!
+
+**Solution:**
+
+```{python}
+def print_hello(name = "Sophie"):
+    return 'Hello ' + name + '!'
+```
+
+```{python}
+print_hello()
+```
+
+```{python}
+print_hello("class of LX394")
+```
+
+# Putting it together: Functions, Palindrones, and Anagrams
+
+9.  Based on the code provided below, write a function that returns `True` when `x` and `y` are anagrams of each other, and false otherwise. Example input and expected output is provided below.
+
+*Note:* You may have noticed `: str` and `-> bool` in this sample code. It's good style to yourself/anyone else using the code that the input parameters should be a `str`, and the output should be a `bool`. However, this is not necessary. In fact, Python will still run if the output is not a `bool`, for example.
+
+```{python}
+def is_anagram(first_word: str, second_word: str) -> bool:
+    """
+    Check whether two strings are anagrams of each other. 
+    An anagram is formed by rearranging the letters of one word to produce another.
+    """
+    pass
+```
+
+**Possible Solutions:**
+
+If there are no duplicates, we can use `set()` to check if the two words are anagrams of each other.
+
+```{python}
+def is_anagram(first_word: str, second_word: str) -> bool:
+    """
+    Check whether two strings are anagrams of each other. 
+    An anagram is formed by rearranging the letters of one word to produce another.
+    """
+    return set(first_word) == set(second_word)
+```
+
+If there are duplicates, we can use `sorted()` to check if the two words are anagrams of each other.
+
+```{python}
+def is_anagram(first_word: str, second_word: str) -> bool:
+    """
+    Check whether two strings are anagrams of each other. 
+    An anagram is formed by rearranging the letters of one word to produce another.
+    """
+    first_word = list(first_word)
+    second_word = list(second_word)
+    if sorted(first_word) == sorted(second_word):
+        return True
+    else:
+        return False
+```
+
+If you want to be concise, you can also write the above code as:
+
+```{python}
+def is_anagram(first_word: str, second_word: str) -> bool:
+    """
+    Check whether two strings are anagrams of each other. 
+    An anagram is formed by rearranging the letters of one word to produce another.
+    """
+    return sorted(list(first_word)) == sorted(list(second_word))
+
+
+```
+
+```{python}
+is_anagram('listen', 'silent')
+```
+
+```{python}
+is_anagram('listen', 'listened')
+```
+
+**Challenge question:**
+
+Modify your code so that it also ignores spaces and capitalization.
+
+**Solution:**
+
+```{python}
+#| echo: FALSE
+def is_anagram(first_word: str, second_word: str) -> bool:
+    return sorted(list(first_word.lower().replace(' ', ''))) == sorted(list(second_word.lower().replace(' ', '')))
+
+```
+
+```{python}
+is_anagram('Listen', 'siLeNt')
+```
+
+```{python}
+is_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')
+```
+
+10. Based on the code provided below, write a function that returns `True` when `x` is a palindrome. Example input and expected output is provided below.
+
+**Solution:**
+
+```{python}
+def is_palindrone(word: str) -> bool:
+    """
+    Check whether a word is a palindrone
+    A palindrome is a word that is spelt the same backwards and forward 
+    """
+    return word == word[::-1]
+```
+
+```{python}
+is_palindrone('racecar')
+```
+
+```{python}
+is_palindrone('hello')
+```
