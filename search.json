@@ -14,46 +14,11 @@
     "text": "This site hosts the lab materials for LX394. Use the menu above to select the Lab Materials.\n\nLab section: Wednesdays 3:35pm - 4:25pm, PSY B51\nOffice Hours: Mondays 3:45pm - 4:45pm, Room 138M, 111 Cummington Mall\nSophie’s Office Hours: Thursdays 11:00–12:00, Room 138S, 111 Cummington Mall\n\nSee the Syllabus for important dates and homework."
   },
   {
-    "objectID": "lab/lab03.html",
-    "href": "lab/lab03.html",
-    "title": "Lab 03",
+    "objectID": "solutions/solutions.html",
+    "href": "solutions/solutions.html",
+    "title": "Lab Solutions",
     "section": "",
-    "text": "Any questions/issues/concerns?"
-  },
-  {
-    "objectID": "lab/lab03.html#functions",
-    "href": "lab/lab03.html#functions",
-    "title": "Lab 03",
-    "section": "5.1 Functions",
-    "text": "5.1 Functions\n\nWrite a function that outputs the following\n\n\nprint_hello('Romi')\n\nHello Romi!\n\n\nI’ll give you the start. Hint: you need to use an operator.\n\ndef print_hello(name):\n    pass # replace pass with your statement\n\nAdditional Exercise:\nModify the code so that the default value is “Sophie”. That is, your function should have the following output given these inputs. This should only take 9ish characters to type if your last code was correct!\n\nprint_hello()\n\nHello Sophie!\n\n\n\nprint_hello(\"class of LX394\")\n\nHello class of LX394!"
-  },
-  {
-    "objectID": "lab/lab03.html#putting-it-together-functions-palindrones-and-anagrams",
-    "href": "lab/lab03.html#putting-it-together-functions-palindrones-and-anagrams",
-    "title": "Lab 03",
-    "section": "5.2 Putting it together: Functions, Palindrones, and Anagrams",
-    "text": "5.2 Putting it together: Functions, Palindrones, and Anagrams\n\nBased on the code provided below, write a function that returns True when x and y are anagrams of each other, and false otherwise. Example input and expected output is provided below.\n\nNote: You may have noticed : str and -&gt; bool in this sample code. It’s good style to yourself/anyone else using the code that the input parameters should be a str, and the output should be a bool. However, this is not necessary. In fact, Python will still run if the output is not a bool, for example.\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are palidrones of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    pass\n\n\nis_anagram('listen', 'silent')\n\nTrue\n\n\n\nis_anagram('listen', 'listened')\n\nFalse\n\n\nChallenge question:\nModify your code so that it also ignores spaces and capitalization. For example:\n\nis_anagram('Listen', 'siLeNt')\n\nTrue\n\n\n\nis_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')\n\nTrue\n\n\n\nBased on the code provided below, write a function that returns True when x is a palindrone. Example input and expected output is provided below.\n\n\ndef is_palindrone(word: str) -&gt; bool:\n    \"\"\"\n    Check whether a word is a palindrone\n    A palindrone is a word that is spelt the same backwards and forward \n    \"\"\"\n    pass\n\n\ndef is_palindrone(word: str) -&gt; bool:\n    return word == word[::-1]\n\n\nis_palindrone('racecar')\n\n\nis_palindrone('hello')"
-  },
-  {
-    "objectID": "lab/lab02.html",
-    "href": "lab/lab02.html",
-    "title": "Data Types",
-    "section": "",
-    "text": "Downloading Homework 1\nFolders, Files, and Folder Structure\nData Types\nFunctions"
-  },
-  {
-    "objectID": "lab/lab02.html#variables-and-datatypes",
-    "href": "lab/lab02.html#variables-and-datatypes",
-    "title": "Data Types",
-    "section": "4.1 Variables and Datatypes",
-    "text": "4.1 Variables and Datatypes\n\nProvide Python code that saves a variable of the following the data types. Then, print the variable. Give a different name to each variable.\n\n\nint\nfloat\nstr\nlist\nset\nbool\nNone\n\nFor example:\n\nmy_int = 5\nprint(my_int)\n\nmy_float = 0.3\nprint(my_float)\n\n5\n0.3"
-  },
-  {
-    "objectID": "lab/lab02.html#types",
-    "href": "lab/lab02.html#types",
-    "title": "Data Types",
-    "section": "4.2 Types",
-    "text": "4.2 Types\n\nBefore you run the code in Python, think about what the expected output of these commands is. Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\n\ntype(10)\n\n\ntype(\"7.3\")\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example, what happens when you run the following code?\n\nmy_lst * my_int\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this here.\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
+    "text": "Lab Solutions\n\nLab 02 Solutions"
   },
   {
     "objectID": "lab/lab01.html",
@@ -89,5 +54,61 @@
     "title": "Getting Started",
     "section": "5.2 Demo: Using Python on the SCC!",
     "text": "5.2 Demo: Using Python on the SCC!\n\nWe will use the VSCode server to access Python\nGo back to https://scc-ondemand1.bu.edu, and click “interactive apps”, and “VS Code Server”\n\n\n\n\nAccess VS Code Server\n\n\n\nFrom here, it is important that you you change the working directory to projectnblx394sh/students/your_username. Leave everything else the same.\n\n\n\n\nSet working directory in VS Code Server\n\n\n\nThis is a good back up if you want to use Python, but haven’t set it up locally yet"
+  },
+  {
+    "objectID": "lab/lab02.html",
+    "href": "lab/lab02.html",
+    "title": "Data Types",
+    "section": "",
+    "text": "Downloading Homework 1\nFolders, Files, and Folder Structure\nData Types\nFunctions"
+  },
+  {
+    "objectID": "lab/lab02.html#variables-and-datatypes",
+    "href": "lab/lab02.html#variables-and-datatypes",
+    "title": "Data Types",
+    "section": "4.1 Variables and Datatypes",
+    "text": "4.1 Variables and Datatypes\n\nProvide Python code that saves a variable of the following the data types. Then, print the variable. Give a different name to each variable.\n\n\nint\nfloat\nstr\nlist\nset\nbool\nNone\n\nFor example:\n\nmy_int = 5\nprint(my_int)\n\nmy_float = 0.3\nprint(my_float)\n\n5\n0.3"
+  },
+  {
+    "objectID": "lab/lab02.html#types",
+    "href": "lab/lab02.html#types",
+    "title": "Data Types",
+    "section": "4.2 Types",
+    "text": "4.2 Types\n\nBefore you run the code in Python, think about what the expected output of these commands is. Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\nfloat\n\n\n\ntype(10)\n\nint\n\n\n\ntype(\"7.3\")\n\nstr\n\n\n\ntype(8 + 38.1)\n\n\ntype([10, 5])\n\n\ntype(\"hello\")\n\n\ntype(print(\"hello\"))\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\nWhat happens when you multiply a list with an int?\nWhat happens when you add a list with an int?\nWhat happens when you multiply a str with an int?\nWhat happens when you add a str with an int?\nWhat happens when you add a str with an list?\n\n\nFor example, what happens when you run the following code?\n\nmy_lst * my_int\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! This is called implicit type casting. You can read more about this here.\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!"
+  },
+  {
+    "objectID": "lab/lab03.html",
+    "href": "lab/lab03.html",
+    "title": "Lab 03",
+    "section": "",
+    "text": "Any questions/issues/concerns?"
+  },
+  {
+    "objectID": "lab/lab03.html#functions",
+    "href": "lab/lab03.html#functions",
+    "title": "Lab 03",
+    "section": "5.1 Functions",
+    "text": "5.1 Functions\n\nWrite a function that outputs the following\n\n\nprint_hello('Romi')\n\nHello Romi!\n\n\nI’ll give you the start. Hint: you need to use an operator.\n\ndef print_hello(name):\n    pass # replace pass with your statement\n\nAdditional Exercise:\nModify the code so that the default value is “Sophie”. That is, your function should have the following output given these inputs. This should only take 9ish characters to type if your last code was correct!\n\nprint_hello()\n\nHello Sophie!\n\n\n\nprint_hello(\"class of LX394\")\n\nHello class of LX394!"
+  },
+  {
+    "objectID": "lab/lab03.html#putting-it-together-functions-palindrones-and-anagrams",
+    "href": "lab/lab03.html#putting-it-together-functions-palindrones-and-anagrams",
+    "title": "Lab 03",
+    "section": "5.2 Putting it together: Functions, Palindrones, and Anagrams",
+    "text": "5.2 Putting it together: Functions, Palindrones, and Anagrams\n\nBased on the code provided below, write a function that returns True when x and y are anagrams of each other, and false otherwise. Example input and expected output is provided below.\n\nNote: You may have noticed : str and -&gt; bool in this sample code. It’s good style to yourself/anyone else using the code that the input parameters should be a str, and the output should be a bool. However, this is not necessary. In fact, Python will still run if the output is not a bool, for example.\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are palidrones of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    pass\n\n\nis_anagram('listen', 'silent')\n\nTrue\n\n\n\nis_anagram('listen', 'listened')\n\nFalse\n\n\nChallenge question:\nModify your code so that it also ignores spaces and capitalization. For example:\n\nis_anagram('Listen', 'siLeNt')\n\nTrue\n\n\n\nis_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')\n\nTrue\n\n\n\nBased on the code provided below, write a function that returns True when x is a palindrone. Example input and expected output is provided below.\n\n\ndef is_palindrone(word: str) -&gt; bool:\n    \"\"\"\n    Check whether a word is a palindrone\n    A palindrone is a word that is spelt the same backwards and forward \n    \"\"\"\n    pass\n\n\ndef is_palindrone(word: str) -&gt; bool:\n    return word == word[::-1]\n\n\nis_palindrone('racecar')\n\n\nis_palindrone('hello')"
+  },
+  {
+    "objectID": "lab/lab04.html",
+    "href": "lab/lab04.html",
+    "title": "Lab 04",
+    "section": "",
+    "text": "1 Python Exercises\nIn a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.\nSome relevant operations you may find useful are:\n\n**: exponentiation, e.g. 2**3 is 8\nrange(n): generates a list of numbers from 0 to n-1\n%: modulus operator, e.g. 5 % 2 is 1, because 5 divided by 2 is 2 with a remainder of 1\nlen(): returns the length of a list, string, etc\n\nI’ll give you can example of the first exercise.\nSquares: Create a list of the squares of numbers from 1 to 10.\n\n[i**2 for i in range(1, 10 + 1)]\n\n[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n\n\n\nEven numbers only: From range(20), build a list of only the even numbers.\nFirst letters of words: Given [\"apple\", \"banana\", \"cherry\"], produce [\"a\", \"b\", \"c\"].\nFilter & transform: From range(50), build a list of numbers divisible by 7, squared.\nWord lengths: From [\"apple\",\"banana\",\"cherry\"], create a dict mapping each word → its length.\nFrequency count: From the string \"banana\", create a dict mapping each letter → its frequency.\nFilter dictionary: From {'Alice': 25, 'Bob': 17, 'Carol': 30 }, keep only entries where age ≥ 21.\nUnique squares: From range(10), generate the set of squares.\nVowels in a word: Given the str \"comprehension\", create a set of vowels that appear in it.\nLetters in two words: Given \"python\" and \"notebook\", make a set of letters they share.\nSwap keys and values: Given {'a':1, 'b':2, 'c':3}, produce {1:'a', 2:'b', 3:'c'}.\n\nExtra Challenge Exercise:\n\nCommon factors: Build a set of all numbers ≤ 50 divisible by both 2 and 3.\nFlatten a list of lists: Given [[1,2],[3,4],[5,6]], produce [1,2,3,4,5,6]."
+  },
+  {
+    "objectID": "solutions/lab02_solutions.html",
+    "href": "solutions/lab02_solutions.html",
+    "title": "Data Types",
+    "section": "",
+    "text": "1 Types\n\nBefore you run the code in Python, think about what the expected output of these commands is. Once you’ve thought about it, run the code.\n\n\ntype(10.5)\n\nfloat\n\n\n\ntype(10)\n\nint\n\n\n\ntype(\"7.3\")\n\nstr\n\n\n\ntype(8 + 38.1)\n\nfloat\n\n\n\ntype([10, 5])\n\nlist\n\n\n\ntype(\"hello\")\n\nstr\n\n\n\ntype(print(\"hello\"))\n\nhello\n\n\nNoneType\n\n\n\nWhat happens when you try to apply arithmetic operator to different data types? You can use your previously defined variables to answer this question!\n\n\nmy_lst = [1, 2, 3]\nmy_int = 5\nmy_str = \"hello\"\n\n1. What happens when you multiply a `list` with an `int`?\n\nmy_lst * my_int\n\n[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]\n\n\n2. What happens when you add a `list` with an `int`?\n\nmy_lst + my_int \n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[10], line 1\n----&gt; 1 my_lst + my_int\n\nTypeError: can only concatenate list (not \"int\") to list\n\n\n\n3. What happens when you multiply a `str` with an `int`?\n\nmy_str * my_int\n\n'hellohellohellohellohello'\n\n\n4. What happens when you add a str with an int?\n\nmy_str + my_int\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[12], line 1\n----&gt; 1 my_str + my_int\n\nTypeError: can only concatenate str (not \"int\") to str\n\n\n\n5. What happens when you add a str with an list?\n\nmy_str + my_lst\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[13], line 1\n----&gt; 1 my_str + my_lst\n\nTypeError: can only concatenate str (not \"list\") to str\n\n\n\nFor example, what happens when you run the following code?\n\nmy_lst * my_int\n\nThe take away message here: When you apply an operator to two different data types, the output might not be obvious! Some operations will work (though it’s not always clear what the final data type will be), while others will raise an error. If it is successful, then the one of the types will be converted to the other. This is called implicit type casting. You can read more about this here.\nBut if you cannot be bothered/not interested, you should still always check what happens when you combine two data types. Or better yet, you can type cast to make explicit what you’re trying to do!\n\n\n2 Type Casting\nYou can also explicitly convert data types.\nWhat do the following operations do?\n\nint(-7.3)\n\n-7\n\n\n\nlist('hello')\n\n['h', 'e', 'l', 'l', 'o']\n\n\n\nset([1, 2, 2, 4, 5])\n\n{1, 2, 4, 5}\n\n\n\nset(str(7.375) + str(45))\n\n{'.', '3', '4', '5', '7'}\n\n\n\n\n3 Operations on Lists\nWe can index lists.\n\nmy_lst = [17, 22, 'a', 'r', True]\n\n\nmy_lst[2]\n\n'a'\n\n\n\nmy_lst[0]\n\n17\n\n\n\nmy_lst[-1]\n\nTrue\n\n\nWe can slice lists.\n\nmy_lst[:2]\n\n[17, 22]\n\n\n\nmy_lst[1:3]\n\n[22, 'a']\n\n\nWe can specify the steps\n\nmy_lst[::2]\n\n[17, 'a', True]\n\n\nWe can reverse lists\n\nmy_lst[::-1]\n\n[True, 'r', 'a', 22, 17]\n\n\nWe can reverse and specify the number of steps\n\nmy_lst[::-2]\n\n[True, 'a', 17]\n\n\n\n\n4 Functions\nRecall functions:\n\ndef frequency(corpus, word):\n    \"\"\"\n    Calculates the relative frequency of a word within a corpus. \n\n    :param corpus: An NLTK Text containing a corpus\n    :param word: A word to search for in the corpus\n\n    :return: The proportion of words in corpus that match word\n    \"\"\"\n    return corpus.count(word) / len(corpus)\n\n\nWhat is a function? What are some of the components of a function?\nWrite a function that outputs the following\n\n\nprint_hello('Romi')\n\n'Hello Romi!'\n\n\nI’ll give you the start. Hint: you need to use an operator.\nSolution:\n\ndef print_hello(name):\n    print('Hello ' + name + '!')\n\nAdditional Exercise:\nModify the code so that the default value is “Sophie”. That is, your function should have the following output given these inputs. This should only take 9 characters to type!\nSolution:\n\ndef print_hello(name = \"Sophie\"):\n    return 'Hello ' + name + '!'\n\n\nprint_hello()\n\n'Hello Sophie!'\n\n\n\nprint_hello(\"class of LX394\")\n\n'Hello class of LX394!'\n\n\n\n\n5 Putting it together: Functions, Palindrones, and Anagrams\n\nBased on the code provided below, write a function that returns True when x and y are anagrams of each other, and false otherwise. Example input and expected output is provided below.\n\nNote: You may have noticed : str and -&gt; bool in this sample code. It’s good style to yourself/anyone else using the code that the input parameters should be a str, and the output should be a bool. However, this is not necessary. In fact, Python will still run if the output is not a bool, for example.\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are anagrams of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    pass\n\nPossible Solutions:\nIf there are no duplicates, we can use set() to check if the two words are anagrams of each other.\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are anagrams of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    return set(first_word) == set(second_word)\n\nIf there are duplicates, we can use sorted() to check if the two words are anagrams of each other.\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are anagrams of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    first_word = list(first_word)\n    second_word = list(second_word)\n    if sorted(first_word) == sorted(second_word):\n        return True\n    else:\n        return False\n\nIf you want to be concise, you can also write the above code as:\n\ndef is_anagram(first_word: str, second_word: str) -&gt; bool:\n    \"\"\"\n    Check whether two strings are anagrams of each other. \n    An anagram is formed by rearranging the letters of one word to produce another.\n    \"\"\"\n    return sorted(list(first_word)) == sorted(list(second_word))\n\n\nis_anagram('listen', 'silent')\n\nTrue\n\n\n\nis_anagram('listen', 'listened')\n\nFalse\n\n\nChallenge question:\nModify your code so that it also ignores spaces and capitalization.\nSolution:\n\nis_anagram('Listen', 'siLeNt')\n\nTrue\n\n\n\nis_anagram('Tom Marvolo Riddle', 'I am Lord Voldemort')\n\nTrue\n\n\n\nBased on the code provided below, write a function that returns True when x is a palindrome. Example input and expected output is provided below.\n\nSolution:\n\ndef is_palindrone(word: str) -&gt; bool:\n    \"\"\"\n    Check whether a word is a palindrone\n    A palindrome is a word that is spelt the same backwards and forward \n    \"\"\"\n    return word == word[::-1]\n\n\nis_palindrone('racecar')\n\nTrue\n\n\n\nis_palindrone('hello')\n\nFalse"
   }
 ]
