@@ -67,7 +67,9 @@ for i in range(len(sentence)):
 
 ```
 
-**Discussion Code Block 4:** What about this code block? How is it different to code block 3, and what is the expected output?
+**Discussion Code Block 4:**
+
+What about this code block? How is it different to code block 3, and what is the expected output?
 
 ```{python}
 
@@ -81,6 +83,26 @@ for i in range(len(sentence)):
         print(sentence[i])
 
 
+```
+
+**Discussion Code Block 5 (Challenge!):**
+
+What is the expected value of `y` after running this code, at each `print()` statement?
+
+```{python}
+#| eval: FALSE
+
+x = 10
+y = [x, x, x]
+print(y)
+
+x = [1, 2, 3]
+y = [x, x, x]
+print(y)
+
+
+x[1] = 5
+print(y)
 ```
 
 # Python Exercises
