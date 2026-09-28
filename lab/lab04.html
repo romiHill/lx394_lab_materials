@@ -169,7 +169,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#python-exercises" id="toc-python-exercises" class="nav-link active" data-scroll-target="#python-exercises"><span class="header-section-number">1</span> Python Exercises</a></li>
+  <li><a href="#introducing-for-loops" id="toc-introducing-for-loops" class="nav-link active" data-scroll-target="#introducing-for-loops"><span class="header-section-number">1</span> Introducing For Loops</a>
+  <ul class="collapse">
+  <li><a href="#in-class-discussion" id="toc-in-class-discussion" class="nav-link" data-scroll-target="#in-class-discussion"><span class="header-section-number">1.1</span> In Class Discussion</a></li>
+  </ul></li>
+  <li><a href="#python-exercises" id="toc-python-exercises" class="nav-link" data-scroll-target="#python-exercises"><span class="header-section-number">2</span> Python Exercises</a>
+  <ul class="collapse">
+  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops"><span class="header-section-number">2.1</span> For Loops</a></li>
+  <li><a href="#list-comprehension" id="toc-list-comprehension" class="nav-link" data-scroll-target="#list-comprehension"><span class="header-section-number">2.2</span> List Comprehension</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -208,9 +216,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="python-exercises" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Python Exercises</h1>
-<p>In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use lists, because they are foundational data type in Python.</p>
+<section id="introducing-for-loops" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducing For Loops</h1>
+<p>What are some important components to make a for loop?</p>
+<p>Say I have a list <code>sentence = ['Call', 'me', 'Ishmael', '.']</code>. How do I print each word in the list using a for loop?</p>
+<section id="in-class-discussion" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="in-class-discussion"><span class="header-section-number">1.1</span> In Class Discussion</h2>
+<p>What does the following code do? What is the expected output?</p>
+<p><strong>Discussion Code Block 1:</strong></p>
+<div id="746d291d" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> [<span class="st">'Call'</span>, <span class="st">'me'</span>, <span class="st">'Ishmael'</span>, <span class="st">'.'</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> sentence:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'l'</span> <span class="kw">in</span> word:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word.upper())</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(word)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Discussion Code Block 2:</strong></p>
+<div id="ba9a77d6" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> [<span class="st">'Call'</span>, <span class="st">'me'</span>, <span class="st">'Ishmael'</span>, <span class="st">'.'</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sentence)):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'l'</span> <span class="kw">in</span> sentence[i]:</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(sentence[i].upper())</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(sentence[i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Discussion Code Block 3:</strong></p>
+<p>What is the difference between the previous code, and the following code? Is there a difference?</p>
+<div id="f087b115" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> [<span class="st">'Call'</span>, <span class="st">'me'</span>, <span class="st">'Ishmael'</span>, <span class="st">'.'</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sentence)):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'l'</span> <span class="kw">in</span> sentence[i]:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        sentence[i] <span class="op">=</span> sentence[i].upper()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(sentence[i])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(sentence[i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Discussion Code Block 4:</strong> What about this code block? How is it different to code block 3, and what is the expected output?</p>
+<div id="30de4f37" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sentence <span class="op">=</span> (<span class="st">'Call'</span>, <span class="st">'me'</span>, <span class="st">'Ishmael'</span>, <span class="st">'.'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sentence)):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">'l'</span> <span class="kw">in</span> sentence[i]:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        sentence[i] <span class="op">=</span> sentence[i].upper()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(sentence[i])</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(sentence[i])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="python-exercises" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Python Exercises</h1>
+<p>In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use for loops and lists, because they are foundational data type in Python.</p>
 <p>Some relevant operations you may find useful are:</p>
 <ul>
 <li><p><code>**</code>: exponentiation, e.g.&nbsp;<code>2**3</code> is 8</p></li>
@@ -218,33 +274,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>%</code>: modulus operator, e.g.&nbsp;<code>5 % 2</code> is 1, because 5 divided by 2 is 2 with a remainder of 1</p></li>
 <li><p><code>len()</code>: returns the length of a list, string, etc</p></li>
 </ul>
+<section id="for-loops" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="for-loops"><span class="header-section-number">2.1</span> For Loops</h2>
+<p><strong>Squares:</strong> Print the squares of numbers from 1 to 10.</p>
+<p>I’ll give you the solution for the first one.</p>
+<div id="ead3f8a9" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+4
+9
+16
+25
+36
+49
+64
+81
+100</code></pre>
+</div>
+</div>
+<ol type="1">
+<li><p><strong>Even numbers only:</strong> From <code>range(20)</code>, print only the even numbers.</p></li>
+<li><p><strong>First letters of words:</strong> Given <code>["apple", "banana", "cherry"]</code>, print the first letter in each element <code>["a", "b", "c"]</code>.</p></li>
+</ol>
+<p>You can use the following variable.</p>
+<div id="aa0a8997" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_lst <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="3" type="1">
+<li><p><strong>Filter &amp; transform:</strong> From <code>range(50)</code>, print the numbers in that range which are divisible by 7, squared.</p></li>
+<li><p><strong>Word lengths:</strong> From <code>["apple","banana","cherry"]</code>, print the word and its length, separated by a tab and colon. <em>Hint</em>: you will need to use the <code>sep</code> option your <code>print</code> statement. See Sophie’s slides from Monday September 28, on <code>if</code>/<code>else</code> statements.</p></li>
+</ol>
+<p>You can use the following variable.</p>
+<div id="f88b8969" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_lst <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="5" type="1">
+<li><p><strong>Frequency count (Hard!):</strong> From the string <code>"banana"</code>, create a <code>dict</code> mapping each letter → its frequency. <em>Hint</em>: You need to initialize the dictionary before starting the for loop.</p></li>
+<li><p><strong>Filter dictionary:</strong> From <code>{'Alice': 25, 'Bob': 17, 'Carol': 30 }</code>, print only the names where their age is greater than or equal to 21.</p></li>
+</ol>
+<div id="ee539dc6" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ages_dict <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">25</span>, <span class="st">'Bob'</span>: <span class="dv">17</span>, <span class="st">'Carol'</span>: <span class="dv">30</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="7" type="1">
+<li><strong>Vowels in a word:</strong> Given the <code>str</code> <code>"comprehension"</code>, create a set <code>x</code> that contains the set of vowels that appear in the string. You may need to use the <code>.add()</code> method: <a href="https://www.w3schools.com/python/python_sets_add.asp" class="uri">https://www.w3schools.com/python/python_sets_add.asp</a></li>
+</ol>
+<p>You can use the following variable.</p>
+<div id="1f84477f" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="8" type="1">
+<li><p><strong>Letters in two words:</strong> Given <code>"python"</code> and <code>"notebook"</code>, make a set of letters they share.</p></li>
+<li><p><strong>Swap keys and values:</strong> Given <code>{'a':1, 'b':2, 'c':3}</code>, produce <code>{1:'a', 2:'b', 3:'c'}</code>.</p></li>
+</ol>
+<p>You can use the following variables.</p>
+<div id="c5196d3f" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>input_dictionary <span class="op">=</span> {<span class="st">'a'</span>:<span class="dv">1</span>, <span class="st">'b'</span>:<span class="dv">2</span>, <span class="st">'c'</span>:<span class="dv">3</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>output_dictionary <span class="op">=</span> <span class="bu">dict</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="10" type="1">
+<li><p><strong>Common factors:</strong> Build a set of all numbers ≤ 50 divisible by both 2 and 3.</p></li>
+<li><p><strong>Flatten a list of lists (Hard!):</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, print each element in the list <code>[1,2,3,4,5,6]</code>. You can assume that the list of lists is only one level deep.</p></li>
+</ol>
+<p>You can use the following variable.</p>
+<div id="7a4c92f6" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_embedded_lst <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">5</span>,<span class="dv">6</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="list-comprehension" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="list-comprehension"><span class="header-section-number">2.2</span> List Comprehension</h2>
+<p>In the last exercise, we were simply printing our output.</p>
+<p>In this exercise, rewrite the tasks from above into <code>list</code> comprehension notation. These exercises also include the data type that is the expected output. You will be able to carry over the logic from the previous exercise to this one.</p>
 <p>I’ll give you can example of the first exercise.</p>
 <p><strong>Squares:</strong> Create a <code>list</code> of the squares of numbers from 1 to 10.</p>
-<div id="2f45efc1" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div id="94a6545a" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code></pre>
 </div>
 </div>
 <ol type="1">
 <li><p><strong>Even numbers only:</strong> From <code>range(20)</code>, build a <code>list</code> of only the even numbers.</p></li>
-<li><p><strong>First letters of words:</strong> Given <code>["apple", "banana", "cherry"]</code>, produce <code>["a", "b", "c"]</code>.</p></li>
-<li><p><strong>Filter &amp; transform:</strong> From <code>range(50)</code>, build a list of numbers divisible by 7, squared.</p></li>
+<li><p><strong>First letters of words:</strong> Given <code>["apple", "banana", "cherry"]</code>, create a list of the first letter in each element <code>["a", "b", "c"]</code>.</p></li>
+<li><p><strong>Filter &amp; transform:</strong> From <code>range(50)</code>, build a <code>list</code> of numbers divisible by 7, squared.</p></li>
 <li><p><strong>Word lengths:</strong> From <code>["apple","banana","cherry"]</code>, create a <code>dict</code> mapping each word → its length.</p></li>
 <li><p><strong>Frequency count:</strong> From the string <code>"banana"</code>, create a <code>dict</code> mapping each letter → its frequency.</p></li>
 <li><p><strong>Filter dictionary:</strong> From <code>{'Alice': 25, 'Bob': 17, 'Carol': 30 }</code>, keep only entries where age ≥ 21.</p></li>
-<li><p><strong>Unique squares:</strong> From <code>range(10)</code>, generate the set of squares.</p></li>
 <li><p><strong>Vowels in a word:</strong> Given the <code>str</code> <code>"comprehension"</code>, create a set of vowels that appear in it.</p></li>
 <li><p><strong>Letters in two words:</strong> Given <code>"python"</code> and <code>"notebook"</code>, make a set of letters they share.</p></li>
 <li><p><strong>Swap keys and values:</strong> Given <code>{'a':1, 'b':2, 'c':3}</code>, produce <code>{1:'a', 2:'b', 3:'c'}</code>.</p></li>
-</ol>
-<p><strong>Extra Challenge Exercise:</strong></p>
-<ol start="11" type="1">
 <li><p><strong>Common factors:</strong> Build a set of all numbers ≤ 50 divisible by both 2 and 3.</p></li>
-<li><p><strong>Flatten a list of lists:</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, produce <code>[1,2,3,4,5,6]</code>.</p></li>
+<li><p><strong>Flatten a list of lists (Hard!):</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, produce <code>[1,2,3,4,5,6]</code>.</p></li>
 </ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
