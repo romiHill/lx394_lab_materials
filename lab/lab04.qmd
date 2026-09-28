@@ -85,7 +85,7 @@ for i in range(len(sentence)):
 
 # Python Exercises
 
-In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use for loops and lists, because they are foundational data type in Python.
+In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use for loops and lists, because they are foundational for Python coding.
 
 Some relevant operations you may find useful are:
 
