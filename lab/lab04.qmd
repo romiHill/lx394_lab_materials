@@ -1,6 +1,6 @@
 ---
 title: "Lab 04"
-subtitle: "List Comprehension" 
+subtitle: "For Loops and List Comprehension" 
 author: "Romi Hill"
 jupyter: lx394_tf
 date: September 30, 2026
