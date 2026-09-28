@@ -1,6 +1,6 @@
 ---
 title: "Lab 03"
-subtitle: "Lab 03" 
+subtitle: "List Comprehension & Functions" 
 author: "Romi Hill"
 jupyter: lx394_tf
 date: September 23, 2026
