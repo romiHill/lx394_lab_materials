@@ -1,0 +1,301 @@
+---
+title: "Lab 04"
+subtitle: "For Loops and List Comprehension Solutions" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 2, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Python Exercises
+
+In a Jupyter Notebook, make python cells that compute the following tasks. These exercises may feel tedious, but it is important to get a grasp of how to use for loops and lists, because they are foundational for Python coding.
+
+Some relevant operations you may find useful are:
+
+- `**`: exponentiation, e.g. `2**3` is 8
+
+- `range(n)`: generates a list of numbers from 0 to n-1
+
+- `%`: modulus operator, e.g. `5 % 2` is 1, because 5 divided by 2 is 2 with a remainder of 1
+
+- `len()`: returns the length of a list, string, etc
+
+## For Loops
+
+**Squares:** Print the squares of numbers from 1 to 10.
+
+I'll give you the solution for the first one.
+
+```{python}
+for i in range(1, 10 + 1):
+    print(i**2)
+```
+
+1.  **Even numbers only:** From `range(20)`, print only the even numbers.
+
+```{python}
+
+for i in range(20):
+    if i % 2 == 0:
+        print(i)
+```
+
+2.  **First letters of words:** Given `["apple", "banana", "cherry"]`, print the first letter in each element `"a"`, `"b"`, `"c"`
+
+You can use the following variable.
+
+```{python}
+my_lst = ["apple", "banana", "cherry"]
+```
+
+```{python}
+
+
+for word in ["apple", "banana", "cherry"]:
+    print(word[0])
+```
+
+3.  **Filter & transform:** From `range(50)`, print the numbers in that range which are divisible by 7, squared.
+
+```{python}
+  
+for i in range(50):
+    if i % 7 == 0:
+        print(i**2)
+```
+
+4.  **Word lengths:** From `["apple","banana","cherry"]`, print the word and its length, separated by a tab and colon. *Hint*: you will need to use the `sep` option your `print` statement. See Sophie's slides from Monday September 28, on `if`/`else` statements.
+
+You can use the following variable.
+
+```{python}
+my_lst = ["apple", "banana", "cherry"]
+```
+
+```{python}
+
+for word in my_lst:
+    print(word, len(word), sep = ':\t')
+```
+
+5.  **Frequency count (Hard!):** From the string `"banana"`, create a `dict` mapping each letter → its frequency. *Hint*: You need to initialize the dictionary before starting the for loop.
+
+```{python}
+
+counting_dictionary = dict()
+for letter in set("banana"):
+    if letter not in counting_dictionary:
+        counting_dictionary[letter] = 0
+    counting_dictionary[letter] += 1
+```
+
+```{python}
+
+from nltk import FreqDist
+freq = FreqDist("banana")
+print(freq['n'])
+```
+
+6.  **Filter dictionary:** From `{'Alice': 25, 'Bob': 17, 'Carol': 30 }`, print only the names where their age is greater than or equal to 21.
+
+```{python}
+ages_dict = {'Alice': 25, 'Bob': 17, 'Carol': 30}
+```
+
+```{python}
+
+
+for name, age in ages_dict.items():
+    if age >= 21:
+        print(name)
+```
+
+7.  **Vowels in a word:** Given the `str` `"comprehension"`, create a set `x` that contains the set of vowels that appear in the string. You may need to use the `.add()` method: <https://www.w3schools.com/python/python_sets_add.asp>
+
+You can use the following variable.
+
+```{python}
+x = set()
+```
+
+```{python}
+
+
+for letter in "comprehension":
+    if letter in "aeiou":
+        x.add(letter)
+
+
+x
+```
+
+8.  **Letters in two words:** Given `"python"` and `"notebook"`, make a set of letters they share.
+
+```{python}
+x = set()
+
+for letter in "python":
+    if letter in "notebook":
+        x.add(letter)
+
+x
+```
+
+9.  **Swap keys and values:** Given `{'a':1, 'b':2, 'c':3}`, produce `{1:'a', 2:'b', 3:'c'}`.
+
+You can use the following variables.
+
+```{python}
+
+input_dictionary = {'a':1, 'b':2, 'c':3}
+output_dictionary = dict()
+
+```
+
+```{python}
+
+
+
+
+for key, value in input_dictionary.items():
+    output_dictionary[value] = key
+
+output_dictionary
+
+```
+
+10. **Common factors:** Build a set of all numbers ≤ 50 divisible by both 2 and 3.
+
+```{python}
+
+
+
+for i in range(51):
+    if i % 2 == 0 and i % 3 == 0:
+        print(i)
+```
+
+11. **Flatten a list of lists (Hard!):** Given `[[1,2],[3,4],[5,6]]`, print each element in the list `[1,2,3,4,5,6]`. You can assume that the list of lists is only one level deep.
+
+You can use the following variable.
+
+```{python}
+my_embedded_lst = [[1,2],[3,4],[5,6]]
+
+```
+
+```{python}
+
+
+for sublist in my_embedded_lst:
+    for i in sublist:
+        print(i)
+
+```
+
+## List Comprehension
+
+In the last exercise, we were simply printing our output.
+
+In this exercise, rewrite the tasks from above into `list` comprehension notation. These exercises also include the data type that is the expected output. You will be able to carry over the logic from the previous exercise to this one.
+
+I'll give you can example of the first exercise.
+
+**Squares:** Create a `list` of the squares of numbers from 1 to 10.
+
+```{python}
+[i**2 for i in range(1, 10 + 1)]
+```
+
+1.  **Even numbers only:** From `range(20)`, build a `list` of only the even numbers.
+
+```{python}
+
+[i for i in range(20) if i % 2 == 0]
+```
+
+2.  **First letters of words:** Given `["apple", "banana", "cherry"]`, create a list of the first letter in each element `["a", "b", "c"]`.
+
+```{python}
+
+[word[0] for word in ["apple", "banana", "cherry"]]
+```
+
+3.  **Filter & transform:** From `range(50)`, build a `list` of numbers divisible by 7, squared.
+
+```{python}
+  
+[i**2 for i in range(50) if i % 7 == 0]
+```
+
+4.  **Word lengths:** From `["apple","banana","cherry"]`, create a `dict` mapping each word → its length.
+
+```{python}
+
+{word: len(word) for word in ["apple","banana","cherry"]}
+```
+
+5.  **Frequency count:** From the string `"banana"`, create a `dict` mapping each letter → its frequency.
+
+```{python}
+
+{letter: "banana".count(letter) for letter in set("banana")}
+```
+
+```{python}
+
+from nltk import FreqDist
+freq = FreqDist("banana")
+print(freq['n'])
+```
+
+6.  **Filter dictionary:** From `{'Alice': 25, 'Bob': 17, 'Carol': 30 }`, keep only entries where age ≥ 21.
+
+```{python}
+
+{k: v for k, v in {'Alice': 25, 'Bob': 17, 'Carol': 30 }.items() if v >= 21}
+```
+
+7.  **Vowels in a word:** Given the `str` `"comprehension"`, create a set of vowels that appear in it.
+
+```{python}
+
+{letter for letter in "comprehension" if letter in "aeiou"}
+```
+
+8.  **Letters in two words:** Given `"python"` and `"notebook"`, make a set of letters they share.
+
+```{python}
+
+{letter for letter in "python" if letter in "notebook"}
+```
+
+9.  **Swap keys and values:** Given `{'a':1, 'b':2, 'c':3}`, produce `{1:'a', 2:'b', 3:'c'}`.
+
+```{python}
+
+{v: k for k, v in {'a':1, 'b':2, 'c':3}.items()} 
+```
+
+10. **Common factors:** Build a set of all numbers ≤ 50 divisible by both 2 and 3.
+
+```{python}
+
+{i for i in range(51) if i % 2 == 0 and i % 3 == 0}
+```
+
+11. **Flatten a list of lists (Hard!):** Given `[[1,2],[3,4],[5,6]]`, produce `[1,2,3,4,5,6]`.
+
+```{python}
+
+[i for sublist in [[1,2],[3,4],[5,6]] for i in sublist]
+```

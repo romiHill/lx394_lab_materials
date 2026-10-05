@@ -3,7 +3,7 @@ title: "Data Types"
 subtitle: "Lab 02" 
 author: "Romi Hill"
 jupyter: lx394_tf
-date: today
+date: September 23, 2026
 format: 
   html:
       theme: cosmo

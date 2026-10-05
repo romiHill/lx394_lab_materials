@@ -1,0 +1,20 @@
+---
+title: "Lab 03"
+subtitle: "Solutions" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 2, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+In lab 03, we went over the solution for some exericses in lab 02. These solutions are uploaded [here](lab02_solutions.qmd).
+
+Specifically, we looked at writing the `print_hello()` function, [solution here](lab02_solutions.qmd#functions), and identifying palindromes, [solution here](lab02_solutions.qmd#putting-it-together-functions-palindrones-and-anagrams).

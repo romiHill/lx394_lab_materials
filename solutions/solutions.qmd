@@ -1,3 +1,5 @@
 # Lab Solutions
 
 - [Lab 02 Solutions](lab02_solutions.qmd)
+- [Lab 03 Solutions](lab03_solutions.qmd)
+- [Lab 04 Solutions](lab04_solutions.qmd)
