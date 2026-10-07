@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1.1" class="anchored" data-anchor-id="for-loops"><span class="header-section-number">1.1</span> For Loops</h2>
 <p><strong>Squares:</strong> Print the squares of numbers from 1 to 10.</p>
 <p>I’ll give you the solution for the first one.</p>
-<div id="057a760d" class="cell" data-execution_count="1">
+<div id="6dcd9045" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -253,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><strong>Even numbers only:</strong> From <code>range(20)</code>, print only the even numbers.</li>
 </ol>
-<div id="dbf0804c" class="cell" data-execution_count="2">
+<div id="39bcbf5e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -274,10 +274,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>First letters of words:</strong> Given <code>["apple", "banana", "cherry"]</code>, print the first letter in each element <code>"a"</code>, <code>"b"</code>, <code>"c"</code></li>
 </ol>
 <p>You can use the following variable.</p>
-<div id="590c3bd7" class="cell" data-execution_count="3">
+<div id="30110d1c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_lst <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="c85f1b60" class="cell" data-execution_count="4">
+<div id="acd1df3e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -289,7 +289,7 @@ c</code></pre>
 <ol start="3" type="1">
 <li><strong>Filter &amp; transform:</strong> From <code>range(50)</code>, print the numbers in that range which are divisible by 7, squared.</li>
 </ol>
-<div id="0e4038e3" class="cell" data-execution_count="5">
+<div id="019a7cd0" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -308,10 +308,10 @@ c</code></pre>
 <li><strong>Word lengths:</strong> From <code>["apple","banana","cherry"]</code>, print the word and its length, separated by a tab and colon. <em>Hint</em>: you will need to use the <code>sep</code> option your <code>print</code> statement. See Sophie’s slides from Monday September 28, on <code>if</code>/<code>else</code> statements.</li>
 </ol>
 <p>You can use the following variable.</p>
-<div id="c82aed27" class="cell" data-execution_count="6">
+<div id="e8f255e7" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_lst <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a21674ed" class="cell" data-execution_count="7">
+<div id="4eea2b8d" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> my_lst:</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(word, <span class="bu">len</span>(word), sep <span class="op">=</span> <span class="st">':</span><span class="ch">\t</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -323,14 +323,14 @@ cherry: 6</code></pre>
 <ol start="5" type="1">
 <li><strong>Frequency count (Hard!):</strong> From the string <code>"banana"</code>, create a <code>dict</code> mapping each letter → its frequency. <em>Hint</em>: You need to initialize the dictionary before starting the for loop.</li>
 </ol>
-<div id="3bcef6b2" class="cell" data-execution_count="8">
+<div id="5d3a4077" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>counting_dictionary <span class="op">=</span> <span class="bu">dict</span>()</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> <span class="bu">set</span>(<span class="st">"banana"</span>):</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">not</span> <span class="kw">in</span> counting_dictionary:</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        counting_dictionary[letter] <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    counting_dictionary[letter] <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d915883e" class="cell" data-execution_count="9">
+<div id="dbaaafcd" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> FreqDist</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> FreqDist(<span class="st">"banana"</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(freq[<span class="st">'n'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -341,10 +341,10 @@ cherry: 6</code></pre>
 <ol start="6" type="1">
 <li><strong>Filter dictionary:</strong> From <code>{'Alice': 25, 'Bob': 17, 'Carol': 30 }</code>, print only the names where their age is greater than or equal to 21.</li>
 </ol>
-<div id="50dc6a37" class="cell" data-execution_count="10">
+<div id="3e7c01f9" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ages_dict <span class="op">=</span> {<span class="st">'Alice'</span>: <span class="dv">25</span>, <span class="st">'Bob'</span>: <span class="dv">17</span>, <span class="st">'Carol'</span>: <span class="dv">30</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cc580f60" class="cell" data-execution_count="11">
+<div id="d8c4c0bb" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, age <span class="kw">in</span> ages_dict.items():</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">21</span>:</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -357,10 +357,10 @@ Carol</code></pre>
 <li><strong>Vowels in a word:</strong> Given the <code>str</code> <code>"comprehension"</code>, create a set <code>x</code> that contains the set of vowels that appear in the string. You may need to use the <code>.add()</code> method: <a href="https://www.w3schools.com/python/python_sets_add.asp" class="uri">https://www.w3schools.com/python/python_sets_add.asp</a></li>
 </ol>
 <p>You can use the following variable.</p>
-<div id="4795adac" class="cell" data-execution_count="12">
+<div id="01f36202" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">set</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2146ca34" class="cell" data-execution_count="13">
+<div id="b1a2c97f" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> <span class="st">"comprehension"</span>:</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> letter <span class="kw">in</span> <span class="st">"aeiou"</span>:</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        x.add(letter)</span>
@@ -374,7 +374,7 @@ Carol</code></pre>
 <ol start="8" type="1">
 <li><strong>Letters in two words:</strong> Given <code>"python"</code> and <code>"notebook"</code>, make a set of letters they share.</li>
 </ol>
-<div id="4560d8ae" class="cell" data-execution_count="14">
+<div id="7a36619d" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">set</span>()</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> <span class="st">"python"</span>:</span>
@@ -390,11 +390,11 @@ Carol</code></pre>
 <li><strong>Swap keys and values:</strong> Given <code>{'a':1, 'b':2, 'c':3}</code>, produce <code>{1:'a', 2:'b', 3:'c'}</code>.</li>
 </ol>
 <p>You can use the following variables.</p>
-<div id="820b99cc" class="cell" data-execution_count="15">
+<div id="6191272c" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>input_dictionary <span class="op">=</span> {<span class="st">'a'</span>:<span class="dv">1</span>, <span class="st">'b'</span>:<span class="dv">2</span>, <span class="st">'c'</span>:<span class="dv">3</span>}</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>output_dictionary <span class="op">=</span> <span class="bu">dict</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e9d5a24e" class="cell" data-execution_count="16">
+<div id="667ab24c" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> input_dictionary.items():</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    output_dictionary[value] <span class="op">=</span> key</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -406,7 +406,7 @@ Carol</code></pre>
 <ol start="10" type="1">
 <li><strong>Common factors:</strong> Build a set of all numbers ≤ 50 divisible by both 2 and 3.</li>
 </ol>
-<div id="c8d3566f" class="cell" data-execution_count="17">
+<div id="1fc7f681" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">51</span>):</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -426,10 +426,10 @@ Carol</code></pre>
 <li><strong>Flatten a list of lists (Hard!):</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, print each element in the list <code>[1,2,3,4,5,6]</code>. You can assume that the list of lists is only one level deep.</li>
 </ol>
 <p>You can use the following variable.</p>
-<div id="a990bc28" class="cell" data-execution_count="18">
+<div id="315760a0" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>my_embedded_lst <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">5</span>,<span class="dv">6</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1f8cc670" class="cell" data-execution_count="19">
+<div id="63617c61" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sublist <span class="kw">in</span> my_embedded_lst:</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> sublist:</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -449,7 +449,7 @@ Carol</code></pre>
 <p>In this exercise, rewrite the tasks from above into <code>list</code> comprehension notation. These exercises also include the data type that is the expected output. You will be able to carry over the logic from the previous exercise to this one.</p>
 <p>I’ll give you can example of the first exercise.</p>
 <p><strong>Squares:</strong> Create a <code>list</code> of the squares of numbers from 1 to 10.</p>
-<div id="9792e1a0" class="cell" data-execution_count="20">
+<div id="d93b1779" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code></pre>
@@ -458,7 +458,7 @@ Carol</code></pre>
 <ol type="1">
 <li><strong>Even numbers only:</strong> From <code>range(20)</code>, build a <code>list</code> of only the even numbers.</li>
 </ol>
-<div id="79e0a1e4" class="cell" data-execution_count="21">
+<div id="50f4c584" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</code></pre>
@@ -467,7 +467,7 @@ Carol</code></pre>
 <ol start="2" type="1">
 <li><strong>First letters of words:</strong> Given <code>["apple", "banana", "cherry"]</code>, create a list of the first letter in each element <code>["a", "b", "c"]</code>.</li>
 </ol>
-<div id="6ef025f8" class="cell" data-execution_count="22">
+<div id="a2f7c572" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>[word[<span class="dv">0</span>] <span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>['a', 'b', 'c']</code></pre>
@@ -476,7 +476,7 @@ Carol</code></pre>
 <ol start="3" type="1">
 <li><strong>Filter &amp; transform:</strong> From <code>range(50)</code>, build a <code>list</code> of numbers divisible by 7, squared.</li>
 </ol>
-<div id="ef691268" class="cell" data-execution_count="23">
+<div id="df5a9198" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>[i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>[0, 49, 196, 441, 784, 1225, 1764, 2401]</code></pre>
@@ -485,7 +485,7 @@ Carol</code></pre>
 <ol start="4" type="1">
 <li><strong>Word lengths:</strong> From <code>["apple","banana","cherry"]</code>, create a <code>dict</code> mapping each word → its length.</li>
 </ol>
-<div id="e21ce628" class="cell" data-execution_count="24">
+<div id="8c7c2c2f" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>{word: <span class="bu">len</span>(word) <span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"apple"</span>,<span class="st">"banana"</span>,<span class="st">"cherry"</span>]}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>{'apple': 5, 'banana': 6, 'cherry': 6}</code></pre>
@@ -494,13 +494,13 @@ Carol</code></pre>
 <ol start="5" type="1">
 <li><strong>Frequency count:</strong> From the string <code>"banana"</code>, create a <code>dict</code> mapping each letter → its frequency.</li>
 </ol>
-<div id="4ff1721e" class="cell" data-execution_count="25">
+<div id="bb527841" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>{letter: <span class="st">"banana"</span>.count(letter) <span class="cf">for</span> letter <span class="kw">in</span> <span class="bu">set</span>(<span class="st">"banana"</span>)}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-<pre><code>{'n': 2, 'a': 3, 'b': 1}</code></pre>
+<pre><code>{'a': 3, 'b': 1, 'n': 2}</code></pre>
 </div>
 </div>
-<div id="36a7f86a" class="cell" data-execution_count="26">
+<div id="16bf7398" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk <span class="im">import</span> FreqDist</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> FreqDist(<span class="st">"banana"</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(freq[<span class="st">'n'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -511,7 +511,7 @@ Carol</code></pre>
 <ol start="6" type="1">
 <li><strong>Filter dictionary:</strong> From <code>{'Alice': 25, 'Bob': 17, 'Carol': 30 }</code>, keep only entries where age ≥ 21.</li>
 </ol>
-<div id="222bad83" class="cell" data-execution_count="27">
+<div id="33f6171a" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>{k: v <span class="cf">for</span> k, v <span class="kw">in</span> {<span class="st">'Alice'</span>: <span class="dv">25</span>, <span class="st">'Bob'</span>: <span class="dv">17</span>, <span class="st">'Carol'</span>: <span class="dv">30</span> }.items() <span class="cf">if</span> v <span class="op">&gt;=</span> <span class="dv">21</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>{'Alice': 25, 'Carol': 30}</code></pre>
@@ -520,7 +520,7 @@ Carol</code></pre>
 <ol start="7" type="1">
 <li><strong>Vowels in a word:</strong> Given the <code>str</code> <code>"comprehension"</code>, create a set of vowels that appear in it.</li>
 </ol>
-<div id="aa9f78ac" class="cell" data-execution_count="28">
+<div id="86b76160" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>{letter <span class="cf">for</span> letter <span class="kw">in</span> <span class="st">"comprehension"</span> <span class="cf">if</span> letter <span class="kw">in</span> <span class="st">"aeiou"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>{'e', 'i', 'o'}</code></pre>
@@ -529,7 +529,7 @@ Carol</code></pre>
 <ol start="8" type="1">
 <li><strong>Letters in two words:</strong> Given <code>"python"</code> and <code>"notebook"</code>, make a set of letters they share.</li>
 </ol>
-<div id="e338c377" class="cell" data-execution_count="29">
+<div id="68021849" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>{letter <span class="cf">for</span> letter <span class="kw">in</span> <span class="st">"python"</span> <span class="cf">if</span> letter <span class="kw">in</span> <span class="st">"notebook"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>{'n', 'o', 't'}</code></pre>
@@ -538,7 +538,7 @@ Carol</code></pre>
 <ol start="9" type="1">
 <li><strong>Swap keys and values:</strong> Given <code>{'a':1, 'b':2, 'c':3}</code>, produce <code>{1:'a', 2:'b', 3:'c'}</code>.</li>
 </ol>
-<div id="2235dc40" class="cell" data-execution_count="30">
+<div id="61911b81" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>{v: k <span class="cf">for</span> k, v <span class="kw">in</span> {<span class="st">'a'</span>:<span class="dv">1</span>, <span class="st">'b'</span>:<span class="dv">2</span>, <span class="st">'c'</span>:<span class="dv">3</span>}.items()} </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>{1: 'a', 2: 'b', 3: 'c'}</code></pre>
@@ -547,7 +547,7 @@ Carol</code></pre>
 <ol start="10" type="1">
 <li><strong>Common factors:</strong> Build a set of all numbers ≤ 50 divisible by both 2 and 3.</li>
 </ol>
-<div id="e7a88ed7" class="cell" data-execution_count="31">
+<div id="cf5734dc" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>{i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">51</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>{0, 6, 12, 18, 24, 30, 36, 42, 48}</code></pre>
@@ -556,7 +556,7 @@ Carol</code></pre>
 <ol start="11" type="1">
 <li><strong>Flatten a list of lists (Hard!):</strong> Given <code>[[1,2],[3,4],[5,6]]</code>, produce <code>[1,2,3,4,5,6]</code>.</li>
 </ol>
-<div id="e5f7db87" class="cell" data-execution_count="32">
+<div id="bf2d1621" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> sublist <span class="kw">in</span> [[<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">5</span>,<span class="dv">6</span>]] <span class="cf">for</span> i <span class="kw">in</span> sublist]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>[1, 2, 3, 4, 5, 6]</code></pre>
