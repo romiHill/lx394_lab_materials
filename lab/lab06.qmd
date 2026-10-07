@@ -1,0 +1,28 @@
+---
+title: "Lab 06"
+subtitle: "Classes" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 14, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Today
+
+1.  In class discussion on classes
+2.  Code styles in Python
+3.  In class exercises
+
+# Recap: Classes
+
+What are classes?
+
+# Code Styles in Python

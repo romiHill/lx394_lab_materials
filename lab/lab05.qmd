@@ -1,0 +1,21 @@
+---
+title: "Lab 05"
+subtitle: "HW1 Solutions" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 7, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# HW1 Solutions
+
+We will go over solution 
+
