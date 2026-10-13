@@ -1,6 +1,8 @@
 ---
+
+---
 title: "Lab 06"
-subtitle: "Classes" 
+subtitle: "Homework 2" 
 author: "Romi Hill"
 jupyter: lx394_tf
 date: October 14, 2026
@@ -17,12 +19,8 @@ editor: visual
 
 # Today
 
-1.  In class discussion on classes
-2.  Code styles in Python
-3.  In class exercises
+1.  Setting Up HW2
 
-# Recap: Classes
+# HW2 is released!
 
-What are classes?
-
-# Code Styles in Python
+Click [here](https://github.com/BU-CompLing/lx394-f26-hw2/tree/main) to download HW2.

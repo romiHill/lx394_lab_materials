@@ -17,6 +17,8 @@ website:
         text: Lab 04
       - href: lab/lab05.qmd
         text: Lab 05
+      - href: lab/lab06.qmd
+        text: Lab 06
     right:
       - href: solutions/solutions.qmd
         text: Lab Solutions
