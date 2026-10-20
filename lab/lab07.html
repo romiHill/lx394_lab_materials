@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Romi Hill">
-<meta name="dcterms.date" content="2026-10-14">
+<meta name="dcterms.date" content="2026-10-21">
 
-<title>Lab 06 – LX 394 Lab Materials</title>
+<title>Lab 07 – LX 394 Lab Materials</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -76,6 +111,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -124,6 +188,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../lab/lab06.html"> 
 <span class="menu-text">Lab 06</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../lab/lab07.html" aria-current="page"> 
+<span class="menu-text">Lab 07</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -147,10 +215,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#today" id="toc-today" class="nav-link active" data-scroll-target="#today"><span class="header-section-number">1</span> Today</a></li>
-  <li><a href="#hw2-is-released" id="toc-hw2-is-released" class="nav-link" data-scroll-target="#hw2-is-released"><span class="header-section-number">2</span> HW2 is released!</a></li>
-  <li><a href="#recap-classes" id="toc-recap-classes" class="nav-link" data-scroll-target="#recap-classes"><span class="header-section-number">3</span> Recap: Classes</a></li>
-  <li><a href="#code-styles-in-python" id="toc-code-styles-in-python" class="nav-link" data-scroll-target="#code-styles-in-python"><span class="header-section-number">4</span> Code Styles in Python</a></li>
-  <li><a href="#in-class-exericses" id="toc-in-class-exericses" class="nav-link" data-scroll-target="#in-class-exericses"><span class="header-section-number">5</span> In Class Exericses</a></li>
+  <li><a href="#recap-classes" id="toc-recap-classes" class="nav-link" data-scroll-target="#recap-classes"><span class="header-section-number">2</span> Recap: Classes</a>
+  <ul class="collapse">
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">2.1</span> Discussion</a></li>
+  </ul></li>
+  <li><a href="#in-class-exericses" id="toc-in-class-exericses" class="nav-link" data-scroll-target="#in-class-exericses"><span class="header-section-number">3</span> In Class Exericses</a></li>
   </ul>
 </nav>
     </div>
@@ -159,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 06</h1>
+<h1 class="title">Lab 07</h1>
 <p class="subtitle lead">Classes</p>
 </div>
 
@@ -177,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 14, 2026</p>
+      <p class="date">October 21, 2026</p>
     </div>
   </div>
   
@@ -192,25 +261,143 @@ ul.task-list li input[type="checkbox"] {
 <section id="today" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Today</h1>
 <ol type="1">
-<li>Setting Up HW2</li>
-<li>In class discussion on classes</li>
-<li>Code styles in Python</li>
-<li>In class exercises</li>
+<li>Classes</li>
+<li>In class exercise</li>
 </ol>
 </section>
-<section id="hw2-is-released" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> HW2 is released!</h1>
-<p>Click <a href="https://github.com/BU-CompLing/lx394-f26-hw2/tree/main">here</a> to download HW2.</p>
+<section id="recap-classes" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Recap: Classes</h1>
+<p>What are classes? What are some important elements to remember when making a class?</p>
+<p>Recall this class we introduced a couple of week ago:</p>
+<div id="43646875" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statistics</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Student class definition"""</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Student class constructor"""</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># Student class properties</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.grades <span class="op">=</span> []</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Student class methods</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> take_class(<span class="va">self</span>, grade: <span class="bu">float</span>):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.grades.append(grade)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> gpa(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> statistics.mean(<span class="va">self</span>.grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="4d34718d" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>romi <span class="op">=</span> Student(<span class="st">"Romi"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="40b95cdc" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(romi.name)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(romi.grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Romi
+[]</code></pre>
+</div>
+</div>
+<div id="d0eacc3d" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>romi.take_class(<span class="fl">3.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="036598af" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(romi.grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[3.5]</code></pre>
+</div>
+</div>
+<section id="discussion" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="discussion"><span class="header-section-number">2.1</span> Discussion</h2>
+<ol type="1">
+<li><p>Say I want make a class on information that a song may contain. How would I make a class <code>Song()</code>, that contains the <em>name</em> of the song, the <em>artist</em> of the song, the <em>genre</em>s of the song, and the <em>year</em> it was released?</p></li>
+<li><p>For example, make a variable <code>down_under</code> which has the following information: - Name: <code>"Down Under"</code> - Artist: <code>"Men at Work"</code> - Genre: <code>["Pop", "Rock"]</code> - Year: <code>1981</code></p></li>
+</ol>
+<p>Expected output:</p>
+<div id="ee4accb3" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>down_under <span class="op">=</span> Song(<span class="st">"Down Under"</span>, <span class="st">"Men at Work"</span>, [<span class="st">"Pop"</span>, <span class="st">"Rock"</span>], <span class="dv">1981</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="95eb73bf" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>down_under.name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>'Down Under'</code></pre>
+</div>
+</div>
+<div id="93dfb6fe" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>down_under.artist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'Men at Work'</code></pre>
+</div>
+</div>
+<div id="b4e8048a" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>down_under.genre</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>['Pop', 'Rock']</code></pre>
+</div>
+</div>
+<div id="5cb1d33c" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>down_under.year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>1981</code></pre>
+</div>
+</div>
+<p>How do I add a new <em>method</em> to the Class, which adds a new genre to it?</p>
+<p>For example:</p>
+<div id="7f80fcc6" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>down_under <span class="op">=</span> Song(<span class="st">"Down Under"</span>, <span class="st">"Men at Work"</span>, [<span class="st">"Pop"</span>, <span class="st">"Rock"</span>], <span class="dv">1981</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>down_under.add_genre(<span class="st">"Classic Rock"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>down_under.genre</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>['Pop', 'Rock', 'Classic Rock']</code></pre>
+</div>
+</div>
 </section>
-<section id="recap-classes" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Recap: Classes</h1>
-<p>What are classes?</p>
 </section>
-<section id="code-styles-in-python" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Code Styles in Python</h1>
-</section>
-<section id="in-class-exericses" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> In Class Exericses</h1>
+<section id="in-class-exericses" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> In Class Exericses</h1>
+<p>Make a class <code>Cat</code> which contains a cat’s name, color, and its average walking speed (speed, in feet/second. The average walking pace of a cat is around 4 feet per second).</p>
+<p>For example:</p>
+<div id="7e55ada1" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mittens <span class="op">=</span> Cat(<span class="st">"Mittens"</span>, <span class="st">"brown"</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="f9412450" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mittens.name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>'Mittens'</code></pre>
+</div>
+</div>
+<div id="25129a7d" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mittens.color</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>'brown'</code></pre>
+</div>
+</div>
+<div id="9402b8be" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mittens.speed</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>4</code></pre>
+</div>
+</div>
+<p><strong>Add a method</strong>: Make a new method <code>meow</code> that takes an int and prints out that number of <code>meow</code>s. <em>Hint</em>: Use a for loop.</p>
+<div id="b3895dd3" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>mittens.meow(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Meow!
+Meow!
+Meow!
+Meow!
+Meow!</code></pre>
+</div>
+</div>
+<p><strong>Challenge!</strong> Make a method <code>move()</code> in your <code>Cat</code> class that takes a <em>distance</em> (<code>int</code>) in feet as input, and prints out how long it took for your cat to travel that distance. Recall from high school math that <span class="math inline">\(time = \frac{distance}{speed}\)</span></p>
+<div id="1f2358a3" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>mittens.move(<span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>It took Mittens 7.5 seconds to travel 30 feet.</code></pre>
+</div>
+</div>
 
 
 </section>
