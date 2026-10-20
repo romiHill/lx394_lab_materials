@@ -15,4 +15,4 @@ highlight-style: gruvbox
 editor: visual
 ---
 
-We went over HW1 solutions, We will go over the solutions for HW1, located [here](https://github.com/BU-CompLing/lx394-f26-hw1-solution).
+We went over HW1 solutions, located [here](https://github.com/BU-CompLing/lx394-f26-hw1-solution).

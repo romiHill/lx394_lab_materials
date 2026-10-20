@@ -17,8 +17,8 @@ editor: visual
 
 # Today
 
-1. Classes
-2. In class exercise
+1.  Classes
+2.  In class exercise
 
 # Recap: Classes
 
@@ -137,15 +137,15 @@ Make a class `Cat` which contains a cat's name, color, and its average walking s
 ```{python}
 #| echo: FALSE
 class Cat:
-    def __init__(self, name, color, speed):
+    def __init__(self, name: str, color: str, speed: int):
         self.name = name
         self.color = color
         self.speed = speed
 
-    def move(self, distance):
+    def move(self, distance: int | float) -> None:
         print(f"It took {self.name} {distance/self.speed} seconds to travel {distance} feet.")
 
-    def meow(self, num):
+    def meow(self, num: int) -> None:
         for _ in range(num):
             print("Meow!")
 ```
@@ -170,13 +170,15 @@ mittens.color
 mittens.speed
 ```
 
-**Add a method**: Make a new method `meow` that takes an int and prints out that number of `meow`s. *Hint*: Use a for loop.
+**Add a method**: Make a new method `meow` that takes an int and prints out that number of *meow*s. *Hint*: Use a for loop.
 
 ```{python}
 mittens.meow(5)
 ```
 
 **Challenge!** Make a method `move()` in your `Cat` class that takes a *distance* (`int`) in feet as input, and prints out how long it took for your cat to travel that distance. Recall from high school math that $time = \frac{distance}{speed}$
+
+For example:
 
 ```{python}
 mittens.move(30)
