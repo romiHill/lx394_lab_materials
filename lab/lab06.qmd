@@ -1,6 +1,4 @@
 ---
-
----
 title: "Lab 06"
 subtitle: "Homework 2" 
 author: "Romi Hill"

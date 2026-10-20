@@ -1,0 +1,18 @@
+---
+title: "Lab 05"
+subtitle: "Homework 1 Solutions" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 7, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+We went over HW1 solutions, We will go over the solutions for HW1, located [here](https://github.com/BU-CompLing/lx394-f26-hw1-solution).

@@ -1,0 +1,183 @@
+---
+title: "Lab 07"
+subtitle: "Classes" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 21, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Today
+
+1. Classes
+2. In class exercise
+
+# Recap: Classes
+
+What are classes? What are some important elements to remember when making a class?
+
+Recall this class we introduced a couple of week ago:
+
+```{python}
+
+import statistics
+
+class Student:
+    """Student class definition"""
+    
+    def __init__(self, name: str):
+        """Student class constructor"""
+        self.name = name  # Student class properties
+        self.grades = []
+        
+    # Student class methods
+    def take_class(self, grade: float):
+        self.grades.append(grade)
+        
+    def gpa(self) -> float:
+        return statistics.mean(self.grades)
+
+```
+
+```{python}
+romi = Student("Romi")
+```
+
+```{python}
+print(romi.name)
+print(romi.grades)
+```
+
+```{python}
+romi.take_class(3.5)
+```
+
+```{python}
+print(romi.grades)
+```
+
+## Discussion
+
+1.  Say I want make a class on information that a song may contain. How would I make a class `Song()`, that contains the *name* of the song, the *artist* of the song, the *genre*s of the song, and the *year* it was released?
+
+```{python}
+#| echo: FALSE
+class Song:
+    def __init__(self, name: str, artist: str, genre: list, year: int):
+        self.name = name
+        self.artist = artist
+        self.genre = genre
+        self.year = year
+```
+
+2.  For example, make a variable `down_under` which has the following information: - Name: `"Down Under"` - Artist: `"Men at Work"` - Genre: `["Pop", "Rock"]` - Year: `1981`
+
+Expected output:
+
+```{python}
+down_under = Song("Down Under", "Men at Work", ["Pop", "Rock"], 1981)
+
+```
+
+```{python}
+down_under.name
+```
+
+```{python}
+down_under.artist
+```
+
+```{python}
+down_under.genre
+```
+
+```{python}
+down_under.year
+```
+
+How do I add a new *method* to the Class, which adds a new genre to it?
+
+```{python}
+#| echo: FALSE
+class Song:
+    def __init__(self, name: str, artist: str, genre: list, year: int):
+        self.name = name
+        self.artist = artist
+        self.genre = genre
+        self.year = year
+
+    def add_genre(self, new_genre: str):
+        self.genre.append(new_genre)
+
+```
+
+For example:
+
+```{python}
+#| EVAL: false
+down_under = Song("Down Under", "Men at Work", ["Pop", "Rock"], 1981)
+
+down_under.add_genre("Classic Rock")
+
+down_under.genre
+```
+
+# In Class Exericses
+
+Make a class `Cat` which contains a cat's name, color, and its average walking speed (speed, in feet/second. The average walking pace of a cat is around 4 feet per second).
+
+```{python}
+#| echo: FALSE
+class Cat:
+    def __init__(self, name, color, speed):
+        self.name = name
+        self.color = color
+        self.speed = speed
+
+    def move(self, distance):
+        print(f"It took {self.name} {distance/self.speed} seconds to travel {distance} feet.")
+
+    def meow(self, num):
+        for _ in range(num):
+            print("Meow!")
+```
+
+For example:
+
+```{python}
+
+mittens = Cat("Mittens", "brown", 4)
+
+```
+
+```{python}
+mittens.name
+```
+
+```{python}
+mittens.color
+```
+
+```{python}
+mittens.speed
+```
+
+**Add a method**: Make a new method `meow` that takes an int and prints out that number of `meow`s. *Hint*: Use a for loop.
+
+```{python}
+mittens.meow(5)
+```
+
+**Challenge!** Make a method `move()` in your `Cat` class that takes a *distance* (`int`) in feet as input, and prints out how long it took for your cat to travel that distance. Recall from high school math that $time = \frac{distance}{speed}$
+
+```{python}
+mittens.move(30)
+```
