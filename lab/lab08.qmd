@@ -83,7 +83,7 @@ format(ord("ö"), "08b")
 
 ## In Class Exercise
 
-Using [this](https://drive.google.com/file/d/1X2KZG7ESi8H16Wf9OIWR4xjM0SQ5pJDy/view?usp=sharing) file, write Python code to: 
+Using [this](https://drive.google.com/file/d/1X2KZG7ESi8H16Wf9OIWR4xjM0SQ5pJDy/view?usp=sharing) file, write Python code to do the following. (The IPA transcriptions of the German words were taken from [this open source dictionary project](https://github.com/open-dict-data/ipa-dict/tree/master))
 
 
 
