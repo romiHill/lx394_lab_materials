@@ -1,0 +1,222 @@
+---
+title: "Lab 08"
+subtitle: "BeautifulSoup and Encodings" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: October 28, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Today
+
+1.  UTF8/Latin1 Encoding
+2.  BeautifulSoup
+
+For this exercise, we need to download a file
+
+# UTF8/Latin1 Encoding: Warm Up
+
+```{python}
+word = "schön"
+
+utf8_bytes = word.encode("utf-8")
+latin1_bytes = word.encode("latin-1")
+
+print(type(latin1_bytes))
+
+print(f"{word} in UTF-8 encoding is {utf8_bytes}. It is {len(utf8_bytes)} bytes long.")
+
+print(f"{word} in latin1 encoding is {latin1_bytes}. It is {len(latin1_bytes)} bytes long.")
+
+```
+
+
+
+When Python prints a `bytes` object, any byte with a value from 0 to 127 (the ASCII range) is shown as its ASCII character, like "s", "c", "h", and "n". Any byte above 127 is shown as \x followed by its value in hexadecimal, like \xc3. Each \x.. is a single byte.
+
+Why are the number of bytes in UTF-8 encoding longer than in Latin1 encoding?
+
+Let's see what happens when we try to decode in a different encoding scheme.
+
+```{python}
+utf8_bytes.decode("latin1")
+```
+
+```{python}
+#| error: True
+latin1_bytes.decode('utf-8')
+```
+
+Let's try to manually decode Latin1 from UTF-8 encoding.
+
+```{python}
+utf8_character = "ö".encode("utf-8")
+
+utf8_character
+```
+
+Now, use [this Unicode online converter](https://www.cogsci.ed.ac.uk/~richard/unicode.html) to look up what these decimal representations correspond to. Do they look familiar?
+
+You may be wondering how UTF-8 is able to encode one "character" using more than one byte. The answer to this question is part of 1a in HW2, though here is a hint to get you started. Compare the two outputs below. Can you find the Unicode bits hiding inside the UTF-8 bytes?
+
+```{python}
+# UTF-8 encoding of ö in binary
+" ".join(format(x, "08b") for x in utf8_character)
+```
+
+
+```{python}
+# Unicode code point of ö in binary
+format(ord("ö"), "08b")
+```
+
+
+# BeautifulSoup
+
+## In Class Exercise
+
+Using [this](https://drive.google.com/file/d/1X2KZG7ESi8H16Wf9OIWR4xjM0SQ5pJDy/view?usp=sharing) file, write Python code to: 
+
+
+
+1. Read in the file, using UTF-8 encoding
+
+```{python}
+#| echo: false
+from bs4 import BeautifulSoup
+
+with open("../input_files/wortliste.html", 'r', encoding = 'utf-8') as f:
+    soup = BeautifulSoup(f, 'html.parser')
+
+```
+
+```{python}
+soup
+```
+
+
+2. Using the `soup` you've made, create a dictionary where the key is the word English, and the values are a list. The first value in the list is the German orthography, and the second value is the IPA transcription. The expected output is below.
+
+
+
+```{python}
+#| echo: false
+
+pron_dict = dict()
+
+for item in soup.find_all('tr'):
+  eng_word = item.find('td', class_ = 'en').get_text()
+  ger_word = item.find('td', class_ = 'wort').get_text()
+  ipa_trans = item.find('td', class_ = 'ipa').get_text()
+  pron_dict[eng_word] = [ger_word, ipa_trans]
+```
+
+```{python}
+pron_dict
+```
+
+Hint: You will probably need to use `find_all()`, `.find()`, `.find(XX, class_ = XX)` and `.get_text()`. You will also need to use a for loop. 
+
+
+Here are some examples of how to use each of these. 
+
+```{python}
+soup.find_all('tr')
+```
+
+
+```{python}
+for item in soup.find_all('tr'):
+  print(item.find('td'))
+  print(item.find('td', class_ = 'ipa'))
+  print()
+```
+
+```{python}
+for item in soup.find_all('tr'):
+  print(item.find('td', class_ = 'ipa').get_text())
+```
+
+
+
+
+## Bonus
+
+Read in the file, this time in Latin1 encoding. 
+
+
+```{python}
+#| echo: false
+from bs4 import BeautifulSoup
+
+with open("../input_files/wortliste.html", 'r', encoding = 'latin1') as f:
+    soup = BeautifulSoup(f, 'html.parser')
+```
+
+
+You should get something like this:
+
+
+```{python}
+soup
+```
+
+
+Using this soup, convert everything back into UTF-8. Do not re-read the file, you should amend your for loop to encode and decode the strings. *Hint:* use `.decode()` and `.encode()`.
+
+
+
+```{python}
+#| echo: false
+pron_dict = dict()
+
+for item in soup.find_all('tr'):
+  eng_word = item.find('td', class_ = 'en').get_text()
+  ger_word = item.find('td', class_ = 'wort').get_text()
+  ipa_trans = item.find('td', class_ = 'ipa').get_text()
+  pron_dict[eng_word] = [ger_word, ipa_trans]
+```
+
+```{python}
+# dictionary that reads in latin1 encoding
+pron_dict
+```
+
+```{python}
+#| echo: false
+pron_dict_latin1 = dict()
+
+for item in soup.find_all('tr'):
+  eng_word = item.find('td', class_ = 'en').get_text().encode('latin1')
+  eng_word = eng_word.decode('utf-8')
+  ger_word = item.find('td', class_ = 'wort').get_text().encode('latin1')
+  ger_word = ger_word.decode('utf-8')
+  ipa_trans = item.find('td', class_ = 'ipa').get_text().encode('latin1')
+  ipa_trans = ipa_trans.decode('utf-8')
+  pron_dict_latin1[eng_word] = [ger_word, ipa_trans]
+```
+
+
+
+```{python}
+# dictionary that reads in latin1 encoding, and converts back into UTF-8
+pron_dict_latin1
+```
+
+
+**Additional exercise:** 
+
+If you weren't able to complete the exercise above, you can still attempt this one using the sample outputs. 
+
+Have a look at the IPA transcription for the German word of `dog`. Use the online converter to encode `ʊ` into hex UTF-8 bytes. Then enter each of those bytes back into the converter as a hex code point to see which character it corresponds to. Do these characters match what you see in `pron_dict_latin1`? What about the output in the latin1 version of the `soup`?
+
+
+
