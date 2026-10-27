@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="utf8latin1-encoding-warm-up" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> UTF8/Latin1 Encoding: Warm Up</h1>
-<div id="da8b0131" class="cell" data-execution_count="1">
+<div id="da122f38" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"schön"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>utf8_bytes <span class="op">=</span> word.encode(<span class="st">"utf-8"</span>)</span>
@@ -264,13 +264,13 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 <p>When Python prints a <code>bytes</code> object, any byte with a value from 0 to 127 (the ASCII range) is shown as its ASCII character, like “s”, “c”, “h”, and “n”. Any byte above 127 is shown as followed by its value in hexadecimal, like . Each .. is a single byte.</p>
 <p>Why are the number of bytes in UTF-8 encoding longer than in Latin1 encoding?</p>
 <p>Let’s see what happens when we try to decode in a different encoding scheme.</p>
-<div id="937c377e" class="cell" data-execution_count="2">
+<div id="fa341a37" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>utf8_bytes.decode(<span class="st">"latin1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'schÃ¶n'</code></pre>
 </div>
 </div>
-<div id="274afe3f" class="cell" data-execution_count="3">
+<div id="19e016ff" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>latin1_bytes.decode(<span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -284,7 +284,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 </div>
 </div>
 <p>Let’s try to manually decode Latin1 from UTF-8 encoding.</p>
-<div id="05c417b9" class="cell" data-execution_count="4">
+<div id="cf9c26d4" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>utf8_character <span class="op">=</span> <span class="st">"ö"</span>.encode(<span class="st">"utf-8"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>utf8_character</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -294,14 +294,14 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 </div>
 <p>Now, use <a href="https://www.cogsci.ed.ac.uk/~richard/unicode.html">this Unicode online converter</a> to look up what these decimal representations correspond to. Do they look familiar?</p>
 <p>You may be wondering how UTF-8 is able to encode one “character” using more than one byte. The answer to this question is part of 1a in HW2, though here is a hint to get you started. Compare the two outputs below. Can you find the Unicode bits hiding inside the UTF-8 bytes?</p>
-<div id="8a28c0cd" class="cell" data-execution_count="5">
+<div id="f6e95c4c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UTF-8 encoding of ö in binary</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">" "</span>.join(<span class="bu">format</span>(x, <span class="st">"08b"</span>) <span class="cf">for</span> x <span class="kw">in</span> utf8_character)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>'11000011 10110110'</code></pre>
 </div>
 </div>
-<div id="37b6fcc8" class="cell" data-execution_count="6">
+<div id="528f8c1e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unicode code point of ö in binary</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span>(<span class="bu">ord</span>(<span class="st">"ö"</span>), <span class="st">"08b"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -317,7 +317,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 <ol type="1">
 <li>Read in the file, using UTF-8 encoding</li>
 </ol>
-<div id="f6a06ebc" class="cell" data-execution_count="8">
+<div id="fcfe01c2" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>soup</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -348,7 +348,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 <ol start="2" type="1">
 <li>Using the <code>soup</code> you’ve made, create a dictionary where the key is the word English, and the values are a list. The first value in the list is the German orthography, and the second value is the IPA transcription. The expected output is below.</li>
 </ol>
-<div id="c2738149" class="cell" data-execution_count="10">
+<div id="bd1f2f2f" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pron_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>{'size': ['Größe', 'ˈɡʁøːsə'],
@@ -365,7 +365,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 </div>
 <p>Hint: You will probably need to use <code>find_all()</code>, <code>.find()</code>, <code>.find(XX, class_ = XX)</code> and <code>.get_text()</code>. You will also need to use a for loop.</p>
 <p>Here are some examples of how to use each of these.</p>
-<div id="f104641f" class="cell" data-execution_count="11">
+<div id="0c1faa1d" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>soup.find_all(<span class="st">'tr'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[&lt;tr&gt;&lt;td class="wort"&gt;Größe&lt;/td&gt;&lt;td class="ipa"&gt;ˈɡʁøːsə&lt;/td&gt;&lt;td class="en"&gt;size&lt;/td&gt;&lt;/tr&gt;,
@@ -380,7 +380,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
  &lt;tr&gt;&lt;td class="wort"&gt;Fuß&lt;/td&gt;&lt;td class="ipa"&gt;fuːs&lt;/td&gt;&lt;td class="en"&gt;foot&lt;/td&gt;&lt;/tr&gt;]</code></pre>
 </div>
 </div>
-<div id="b48ce484" class="cell" data-execution_count="12">
+<div id="db37e8ac" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> soup.find_all(<span class="st">'tr'</span>):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>))</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>, class_ <span class="op">=</span> <span class="st">'ipa'</span>))</span>
@@ -418,7 +418,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 </code></pre>
 </div>
 </div>
-<div id="84eab6a1" class="cell" data-execution_count="13">
+<div id="d66edb49" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> soup.find_all(<span class="st">'tr'</span>):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>, class_ <span class="op">=</span> <span class="st">'ipa'</span>).get_text())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -439,7 +439,7 @@ fuːs</code></pre>
 <h2 data-number="3.2" class="anchored" data-anchor-id="bonus"><span class="header-section-number">3.2</span> Bonus</h2>
 <p>Read in the file, this time in Latin1 encoding.</p>
 <p>You should get something like this:</p>
-<div id="17c6e38c" class="cell" data-execution_count="15">
+<div id="8eb7519a" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>soup</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -468,9 +468,9 @@ fuːs</code></pre>
 </div>
 </div>
 <p>Using this soup, convert everything back into UTF-8. Do not re-read the file, you should amend your for loop to encode and decode the strings. <em>Hint:</em> use <code>.decode()</code> and <code>.encode()</code>.</p>
-<div id="e4185e6e" class="cell" data-execution_count="17">
+<div id="f86a280c" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary that reads in latin1 encoding</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pron_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pron_dict_latin1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>{'size': ['GrÃ¶Ã\x9fe', 'Ë\x88É¡Ê\x81Ã¸Ë\x90sÉ\x99'],
  'girl': ['MÃ¤dchen', 'Ë\x88mÉ\x9bË\x90tÃ§É\x99n'],
@@ -484,9 +484,9 @@ fuːs</code></pre>
  'foot': ['FuÃ\x9f', 'fuË\x90s']}</code></pre>
 </div>
 </div>
-<div id="dff9a3f5" class="cell" data-execution_count="19">
+<div id="729015c1" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary that reads in latin1 encoding, and converts back into UTF-8</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pron_dict_latin1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pron_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>{'size': ['Größe', 'ˈɡʁøːsə'],
  'girl': ['Mädchen', 'ˈmɛːtçən'],
