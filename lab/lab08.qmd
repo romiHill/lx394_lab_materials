@@ -176,23 +176,23 @@ Using this soup, convert everything back into UTF-8. Do not re-read the file, yo
 
 ```{python}
 #| echo: false
-pron_dict = dict()
+pron_dict_latin1 = dict()
 
 for item in soup.find_all('tr'):
   eng_word = item.find('td', class_ = 'en').get_text()
   ger_word = item.find('td', class_ = 'wort').get_text()
   ipa_trans = item.find('td', class_ = 'ipa').get_text()
-  pron_dict[eng_word] = [ger_word, ipa_trans]
+  pron_dict_latin1[eng_word] = [ger_word, ipa_trans]
 ```
 
 ```{python}
 # dictionary that reads in latin1 encoding
-pron_dict
+pron_dict_latin1
 ```
 
 ```{python}
 #| echo: false
-pron_dict_latin1 = dict()
+pron_dict = dict()
 
 for item in soup.find_all('tr'):
   eng_word = item.find('td', class_ = 'en').get_text().encode('latin1')
@@ -201,14 +201,14 @@ for item in soup.find_all('tr'):
   ger_word = ger_word.decode('utf-8')
   ipa_trans = item.find('td', class_ = 'ipa').get_text().encode('latin1')
   ipa_trans = ipa_trans.decode('utf-8')
-  pron_dict_latin1[eng_word] = [ger_word, ipa_trans]
+  pron_dict[eng_word] = [ger_word, ipa_trans]
 ```
 
 
 
 ```{python}
 # dictionary that reads in latin1 encoding, and converts back into UTF-8
-pron_dict_latin1
+pron_dict
 ```
 
 
