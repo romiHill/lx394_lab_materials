@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#in-class-exercise" id="toc-in-class-exercise" class="nav-link" data-scroll-target="#in-class-exercise"><span class="header-section-number">3.1</span> In Class Exercise</a></li>
   <li><a href="#bonus" id="toc-bonus" class="nav-link" data-scroll-target="#bonus"><span class="header-section-number">3.2</span> Bonus</a></li>
+  <li><a href="#hints" id="toc-hints" class="nav-link" data-scroll-target="#hints"><span class="header-section-number">3.3</span> Hints</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -245,20 +246,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="utf8latin1-encoding-warm-up" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> UTF8/Latin1 Encoding: Warm Up</h1>
 <p>Unicode is a universal mapping from characters to numbers called code points. For example, the unicode codepoint of <em>a</em> is 97. You can use the Python function <code>ord</code> to get a character’s unicode codepoint.</p>
-<div id="45229a2e" class="cell" data-execution_count="1">
+<div id="6d847ec7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ord</span>(<span class="st">"a"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>97</code></pre>
 </div>
 </div>
-<div id="c1f723c1" class="cell" data-execution_count="2">
+<div id="49e91f5a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">ord</span>(<span class="st">"🐱"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>128049</code></pre>
 </div>
 </div>
 <p>UTF-8 and Latin-1 are two ways to encode these code points as bytes in a file. For basic English characters they produce the same bytes, but for anything else they differ.</p>
-<div id="8f5e52f4" class="cell" data-execution_count="3">
+<div id="88b05ce8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">"schön"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>utf8_bytes <span class="op">=</span> word.encode(<span class="st">"utf-8"</span>)</span>
@@ -278,13 +279,13 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 <p>When Python prints a <code>bytes</code> object, any byte with a value from 0 to 127 (the ASCII range) is shown as its ASCII character, like “s”, “c”, “h”, and “n”. Any byte above 127 is shown as \x followed by its value in hexadecimal, like \xc3. Each \x.. is a single byte.</p>
 <p>Why are the number of bytes in UTF-8 encoding longer than in Latin1 encoding?</p>
 <p>Let’s see what happens when we try to decode in a different encoding scheme.</p>
-<div id="0b6f3443" class="cell" data-execution_count="4">
+<div id="78937b63" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>utf8_bytes.decode(<span class="st">"latin1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'schÃ¶n'</code></pre>
 </div>
 </div>
-<div id="387f5e5b" class="cell" data-execution_count="5">
+<div id="62f2c4fe" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>latin1_bytes.decode(<span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -298,7 +299,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 </div>
 </div>
 <p>Let’s try to manually decode Latin1 from UTF-8 encoding.</p>
-<div id="16a35f10" class="cell" data-execution_count="6">
+<div id="bea6d175" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>utf8_character <span class="op">=</span> <span class="st">"ö"</span>.encode(<span class="st">"utf-8"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>utf8_character</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -308,14 +309,14 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 </div>
 <p>Now, use <a href="https://www.cogsci.ed.ac.uk/~richard/unicode.html">this Unicode online converter</a> to look up what these decimal representations correspond to. Do they look familiar?</p>
 <p>You may be wondering how UTF-8 is able to encode one “character” using more than one byte. The answer to this question is part of 1a in HW2, though here is a hint to get you started. Compare the two outputs below. Can you find the Unicode bits hiding inside the UTF-8 bytes?</p>
-<div id="79a55ee1" class="cell" data-execution_count="7">
+<div id="04c4952c" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UTF-8 encoding of ö in binary</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">" "</span>.join(<span class="bu">format</span>(x, <span class="st">"08b"</span>) <span class="cf">for</span> x <span class="kw">in</span> utf8_character)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>'11000011 10110110'</code></pre>
 </div>
 </div>
-<div id="5ce5be7b" class="cell" data-execution_count="8">
+<div id="9ce0ec37" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unicode code point of ö in binary</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span>(<span class="bu">ord</span>(<span class="st">"ö"</span>), <span class="st">"08b"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -331,7 +332,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 <ol type="1">
 <li>Read in the file, using UTF-8 encoding</li>
 </ol>
-<div id="f073b8aa" class="cell" data-execution_count="10">
+<div id="5eceb11c" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>soup</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -362,7 +363,7 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
 <ol start="2" type="1">
 <li>Using the <code>soup</code> you’ve made, create a dictionary where the key is the word English, and the values are a list. The first value in the list is the German orthography, and the second value is the IPA transcription. The expected output is below.</li>
 </ol>
-<div id="f511e52d" class="cell" data-execution_count="12">
+<div id="10e42c85" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pron_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>{'size': ['Größe', 'ˈɡʁøːsə'],
@@ -377,85 +378,15 @@ schön in latin1 encoding is b'sch\xf6n'. It is 5 bytes long.</code></pre>
  'foot': ['Fuß', 'fuːs']}</code></pre>
 </div>
 </div>
-<p>Hint: You will probably need to use <code>find_all()</code>, <code>.find()</code>, <code>.find(XX, class_ = XX)</code> and <code>.get_text()</code>. You will also need to use a for loop.</p>
-<p>Here are some examples of how to use each of these.</p>
-<div id="50498d3b" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>soup.find_all(<span class="st">'tr'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>[&lt;tr&gt;&lt;td class="wort"&gt;Größe&lt;/td&gt;&lt;td class="ipa"&gt;ˈɡʁøːsə&lt;/td&gt;&lt;td class="en"&gt;size&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Mädchen&lt;/td&gt;&lt;td class="ipa"&gt;ˈmɛːtçən&lt;/td&gt;&lt;td class="en"&gt;girl&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Straße&lt;/td&gt;&lt;td class="ipa"&gt;ˈʃtʁaːsə&lt;/td&gt;&lt;td class="en"&gt;street&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Bäcker&lt;/td&gt;&lt;td class="ipa"&gt;ˈbɛkɐ&lt;/td&gt;&lt;td class="en"&gt;baker&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;müde&lt;/td&gt;&lt;td class="ipa"&gt;ˈmyːdə&lt;/td&gt;&lt;td class="en"&gt;tired&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;schön&lt;/td&gt;&lt;td class="ipa"&gt;ʃøːn&lt;/td&gt;&lt;td class="en"&gt;beautiful&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Käse&lt;/td&gt;&lt;td class="ipa"&gt;ˈkɛːzə&lt;/td&gt;&lt;td class="en"&gt;cheese&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Bücher&lt;/td&gt;&lt;td class="ipa"&gt;ˈbyːçɐ&lt;/td&gt;&lt;td class="en"&gt;books&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Hund&lt;/td&gt;&lt;td class="ipa"&gt;hʊnt&lt;/td&gt;&lt;td class="en"&gt;dog&lt;/td&gt;&lt;/tr&gt;,
- &lt;tr&gt;&lt;td class="wort"&gt;Fuß&lt;/td&gt;&lt;td class="ipa"&gt;fuːs&lt;/td&gt;&lt;td class="en"&gt;foot&lt;/td&gt;&lt;/tr&gt;]</code></pre>
-</div>
-</div>
-<div id="4961177d" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> soup.find_all(<span class="st">'tr'</span>):</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>))</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>, class_ <span class="op">=</span> <span class="st">'ipa'</span>))</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;td class="wort"&gt;Größe&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈɡʁøːsə&lt;/td&gt;
-
-&lt;td class="wort"&gt;Mädchen&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈmɛːtçən&lt;/td&gt;
-
-&lt;td class="wort"&gt;Straße&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈʃtʁaːsə&lt;/td&gt;
-
-&lt;td class="wort"&gt;Bäcker&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈbɛkɐ&lt;/td&gt;
-
-&lt;td class="wort"&gt;müde&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈmyːdə&lt;/td&gt;
-
-&lt;td class="wort"&gt;schön&lt;/td&gt;
-&lt;td class="ipa"&gt;ʃøːn&lt;/td&gt;
-
-&lt;td class="wort"&gt;Käse&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈkɛːzə&lt;/td&gt;
-
-&lt;td class="wort"&gt;Bücher&lt;/td&gt;
-&lt;td class="ipa"&gt;ˈbyːçɐ&lt;/td&gt;
-
-&lt;td class="wort"&gt;Hund&lt;/td&gt;
-&lt;td class="ipa"&gt;hʊnt&lt;/td&gt;
-
-&lt;td class="wort"&gt;Fuß&lt;/td&gt;
-&lt;td class="ipa"&gt;fuːs&lt;/td&gt;
-</code></pre>
-</div>
-</div>
-<div id="845706b6" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> soup.find_all(<span class="st">'tr'</span>):</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>, class_ <span class="op">=</span> <span class="st">'ipa'</span>).get_text())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>ˈɡʁøːsə
-ˈmɛːtçən
-ˈʃtʁaːsə
-ˈbɛkɐ
-ˈmyːdə
-ʃøːn
-ˈkɛːzə
-ˈbyːçɐ
-hʊnt
-fuːs</code></pre>
-</div>
-</div>
+<p>There are some hints at the bottom of this page if you get stuck.</p>
 </section>
 <section id="bonus" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="bonus"><span class="header-section-number">3.2</span> Bonus</h2>
 <p>Read in the file, this time in Latin1 encoding.</p>
 <p>You should get something like this:</p>
-<div id="66fae35e" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>soup</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div id="387ca9bc" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>soup</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;!DOCTYPE html&gt;
 
 &lt;html lang="de"&gt;
@@ -483,10 +414,10 @@ fuːs</code></pre>
 </div>
 <p>Using this soup, convert everything back into UTF-8. Do not re-read the file, you should amend your for loop to encode and decode the strings. <em>Hint:</em> use <code>.decode()</code> and <code>.encode()</code>.</p>
 <p><strong>Disclaimer:</strong> It is not good practice to do this! Ideally, you should always read in your files with the correct encoding. However, sometimes there may be a stray sequences of characters that was incorrectly decoded. This is also an exercise to ensure you understand which direction we are encoding/decoding.</p>
-<div id="87440cfd" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary that reads in latin1 encoding</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>pron_dict_latin1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div id="6597b114" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary that reads in latin1 encoding</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>pron_dict_latin1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>{'size': ['GrÃ¶Ã\x9fe', 'Ë\x88É¡Ê\x81Ã¸Ë\x90sÉ\x99'],
  'girl': ['MÃ¤dchen', 'Ë\x88mÉ\x9bË\x90tÃ§É\x99n'],
  'street': ['StraÃ\x9fe', 'Ë\x88Ê\x83tÊ\x81aË\x90sÉ\x99'],
@@ -499,10 +430,10 @@ fuːs</code></pre>
  'foot': ['FuÃ\x9f', 'fuË\x90s']}</code></pre>
 </div>
 </div>
-<div id="070fbffd" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary that reads in latin1 encoding, and converts back into UTF-8</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>pron_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div id="c52b3136" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dictionary that reads in latin1 encoding, and converts back into UTF-8</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pron_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>{'size': ['Größe', 'ˈɡʁøːsə'],
  'girl': ['Mädchen', 'ˈmɛːtçən'],
  'street': ['Straße', 'ˈʃtʁaːsə'],
@@ -518,6 +449,80 @@ fuːs</code></pre>
 <p><strong>Additional exercise:</strong></p>
 <p>If you weren’t able to complete the exercise above, you can still attempt this one using the sample outputs.</p>
 <p>Have a look at the IPA transcription for the German word of <code>dog</code>. Use the online converter to encode <code>ʊ</code> into hex UTF-8 bytes. Then enter each of those bytes back into the converter as a hex code point to see which character it corresponds to. Do these characters match what you see in <code>pron_dict_latin1</code>? What about the output in the latin1 version of the <code>soup</code>? How about the character that represents primary stress?</p>
+</section>
+<section id="hints" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="hints"><span class="header-section-number">3.3</span> Hints</h2>
+<p>For the <code>BeautifulSoup</code> exericse, you will probably need to use <code>find_all()</code>, <code>.find()</code>, <code>.find(XX, class_ = XX)</code> and <code>.get_text()</code>. You will also need to use a for loop.</p>
+<p>Here are some examples of how to use each of these.</p>
+<div id="7fa344de" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>soup.find_all(<span class="st">'tr'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>[&lt;tr&gt;&lt;td class="wort"&gt;GrÃ¶Ãe&lt;/td&gt;&lt;td class="ipa"&gt;ËÉ¡ÊÃ¸ËsÉ&lt;/td&gt;&lt;td class="en"&gt;size&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;MÃ¤dchen&lt;/td&gt;&lt;td class="ipa"&gt;ËmÉËtÃ§Én&lt;/td&gt;&lt;td class="en"&gt;girl&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;StraÃe&lt;/td&gt;&lt;td class="ipa"&gt;ËÊtÊaËsÉ&lt;/td&gt;&lt;td class="en"&gt;street&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;BÃ¤cker&lt;/td&gt;&lt;td class="ipa"&gt;ËbÉkÉ&lt;/td&gt;&lt;td class="en"&gt;baker&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;mÃ¼de&lt;/td&gt;&lt;td class="ipa"&gt;ËmyËdÉ&lt;/td&gt;&lt;td class="en"&gt;tired&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;schÃ¶n&lt;/td&gt;&lt;td class="ipa"&gt;ÊÃ¸Ën&lt;/td&gt;&lt;td class="en"&gt;beautiful&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;KÃ¤se&lt;/td&gt;&lt;td class="ipa"&gt;ËkÉËzÉ&lt;/td&gt;&lt;td class="en"&gt;cheese&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;BÃ¼cher&lt;/td&gt;&lt;td class="ipa"&gt;ËbyËÃ§É&lt;/td&gt;&lt;td class="en"&gt;books&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;Hund&lt;/td&gt;&lt;td class="ipa"&gt;hÊnt&lt;/td&gt;&lt;td class="en"&gt;dog&lt;/td&gt;&lt;/tr&gt;,
+ &lt;tr&gt;&lt;td class="wort"&gt;FuÃ&lt;/td&gt;&lt;td class="ipa"&gt;fuËs&lt;/td&gt;&lt;td class="en"&gt;foot&lt;/td&gt;&lt;/tr&gt;]</code></pre>
+</div>
+</div>
+<div id="47f4b946" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> soup.find_all(<span class="st">'tr'</span>):</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>, class_ <span class="op">=</span> <span class="st">'ipa'</span>))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;td class="wort"&gt;GrÃ¶Ãe&lt;/td&gt;
+&lt;td class="ipa"&gt;ËÉ¡ÊÃ¸ËsÉ&lt;/td&gt;
+
+&lt;td class="wort"&gt;MÃ¤dchen&lt;/td&gt;
+&lt;td class="ipa"&gt;ËmÉËtÃ§Én&lt;/td&gt;
+
+&lt;td class="wort"&gt;StraÃe&lt;/td&gt;
+&lt;td class="ipa"&gt;ËÊtÊaËsÉ&lt;/td&gt;
+
+&lt;td class="wort"&gt;BÃ¤cker&lt;/td&gt;
+&lt;td class="ipa"&gt;ËbÉÉ&lt;/td&gt;
+
+&lt;td class="wort"&gt;mÃ¼de&lt;/td&gt;
+&lt;td class="ipa"&gt;ËmyËdÉ&lt;/td&gt;
+
+&lt;td class="wort"&gt;schÃ¶n&lt;/td&gt;
+&lt;td class="ipa"&gt;ÊÃ¸Ën&lt;/td&gt;
+
+&lt;td class="wort"&gt;KÃ¤se&lt;/td&gt;
+&lt;td class="ipa"&gt;ËkÉËzÉ&lt;/td&gt;
+
+&lt;td class="wort"&gt;BÃ¼cher&lt;/td&gt;
+&lt;td class="ipa"&gt;ËbyËÃ§É&lt;/td&gt;
+
+&lt;td class="wort"&gt;Hund&lt;/td&gt;
+&lt;td class="ipa"&gt;hÊnt&lt;/td&gt;
+
+&lt;td class="wort"&gt;FuÃ&lt;/td&gt;
+&lt;td class="ipa"&gt;fuËs&lt;/td&gt;
+</code></pre>
+</div>
+</div>
+<div id="3199e3a7" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> soup.find_all(<span class="st">'tr'</span>):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(item.find(<span class="st">'td'</span>, class_ <span class="op">=</span> <span class="st">'ipa'</span>).get_text())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ËÉ¡ÊÃ¸ËsÉ
+ËmÉËtÃ§Én
+ËÊtÊaËsÉ
+ËbÉÉ
+ËmyËdÉ
+ÊÃ¸Ën
+ËkÉËzÉ
+ËbyËÃ§É
+hÊnt
+fuËs</code></pre>
+</div>
+</div>
 
 
 </section>
