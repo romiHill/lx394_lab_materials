@@ -24,6 +24,19 @@ For this exercise, we need to download a file
 
 # UTF8/Latin1 Encoding: Warm Up
 
+Unicode is a universal mapping from characters to numbers called code points. For example, the unicode codepoint of *a* is 97. You can use the Python function `ord` to get a character's unicode codepoint. 
+
+```{python}
+ord("a")
+```
+
+```{python}
+ord("🐱")
+```
+
+UTF-8 and Latin-1 are two ways to encode these code points as bytes in a file. For basic English characters they produce the same bytes, but for anything else they differ. 
+
+
 ```{python}
 word = "schön"
 
@@ -40,7 +53,7 @@ print(f"{word} in latin1 encoding is {latin1_bytes}. It is {len(latin1_bytes)} b
 
 
 
-When Python prints a `bytes` object, any byte with a value from 0 to 127 (the ASCII range) is shown as its ASCII character, like "s", "c", "h", and "n". Any byte above 127 is shown as \x followed by its value in hexadecimal, like \xc3. Each \x.. is a single byte.
+When Python prints a `bytes` object, any byte with a value from 0 to 127 (the ASCII range) is shown as its ASCII character, like "s", "c", "h", and "n". Any byte above 127 is shown as \\x followed by its value in hexadecimal, like \\xc3. Each \\x.. is a single byte.
 
 Why are the number of bytes in UTF-8 encoding longer than in Latin1 encoding?
 
@@ -172,6 +185,7 @@ soup
 
 Using this soup, convert everything back into UTF-8. Do not re-read the file, you should amend your for loop to encode and decode the strings. *Hint:* use `.decode()` and `.encode()`.
 
+**Disclaimer:** It is not good practice to do this! Ideally, you should always read in your files with the correct encoding. However, sometimes there may be a stray sequences of characters that was incorrectly decoded. This is also an exercise to ensure you understand which direction we are encoding/decoding. 
 
 
 ```{python}
@@ -216,7 +230,7 @@ pron_dict
 
 If you weren't able to complete the exercise above, you can still attempt this one using the sample outputs. 
 
-Have a look at the IPA transcription for the German word of `dog`. Use the online converter to encode `ʊ` into hex UTF-8 bytes. Then enter each of those bytes back into the converter as a hex code point to see which character it corresponds to. Do these characters match what you see in `pron_dict_latin1`? What about the output in the latin1 version of the `soup`?
+Have a look at the IPA transcription for the German word of `dog`. Use the online converter to encode `ʊ` into hex UTF-8 bytes. Then enter each of those bytes back into the converter as a hex code point to see which character it corresponds to. Do these characters match what you see in `pron_dict_latin1`? What about the output in the latin1 version of the `soup`? How about the character that represents primary stress? 
 
 
 
