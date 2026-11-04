@@ -5,3 +5,5 @@
 - [Lab 04 Solutions](lab04_solutions.qmd)
 - [Lab 05 Solutions](lab05_solutions.qmd)
 - [Lab 06 Solutions](lab06_solutions.qmd)
+- [Lab 07 Solutions](lab07_solutions.qmd)
+- [Lab 08 Solutions](lab08_solutions.qmd)

@@ -1,0 +1,231 @@
+---
+title: "Lab 09 Supplement"
+subtitle: "Tagging and Evaluation" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: November 3, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Code Snippets
+
+## Input Variable
+
+You can use this variable to test your functions for accuracy, precision, recall, and F1.
+
+As a challenge, you can try generate this output using Python code.
+
+```{python}
+eval_data = [ ('The', 'DT', 'DT'),
+                ('quick', 'JJ', 'JJ'),
+                ('brown', 'JJ', 'NN'),
+                ('dog', 'NN', 'NN'),
+                ('jumped', 'VB', 'VB'),
+                ('over', 'IN', 'IN'),
+                ('the', 'DT', 'DT'),
+                ('lazy', 'JJ', 'JJ'),
+                ('fox', 'NN', 'NN'),
+                ('.', '.', '.'),
+                ('The', 'DT', 'DT'),
+                ('old', 'JJ', 'JJ'),
+                ('man', 'VB', 'NN'),
+                ('the',  'DT', 'DT'),
+                ('boat', 'NN', 'NN'),
+                ('.', '.', '.'),
+                ('The', 'DT', 'DT'),
+                ('complex', 'NN', 'JJ'),
+                ('houses', 'VB', 'NNS'),
+                ('young', 'JJ', 'JJ'),
+                ('students', 'NNS', 'NNS'),
+                ('.', '.', '.')
+            ]
+
+
+```
+
+## Extracting gold and predicted tags from the eval_data
+
+```{python}
+# extract gold tags from input variable
+gold = [g for (_, g, _) in eval_data]
+
+# extract predicted tags from input variable
+pred = [p for (_, _, p) in eval_data]
+
+```
+
+If you use the above code you may find the `zip()` function help. Here is how you can use it.
+
+```{python}
+for gold, pred in zip(gold, pred):
+    print(gold, pred)
+```
+
+## Sample Templates for Each Function
+
+```{python}
+# accuracy
+
+def accuracy(gold, pred):
+    # Put code here
+    pass # replace pass statement with relevant return statement
+
+```
+
+```{python}
+# get tp, fp, fn counts
+def count_tp_fp_fn(gold, pred, tag):
+    tp = 0
+    fp = 0
+    fn = 0
+    # Put code here
+    pass # replace pass statement with relevant return statement
+    # the return statement should be: return tp, fp, fn
+
+```
+
+```{python}
+
+#  precision 
+
+def precision(gold, pred, tag):
+    # get tp, fp, fn counts from previously defined function
+    tp, fp, fn = count_tp_fp_fn(gold, pred, tag)
+    if tp + fp == 0:
+        return 0.0
+    # Put code here
+    pass # replace pass statement with relevant return statement
+```
+
+```{python}
+# recall
+ 
+def recall(gold, pred, tag):
+    # get tp, fp, fn counts from previously defined function
+    tp, fp, fn = count_tp_fp_fn(gold, pred, tag)
+    if tp + fn == 0:
+        return 0.0
+    # Put code here
+    pass # replace pass statement with relevant return statement
+```
+
+```{python}
+
+
+def f1(gold, pred, tag):
+    p = precision(gold, pred, tag)
+    r = recall(gold, pred, tag)
+    if p + r == 0:
+        return 0.0
+    # Put code here
+    pass # replace pass statement with relevant return statement
+```
+
+```{python}
+#| echo: false
+# accuracy
+
+def accuracy(gold, pred):
+    correct = 0
+    for g, p in zip(gold, pred):
+        if g == p:
+            correct += 1
+    return correct / len(gold)
+
+
+```
+
+```{python}
+#| echo: false
+ 
+def count_tp_fp_fn(gold, pred, tag):
+    tp = 0
+    fp = 0
+    fn = 0
+    for g, p in zip(gold, pred):
+        if p == tag and g == tag:
+            tp += 1
+        elif p == tag and g != tag:
+            fp += 1
+        elif p != tag and g == tag:
+            fn += 1
+    return tp, fp, fn
+
+```
+
+```{python}
+#| echo: false
+
+def precision(gold, pred, tag):
+    tp, fp, fn = count_tp_fp_fn(gold, pred, tag)
+    if tp + fp == 0:
+        return 0.0
+    return tp / (tp + fp)
+```
+
+```{python}
+#| echo: false
+
+def recall(gold, pred, tag):
+    tp, fp, fn = count_tp_fp_fn(gold, pred, tag)
+    if tp + fn == 0:
+        return 0.0
+    return tp / (tp + fn)
+```
+
+```{python}
+#| echo: false 
+
+def f1(gold, pred, tag):
+    p = precision(gold, pred, tag)
+    r = recall(gold, pred, tag)
+    if p + r == 0:
+        return 0.0
+    return 2 * p * r / (p + r) 
+```
+
+## Summarizing Accuracy, Precision, Recall, and F1 Measures
+
+```{python}
+#| echo: false
+
+# extract gold tags from input variable
+gold = [g for (_, g, _) in eval_data]
+
+# extract predicted tags from input variable
+pred = [p for (_, _, p) in eval_data]
+
+```
+
+The intended output is:
+
+```{python}
+
+# Accuracy
+print(f"Accuracy: {accuracy(gold, pred):.3f}")
+
+print()
+
+# Print header
+print(f"{'Tag':<6}{'TP':>4}{'FP':>4}{'FN':>4}{'P':>8}{'R':>8}{'F1':>8}")
+
+# Calculate precision, recall, and F1 for each tag in the gold and precision tags
+for tag in sorted(set(gold) | set(pred)):
+    # get tp, fp, fn for a given tag
+    tp, fp, fn = count_tp_fp_fn(gold, pred, tag)
+    # get precision, recall, and f1 measures for a given tag
+    print(f"{tag:<6}{tp:>4}{fp:>4}{fn:>4}"
+            f"{precision(gold, pred, tag):>8.3f}"
+            f"{recall(gold, pred, tag):>8.3f}"
+            f"{f1(gold, pred, tag):>8.3f}")
+
+
+```

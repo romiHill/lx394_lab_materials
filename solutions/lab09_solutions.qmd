@@ -1,0 +1,236 @@
+---
+title: "Lab 09 Solutions"
+subtitle: "Tagging and Evaluation" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: November 3, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Today
+
+1.  Tagging
+2.  Calculating accuracy
+3.  Calculating Precision
+4.  Calculating Recall
+5.  Calculating F1
+
+# Tagging
+
+We will evaluate the NLTK part-of-speech tagger, which has already been trained on a large set of tagged sentences. We will run it on some new sentences and compare its *predicted tags* against our own *gold standard* tags, the tags we know are correct.
+
+1. What is the training set in this exercise? What is the test set? 
+
+2. Why is it important that the test set is different from the training set?
+
+
+## Hands on Exercise
+
+With the person next to you, provide the POS tags for the following sentences:
+
+1.  `the quick brown dog jumped over the lazy fox`
+2.  `The old man the boat`
+3.  `The complex houses young students`
+
+Put your answers in the following format, ideally on pen and paper. Fill out the `gold tag` column:
+
+| Word   | Gold tag | Predicted tag |
+|--------|----------|---------------|
+| The    |          |               |
+| quick  |          |               |
+| brown  |          |               |
+| dog    |          |               |
+| jumped |          |               |
+| over   |          |               |
+| the    |          |               |
+| lazy   |          |               |
+| fox    |          |               |
+
+Use the following tags to tag your sentences by hand. For simplicity, group all verbs into `VB`.
+
+| POS tag | Description                               |
+|---------|-------------------------------------------|
+| DT      | Determiner                                |
+| JJ      | Adjective                                 |
+| NN      | Singular noun                             |
+| NNS     | Plural noun                               |
+| .       | Period mark                               |
+| VB      | Verb                                      |
+| IN      | Preposition or conjunction, subordinating |
+
+## Tagging with Python
+
+Use Python to tag the previous sentences. For this exercise, we will just use the base POS tagger.
+
+```{python}
+#| eval: false
+import nltk
+
+# Download base POS tagger for NLTK
+nltk.download('averaged_perceptron_tagger_eng')
+
+```
+
+```{python}
+#| eval: false
+
+text = nltk.word_tokenize("The quick brown dog jumped over the lazy fox. The old man the boat. The complex houses young students.")
+
+
+# base POS tagger
+nltk.pos_tag(text)
+
+```
+
+Using that output, fill out the `Predicted Tag` column in the table you started in section 2.1. Group all all verbs with `VB`. 
+
+
+| Word     | Gold Tag | Predicted Tag | Accuracy |
+| -------- | -------- | ------------- | -------- |
+| The      | DT       | DT            | 1        |
+| quick    | JJ       | JJ            | 1        |
+| brown    | JJ       | NN            | 0        |
+| dog      | NN       | NN            | 1        |
+| jumped   | VB       | VB            | 1        |
+| over     | IN       | IN            | 1        |
+| the      | DT       | DT            | 1        |
+| lazy     | JJ       | JJ            | 1        |
+| fox      | NN       | NN            | 1        |
+| .        | .        | .             | 1        |
+| The      | DT       | DT            | 1        |
+| old      | JJ       | JJ            | 1        |
+| man      | VB       | NN            | 0        |
+| the      | DT       | DT            | 1        |
+| boat     | NN       | NN            | 1        |
+| .        | .        | .             | 1        |
+| The      | DT       | DT            | 1        |
+| complex  | NN       | JJ            | 0        |
+| houses   | VB       | NNS           | 0        |
+| young    | JJ       | JJ            | 1        |
+| students | NNS      | NNS           | 1        |
+| .        | .        | .             | 1        |
+
+# Accuracy
+
+The formula for accuracy is provided below.
+
+$\text{Accuracy} = \frac{\text{number of tokens tagged correctly}}{\text{total number of tokens}}$
+
+Using the table you've already made, what is the accuracy of the tagger?
+
+$\frac{18}{22} = 0.818181...$
+
+# Precision, Recall, F1
+
+There are other measures of evaluation in addition to accuracy. Common ones in machine learning research include *precision*, *recall* and *F1*.
+
+Unlike accuracy, which evaluates the tagger's overall performance across all tags, precision, recall and F1 evaluate the tagger's performance on one particular tag at a time.
+
+Broadly, precision is lowered by **false positives**. That is, when the tag of a word was predicted, but it is not the gold standard tag.
+
+Recall is lowered by **false negatives**. That is, when the tag of a word is gold, but it was not predicted. F1 combines the two into a single score.
+
+## Hands-on Exercise
+
+The formulas for precision, recall, and F1 are:
+
+$$\text{Precision} = \frac{TP}{TP + FP}$$
+
+$$\text{Recall} = \frac{TP}{TP + FN}$$
+
+$$F_1 = \frac{2 \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$$
+
+where, for a given tag:
+
+- TP = True Positives (the number of words where the tag is both the gold tag and the predicted tag)
+- FP = False Positives (the number of words where the tag was predicted, but it is not the gold tag)
+- FN = False Negatives (the number of words where the tag is the gold tag, but it was not predicted)
+
+For the tag `VB`, answer the following questions. Answer questions 1 - 3  by adding the following columns to your table. 
+
+
+
+| Word     | Gold Tag | Predicted Tag | Accuracy | TP (VB) | FP (VB) | FN (VB) |
+| -------- | -------- | ------------- | -------- | ------- | ------- | ------- |
+| The      | DT       | DT            | 1        | NA      | NA      | NA      |
+| quick    | JJ       | JJ            | 1        | NA      | NA      | NA      |
+| brown    | JJ       | NN            | 0        | NA      | NA      | NA      |
+| dog      | NN       | NN            | 1        | NA      | NA      | NA      |
+| jumped   | VB       | VB            | 1        | 1       | 0       | 0       |
+| over     | IN       | IN            | 1        | NA      | NA      | NA      |
+| the      | DT       | DT            | 1        | NA      | NA      | NA      |
+| lazy     | JJ       | JJ            | 1        | NA      | NA      | NA      |
+| fox      | NN       | NN            | 1        | NA      | NA      | NA      |
+| .        | .        | .             | 1        | NA      | NA      | NA      |
+| The      | DT       | DT            | 1        | NA      | NA      | NA      |
+| old      | JJ       | JJ            | 1        | NA      | NA      | NA      |
+| man      | VB       | NN            | 0        | 0       | 0       | 1       |
+| the      | DT       | DT            | 1        | NA      | NA      | NA      |
+| boat     | NN       | NN            | 1        | NA      | NA      | NA      |
+| .        | .        | .             | 1        | NA      | NA      | NA      |
+| The      | DT       | DT            | 1        | NA      | NA      | NA      |
+| complex  | NN       | JJ            | 0        | NA      | NA      | NA      |
+| houses   | VB       | NNS           | 0        | 0       | 0       | 1       |
+| young    | JJ       | JJ            | 1        | NA      | NA      | NA      |
+| students | NNS      | NNS           | 1        | NA      | NA      | NA      |
+| .        | .        | .             | 1        | NA      | NA      | NA      |
+
+
+
+1. How many TP are there for VB? 
+1 
+
+2. How many FP are there for VB?
+0
+
+3. How many FN are there for VB? 
+$1 + 1 = 2$
+
+
+4. What is the precision of VB?
+$\frac{1}{1} = 1$
+
+
+5. What is the recall of VB?
+$\frac{1}{1 + 2} = \frac{1}{3}$
+
+
+
+6. What is the F1 of VB?
+
+$$\frac{2 \times 1 \times \frac{1}{3}}{1 + \frac{1}{3}} = \frac{2}{3} \times \frac{3}{4} = \frac{1}{2}$$
+
+
+## Discussion
+
+
+
+1.  Why does the tagger get a precision of 1 for VB, but a recall of only $\frac{1}{3}$?
+
+
+VB is likely to get false negatives because these garden path sentences lead us "down the path" to think the first three words are a NP (DET ADJ N), when it is in fact a subject NP + V (DET N V). Garden path sentences therefore have a higher number of VB false negatives than VB false positives, making recall lower than precision. 
+
+
+
+2.  What are some real life examples where high recall is more important than high precision, and where high precision is more important? It may help to think about when a false positive is the worse mistake, and when a false negative is.
+
+Covid tests require high recall: we would rather risk having a higher number of false positives than false negatives, because we don't want to risk people walking around if they've tested negative when they're in fact positive. 
+
+
+
+The criminal justice system requires high precision: we would rather risk having a higher number of false negatives than false positives, because convicting an innocent person is worse than letting a guilty person go free.
+
+
+# Evaluating with Python
+
+Set up a jupyter notebook to calculate accuracy, precision, recall and F1 measures in Python.
+
+Click [here](../solutions/lab09_supp.qmd) to copy the input variable we have been working on.
