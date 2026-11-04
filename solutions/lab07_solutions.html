@@ -277,7 +277,7 @@ window.Quarto = {
 <h1 data-number="2"><span class="header-section-number">2</span> Recap: Classes</h1>
 <p>What are classes? What are some important elements to remember when making a class?</p>
 <p>Recall this class we introduced a couple of week ago:</p>
-<div id="6d13e8b5" class="cell" data-execution_count="1">
+<div id="b9e76237" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statistics</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
@@ -295,10 +295,10 @@ window.Quarto = {
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> gpa(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> statistics.mean(<span class="va">self</span>.grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="5896db46" class="cell" data-execution_count="2">
+<div id="18f2c8ce" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>romi <span class="op">=</span> Student(<span class="st">"Romi"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d4bf4fe5" class="cell" data-execution_count="3">
+<div id="6a94ec76" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(romi.name)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(romi.grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -306,10 +306,10 @@ window.Quarto = {
 []</code></pre>
 </div>
 </div>
-<div id="2018c01c" class="cell" data-execution_count="4">
+<div id="6ab85242" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>romi.take_class(<span class="fl">3.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="efd4288b" class="cell" data-execution_count="5">
+<div id="5522e7ae" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(romi.grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[3.5]</code></pre>
@@ -320,7 +320,7 @@ window.Quarto = {
 <ol type="1">
 <li>Say I want make a class on information that a song may contain. How would I make a class <code>Song()</code>, that contains the <em>name</em> of the song, the <em>artist</em> of the song, the <em>genre</em>s of the song, and the <em>year</em> it was released?</li>
 </ol>
-<div id="fbc83473" class="cell" data-execution_count="6">
+<div id="2c691a60" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Song:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>, artist: <span class="bu">str</span>, genre: <span class="bu">list</span>, year: <span class="bu">int</span>):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -332,35 +332,35 @@ window.Quarto = {
 <li>For example, make a variable <code>down_under</code> which has the following information: - Name: <code>"Down Under"</code> - Artist: <code>"Men at Work"</code> - Genre: <code>["Pop", "Rock"]</code> - Year: <code>1981</code></li>
 </ol>
 <p>Expected output:</p>
-<div id="c44ce754" class="cell" data-execution_count="7">
+<div id="c0c5d260" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>down_under <span class="op">=</span> Song(<span class="st">"Down Under"</span>, <span class="st">"Men at Work"</span>, [<span class="st">"Pop"</span>, <span class="st">"Rock"</span>], <span class="dv">1981</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f20fa670" class="cell" data-execution_count="8">
+<div id="dd915543" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>down_under.name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>'Down Under'</code></pre>
 </div>
 </div>
-<div id="db7b218f" class="cell" data-execution_count="9">
+<div id="d1ae10e7" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>down_under.artist</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>'Men at Work'</code></pre>
 </div>
 </div>
-<div id="9b9ee983" class="cell" data-execution_count="10">
+<div id="50de8b38" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>down_under.genre</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>['Pop', 'Rock']</code></pre>
 </div>
 </div>
-<div id="9ba8ef47" class="cell" data-execution_count="11">
+<div id="bed454fe" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>down_under.year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>1981</code></pre>
 </div>
 </div>
 <p>How do I add a new <em>method</em> to the Class, which adds a new genre to it?</p>
-<div id="253cc126" class="cell" data-execution_count="12">
+<div id="76622181" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Song:</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>, artist: <span class="bu">str</span>, genre: <span class="bu">list</span>, year: <span class="bu">int</span>):</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -372,7 +372,7 @@ window.Quarto = {
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.genre.append(new_genre)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For example:</p>
-<div id="74938fce" class="cell" data-execution_count="13">
+<div id="1cd044e3" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>down_under <span class="op">=</span> Song(<span class="st">"Down Under"</span>, <span class="st">"Men at Work"</span>, [<span class="st">"Pop"</span>, <span class="st">"Rock"</span>], <span class="dv">1981</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>down_under.add_genre(<span class="st">"Classic Rock"</span>)</span>
@@ -387,7 +387,7 @@ window.Quarto = {
 <section id="in-class-exericses" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> In Class Exericses</h1>
 <p>Make a class <code>Cat</code> which contains a cat’s name, color, and its average walking speed (speed, in feet/second. The average walking pace of a cat is around 4 feet per second).</p>
-<div id="461eac94" class="cell" data-execution_count="14">
+<div id="8130c4c5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cat:</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name: <span class="bu">str</span>, color: <span class="bu">str</span>, speed: <span class="bu">int</span>):</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -402,29 +402,29 @@ window.Quarto = {
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"Meow!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For example:</p>
-<div id="c6d2e643" class="cell" data-execution_count="15">
+<div id="6e5e9da5" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mittens <span class="op">=</span> Cat(<span class="st">"Mittens"</span>, <span class="st">"brown"</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d3e42aff" class="cell" data-execution_count="16">
+<div id="f817a185" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>mittens.name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>'Mittens'</code></pre>
 </div>
 </div>
-<div id="31a4400c" class="cell" data-execution_count="17">
+<div id="997c6c62" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mittens.color</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>'brown'</code></pre>
 </div>
 </div>
-<div id="1344d3d4" class="cell" data-execution_count="18">
+<div id="011e262e" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mittens.speed</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>4</code></pre>
 </div>
 </div>
 <p><strong>Add a method</strong>: Make a new method <code>meow</code> that takes an int and prints out that number of <em>meow</em>s. <em>Hint</em>: Use a for loop.</p>
-<div id="17aa36d0" class="cell" data-execution_count="19">
+<div id="d4f64049" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>mittens.meow(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meow!
@@ -436,7 +436,7 @@ Meow!</code></pre>
 </div>
 <p><strong>Challenge!</strong> Make a method <code>move()</code> in your <code>Cat</code> class that takes a <em>distance</em> (<code>int</code>) in feet as input, and prints out how long it took for your cat to travel that distance. Recall from high school math that <span class="math inline">\(time = \frac{distance}{speed}\)</span></p>
 <p>For example:</p>
-<div id="2c3151da" class="cell" data-execution_count="20">
+<div id="9eaa2b11" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mittens.move(<span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>It took Mittens 7.5 seconds to travel 30 feet.</code></pre>
