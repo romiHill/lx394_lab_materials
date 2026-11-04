@@ -165,7 +165,7 @@ For the tag `VB`, answer the following questions. Answer questions 1 - 3  by add
 
 ## Discussion
 
-1.  Why does the tagger get a precision of 1 for VB, but a recall of only $\frac{1}{3}$?
+1.  Why does the tagger get a higher precision score for VB, compared to recall?
 
 2.  What are some real life examples where high recall is more important than high precision, and where high precision is more important? It may help to think about when a false positive is the worse mistake, and when a false negative is.
 
