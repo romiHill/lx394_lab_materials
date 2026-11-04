@@ -40,7 +40,7 @@ With the person next to you, provide the POS tags for the following sentences:
 2.  `The old man the boat`
 3.  `The complex houses young students`
 
-Put your answers in the following format, ideally on pen and paper. Fill out the `gold tag` column:
+Put your answers in the following format, in an Excel spreadsheet or google sheets. Fill out the `gold tag` column:
 
 | Word   | Gold tag | Predicted tag |
 |--------|----------|---------------|
@@ -77,6 +77,8 @@ import nltk
 # Download base POS tagger for NLTK
 nltk.download('averaged_perceptron_tagger_eng')
 
+# Download tokenization package 
+nltk.download('punkt_tab')
 ```
 
 ```{python}
@@ -90,7 +92,7 @@ nltk.pos_tag(text)
 
 ```
 
-Using that output, fill out the `Predicted Tag` column in the table you started in section 2.1. Group all all verbs with `VB`. 
+Using that output, fill out the `Predicted Tag` column in the table you started in section 2.1. Group all verbs with `VB`. 
 
 
 | Word     | Gold Tag | Predicted Tag | Accuracy |
@@ -124,7 +126,7 @@ The formula for accuracy is provided below.
 
 $\text{Accuracy} = \frac{\text{number of tokens tagged correctly}}{\text{total number of tokens}}$
 
-Using the table you've already made, what is the accuracy of the tagger?
+Add an Accuracy column with 1 if the predicted tag matches the gold tag and 0 if it doesn't. Then use the formula to calculate the tagger’s overall accuracy.
 
 $\frac{18}{22} = 0.818181...$
 
@@ -153,6 +155,7 @@ where, for a given tag:
 - TP = True Positives (the number of words where the tag is both the gold tag and the predicted tag)
 - FP = False Positives (the number of words where the tag was predicted, but it is not the gold tag)
 - FN = False Negatives (the number of words where the tag is the gold tag, but it was not predicted)
+- TN = True Negatives (the number of words where the tag is not the gold tag, and it is also not the predicted tag)
 
 For the tag `VB`, answer the following questions. Answer questions 1 - 3  by adding the following columns to your table. 
 
@@ -160,28 +163,28 @@ For the tag `VB`, answer the following questions. Answer questions 1 - 3  by add
 
 | Word     | Gold Tag | Predicted Tag | Accuracy | TP (VB) | FP (VB) | FN (VB) |
 | -------- | -------- | ------------- | -------- | ------- | ------- | ------- |
-| The      | DT       | DT            | 1        | NA      | NA      | NA      |
-| quick    | JJ       | JJ            | 1        | NA      | NA      | NA      |
-| brown    | JJ       | NN            | 0        | NA      | NA      | NA      |
-| dog      | NN       | NN            | 1        | NA      | NA      | NA      |
+| The      | DT       | DT            | 1        | TN      | TN      | TN      |
+| quick    | JJ       | JJ            | 1        | TN      | TN      | TN      |
+| brown    | JJ       | NN            | 0        | TN      | TN      | TN      |
+| dog      | NN       | NN            | 1        | TN      | TN      | TN      |
 | jumped   | VB       | VB            | 1        | 1       | 0       | 0       |
-| over     | IN       | IN            | 1        | NA      | NA      | NA      |
-| the      | DT       | DT            | 1        | NA      | NA      | NA      |
-| lazy     | JJ       | JJ            | 1        | NA      | NA      | NA      |
-| fox      | NN       | NN            | 1        | NA      | NA      | NA      |
-| .        | .        | .             | 1        | NA      | NA      | NA      |
-| The      | DT       | DT            | 1        | NA      | NA      | NA      |
-| old      | JJ       | JJ            | 1        | NA      | NA      | NA      |
+| over     | IN       | IN            | 1        | TN      | TN      | TN      |
+| the      | DT       | DT            | 1        | TN      | TN      | TN      |
+| lazy     | JJ       | JJ            | 1        | TN      | TN      | TN      |
+| fox      | NN       | NN            | 1        | TN      | TN      | TN      |
+| .        | .        | .             | 1        | TN      | TN      | TN      |
+| The      | DT       | DT            | 1        | TN      | TN      | TN      |
+| old      | JJ       | JJ            | 1        | TN      | TN      | TN      |
 | man      | VB       | NN            | 0        | 0       | 0       | 1       |
-| the      | DT       | DT            | 1        | NA      | NA      | NA      |
-| boat     | NN       | NN            | 1        | NA      | NA      | NA      |
-| .        | .        | .             | 1        | NA      | NA      | NA      |
-| The      | DT       | DT            | 1        | NA      | NA      | NA      |
-| complex  | NN       | JJ            | 0        | NA      | NA      | NA      |
+| the      | DT       | DT            | 1        | TN      | TN      | TN      |
+| boat     | NN       | NN            | 1        | TN      | TN      | TN      |
+| .        | .        | .             | 1        | TN      | TN      | TN      |
+| The      | DT       | DT            | 1        | TN      | TN      | TN      |
+| complex  | NN       | JJ            | 0        | TN      | TN      | TN      |
 | houses   | VB       | NNS           | 0        | 0       | 0       | 1       |
-| young    | JJ       | JJ            | 1        | NA      | NA      | NA      |
-| students | NNS      | NNS           | 1        | NA      | NA      | NA      |
-| .        | .        | .             | 1        | NA      | NA      | NA      |
+| young    | JJ       | JJ            | 1        | TN      | TN      | TN      |
+| students | NNS      | NNS           | 1        | TN      | TN      | TN      |
+| .        | .        | .             | 1        | TN      | TN      | TN      |
 
 
 
@@ -233,4 +236,4 @@ The criminal justice system requires high precision: we would rather risk having
 
 Set up a jupyter notebook to calculate accuracy, precision, recall and F1 measures in Python.
 
-Click [here](../solutions/lab09_supp.qmd) to copy the input variable we have been working on.
+Click [here](lab09_supp.qmd) to copy the tagged data and get some hints.

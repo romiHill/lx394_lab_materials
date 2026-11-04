@@ -1,5 +1,5 @@
 ---
-title: "Lab 09 Solutions"
+title: "Lab 09"
 subtitle: "Tagging and Evaluation" 
 author: "Romi Hill"
 jupyter: lx394_tf
@@ -40,7 +40,7 @@ With the person next to you, provide the gold standard POS tags for the followin
 2.  `The old man the boat`
 3.  `The complex houses young students`
 
-Put your answers in the following format, ideally on pen and paper. Fill out the `gold tag` column:
+Put your answers in the following format, in an Excel spreadsheet or google sheets. Fill out the `gold tag` column:
 
 | Word   | Gold tag | Predicted tag |
 |--------|----------|---------------|
@@ -78,6 +78,9 @@ import nltk
 # Download base POS tagger for NLTK
 nltk.download('averaged_perceptron_tagger_eng')
 
+# Download tokenization package 
+nltk.download('punkt_tab')
+
 ```
 
 ```{python}
@@ -99,7 +102,7 @@ The formula for accuracy is provided below.
 
 $\text{Accuracy} = \frac{\text{number of tokens tagged correctly}}{\text{total number of tokens}}$
 
-Using the table you've already made, add an "accuracy" column to calculate the accuracy of the tagger? Calculate this by hand.
+Add an Accuracy column with 1 if the predicted tag matches the gold tag and 0 if it doesn't. Then use the formula to calculate the tagger’s overall accuracy.
 
 | Word  | Gold tag | Predicted tag | Accuracy |
 | ----- | -------- | ------------- | -------- |
@@ -132,6 +135,7 @@ where, for a given tag:
 - TP = True Positives (the number of words where the tag is both the gold tag and the predicted tag)
 - FP = False Positives (the number of words where the tag was predicted, but it is not the gold tag)
 - FN = False Negatives (the number of words where the tag is the gold tag, but it was not predicted)
+- TN = True Negatives (the number of words where the tag is not the gold tag, and it is also not the predicted tag)
 
 For the tag `VB`, answer the following questions. Answer questions 1 - 3  by adding the following columns to your table. 
 
@@ -139,8 +143,8 @@ For the tag `VB`, answer the following questions. Answer questions 1 - 3  by add
 
 | Word   | Gold tag | Predicted tag | Accuracy | TP (VB) | FP (VB) | FN (VB) |
 | ------ | -------- | ------------- | -------- | ------- | ------- | ------- |
-| The    |          |               |          | NA      | NA      | NA      |
-| quick  |          |               |          | NA      | NA      | NA      |
+| The    |          |               |          | TN      | TN      | TN      |
+| quick  |          |               |          | TN      | TN      | TN      |
 | ...    |          |               |          | ...     | ...     | ...     |
 | jumped | VB       | ??            |          | 0 or 1  | 0 or 1  | 0 or 1        |
 
@@ -169,4 +173,4 @@ For the tag `VB`, answer the following questions. Answer questions 1 - 3  by add
 
 Set up a jupyter notebook to calculate accuracy, precision, recall and F1 measures in Python.
 
-Click [here](../solutions/lab09_supp.qmd) to copy the input variable we have been working on, and get some hints on how to get started.
+Click [here](../solutions/lab09_supp.qmd) to copy the tagged data and get some hints.

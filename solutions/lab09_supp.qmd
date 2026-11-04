@@ -51,7 +51,7 @@ eval_data = [ ('The', 'DT', 'DT'),
 
 ```
 
-## Extracting gold and predicted tags from the eval_data
+## Extracting gold and predicted tags from eval_data
 
 ```{python}
 # extract gold tags from input variable
