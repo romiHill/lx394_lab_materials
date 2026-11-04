@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#code-snippets" id="toc-code-snippets" class="nav-link active" data-scroll-target="#code-snippets"><span class="header-section-number">1</span> Code Snippets</a>
   <ul class="collapse">
   <li><a href="#input-variable" id="toc-input-variable" class="nav-link" data-scroll-target="#input-variable"><span class="header-section-number">1.1</span> Input Variable</a></li>
-  <li><a href="#extracting-gold-and-predicted-tags-from-the-eval_data" id="toc-extracting-gold-and-predicted-tags-from-the-eval_data" class="nav-link" data-scroll-target="#extracting-gold-and-predicted-tags-from-the-eval_data"><span class="header-section-number">1.2</span> Extracting gold and predicted tags from the eval_data</a></li>
+  <li><a href="#extracting-gold-and-predicted-tags-from-eval_data" id="toc-extracting-gold-and-predicted-tags-from-eval_data" class="nav-link" data-scroll-target="#extracting-gold-and-predicted-tags-from-eval_data"><span class="header-section-number">1.2</span> Extracting gold and predicted tags from eval_data</a></li>
   <li><a href="#sample-templates-for-each-function" id="toc-sample-templates-for-each-function" class="nav-link" data-scroll-target="#sample-templates-for-each-function"><span class="header-section-number">1.3</span> Sample Templates for Each Function</a></li>
   <li><a href="#summarizing-accuracy-precision-recall-and-f1-measures" id="toc-summarizing-accuracy-precision-recall-and-f1-measures" class="nav-link" data-scroll-target="#summarizing-accuracy-precision-recall-and-f1-measures"><span class="header-section-number">1.4</span> Summarizing Accuracy, Precision, Recall, and F1 Measures</a></li>
   </ul></li>
@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="1.1" class="anchored" data-anchor-id="input-variable"><span class="header-section-number">1.1</span> Input Variable</h2>
 <p>You can use this variable to test your functions for accuracy, precision, recall, and F1.</p>
 <p>As a challenge, you can try generate this output using Python code.</p>
-<div id="9cb92c97" class="cell" data-execution_count="1">
+<div id="97db7d9b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>eval_data <span class="op">=</span> [ (<span class="st">'The'</span>, <span class="st">'DT'</span>, <span class="st">'DT'</span>),</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                (<span class="st">'quick'</span>, <span class="st">'JJ'</span>, <span class="st">'JJ'</span>),</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                (<span class="st">'brown'</span>, <span class="st">'JJ'</span>, <span class="st">'NN'</span>),</span>
@@ -270,9 +270,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="extracting-gold-and-predicted-tags-from-the-eval_data" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="extracting-gold-and-predicted-tags-from-the-eval_data"><span class="header-section-number">1.2</span> Extracting gold and predicted tags from the eval_data</h2>
-<div id="0dce7f99" class="cell" data-execution_count="2">
+<section id="extracting-gold-and-predicted-tags-from-eval_data" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="extracting-gold-and-predicted-tags-from-eval_data"><span class="header-section-number">1.2</span> Extracting gold and predicted tags from eval_data</h2>
+<div id="e3ad90d6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract gold tags from input variable</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>gold <span class="op">=</span> [g <span class="cf">for</span> (_, g, _) <span class="kw">in</span> eval_data]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pred <span class="op">=</span> [p <span class="cf">for</span> (_, _, p) <span class="kw">in</span> eval_data]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you use the above code you may find the <code>zip()</code> function help. Here is how you can use it.</p>
-<div id="4a88347d" class="cell" data-execution_count="3">
+<div id="8e6aa845" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> gold, pred <span class="kw">in</span> <span class="bu">zip</span>(gold, pred):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(gold, pred)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -311,14 +311,14 @@ NNS NNS
 </section>
 <section id="sample-templates-for-each-function" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="sample-templates-for-each-function"><span class="header-section-number">1.3</span> Sample Templates for Each Function</h2>
-<div id="8d741a41" class="cell" data-execution_count="4">
+<div id="82eef459" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># accuracy</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> accuracy(gold, pred):</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put code here</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass statement with relevant return statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="bcd82410" class="cell" data-execution_count="5">
+<div id="9fff80a3" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get tp, fp, fn counts</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_tp_fp_fn(gold, pred, tag):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    tp <span class="op">=</span> <span class="dv">0</span></span>
@@ -328,7 +328,7 @@ NNS NNS
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass statement with relevant return statement</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the return statement should be: return tp, fp, fn</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f84bf17e" class="cell" data-execution_count="6">
+<div id="9c727e33" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  precision </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> precision(gold, pred, tag):</span>
@@ -339,7 +339,7 @@ NNS NNS
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put code here</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass statement with relevant return statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="253d5c83" class="cell" data-execution_count="7">
+<div id="51eb554b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># recall</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> recall(gold, pred, tag):</span>
@@ -350,7 +350,7 @@ NNS NNS
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Put code here</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># replace pass statement with relevant return statement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2bb91b5c" class="cell" data-execution_count="8">
+<div id="f5912c6a" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f1(gold, pred, tag):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> precision(gold, pred, tag)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> recall(gold, pred, tag)</span>
@@ -363,7 +363,7 @@ NNS NNS
 <section id="summarizing-accuracy-precision-recall-and-f1-measures" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="summarizing-accuracy-precision-recall-and-f1-measures"><span class="header-section-number">1.4</span> Summarizing Accuracy, Precision, Recall, and F1 Measures</h2>
 <p>The intended output is:</p>
-<div id="316bae35" class="cell" data-execution_count="15">
+<div id="2a2d9afe" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accuracy</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>accuracy(gold, pred)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
