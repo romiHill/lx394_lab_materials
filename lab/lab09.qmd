@@ -104,7 +104,7 @@ $\text{Accuracy} = \frac{\text{number of tokens tagged correctly}}{\text{total n
 
 Add an Accuracy column with 1 if the predicted tag matches the gold tag and 0 if it doesn't. Then use the formula to calculate the tagger’s overall accuracy.
 
-| Word  | Gold tag | Predicted tag | Accuracy |
+| Word  | Gold tag | Predicted tag | Correct? |
 | ----- | -------- | ------------- | -------- |
 | The   |          |               |  0 or 1? |
 | quick |          |               |          |
@@ -141,7 +141,7 @@ For the tag `VB`, answer the following questions. Answer questions 1 - 3  by add
 
 
 
-| Word   | Gold tag | Predicted tag | Accuracy | TP (VB) | FP (VB) | FN (VB) |
+| Word   | Gold tag | Predicted tag | Correct | TP (VB) | FP (VB) | FN (VB) |
 | ------ | -------- | ------------- | -------- | ------- | ------- | ------- |
 | The    |          |               |          | TN      | TN      | TN      |
 | quick  |          |               |          | TN      | TN      | TN      |

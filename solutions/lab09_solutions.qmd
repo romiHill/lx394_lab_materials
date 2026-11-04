@@ -95,7 +95,7 @@ nltk.pos_tag(text)
 Using that output, fill out the `Predicted Tag` column in the table you started in section 2.1. Group all verbs with `VB`. 
 
 
-| Word     | Gold Tag | Predicted Tag | Accuracy |
+| Word     | Gold Tag | Predicted Tag | Correct |
 | -------- | -------- | ------------- | -------- |
 | The      | DT       | DT            | 1        |
 | quick    | JJ       | JJ            | 1        |
@@ -126,7 +126,7 @@ The formula for accuracy is provided below.
 
 $\text{Accuracy} = \frac{\text{number of tokens tagged correctly}}{\text{total number of tokens}}$
 
-Add an Accuracy column with 1 if the predicted tag matches the gold tag and 0 if it doesn't. Then use the formula to calculate the tagger’s overall accuracy.
+Add a Correct column with 1 if the predicted tag matches the gold tag and 0 if it doesn't. Then use the formula to calculate the tagger’s overall accuracy.
 
 $\frac{18}{22} = 0.818181...$
 
@@ -161,7 +161,7 @@ For the tag `VB`, answer the following questions. Answer questions 1 - 3  by add
 
 
 
-| Word     | Gold Tag | Predicted Tag | Accuracy | TP (VB) | FP (VB) | FN (VB) |
+| Word     | Gold Tag | Predicted Tag | Correct | TP (VB) | FP (VB) | FN (VB) |
 | -------- | -------- | ------------- | -------- | ------- | ------- | ------- |
 | The      | DT       | DT            | 1        | TN      | TN      | TN      |
 | quick    | JJ       | JJ            | 1        | TN      | TN      | TN      |
