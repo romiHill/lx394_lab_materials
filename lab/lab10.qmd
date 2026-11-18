@@ -1,0 +1,20 @@
+---
+title: "Lab 10"
+subtitle: "Homework 3 Released" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: November 10, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Homework 3 Released!
+
+Click [here](https://github.com/BU-CompLing/lx394-f26-hw3/tree/main) to download the lab materials. 

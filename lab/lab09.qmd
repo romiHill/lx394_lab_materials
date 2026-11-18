@@ -27,10 +27,9 @@ editor: visual
 
 We will evaluate the NLTK part-of-speech tagger, which has already been trained on a large set of tagged sentences. We will run it on some new sentences and compare its *predicted tags* against our own *gold standard* tags, the tags we know are correct.
 
-1. What is the training set in this exercise? What is the test set? 
+1.  What is the training set in this exercise? What is the test set?
 
-2. Why is it important that the test set is different from the training set?
-
+2.  Why is it important that the test set is different from the training set?
 
 ## Hands on Exercise
 
@@ -105,8 +104,8 @@ $\text{Accuracy} = \frac{\text{number of tokens tagged correctly}}{\text{total n
 Add an Accuracy column with 1 if the predicted tag matches the gold tag and 0 if it doesn't. Then use the formula to calculate the tagger’s overall accuracy.
 
 | Word  | Gold tag | Predicted tag | Correct? |
-| ----- | -------- | ------------- | -------- |
-| The   |          |               |  0 or 1? |
+|-------|----------|---------------|----------|
+| The   |          |               | 0 or 1?  |
 | quick |          |               |          |
 | ...   |          |               |          |
 
@@ -137,19 +136,14 @@ where, for a given tag:
 - FN = False Negatives (the number of words where the tag is the gold tag, but it was not predicted)
 - TN = True Negatives (the number of words where the tag is not the gold tag, and it is also not the predicted tag)
 
-For the tag `VB`, answer the following questions. Answer questions 1 - 3  by adding the following columns to your table. 
-
-
+For the tag `VB`, answer the following questions. Answer questions 1 - 3 by adding the following columns to your table.
 
 | Word   | Gold tag | Predicted tag | Correct | TP (VB) | FP (VB) | FN (VB) |
-| ------ | -------- | ------------- | -------- | ------- | ------- | ------- |
-| The    |          |               |          | TN      | TN      | TN      |
-| quick  |          |               |          | TN      | TN      | TN      |
-| ...    |          |               |          | ...     | ...     | ...     |
-| jumped | VB       | ??            |          | 0 or 1  | 0 or 1  | 0 or 1        |
-
-
-
+|--------|----------|---------------|---------|---------|---------|---------|
+| The    |          |               |         | TN      | TN      | TN      |
+| quick  |          |               |         | TN      | TN      | TN      |
+| ...    |          |               |         | ...     | ...     | ...     |
+| jumped | VB       | ??            |         | 0 or 1  | 0 or 1  | 0 or 1  |
 
 1.  How many TP are there for VB?
 

@@ -1,0 +1,53 @@
+---
+title: "Lab 11"
+subtitle: "Spam Classification" 
+author: "Romi Hill"
+jupyter: lx394_tf
+date: November 18, 2026
+format: 
+  html:
+      theme: cosmo
+      toc: true
+      toc-depth: 3
+      code-overflow: wrap
+number-sections: true
+highlight-style: gruvbox
+editor: visual
+---
+
+# Today
+1. Enron dataset
+2. Identifying Spam
+
+# Spam Classification
+
+Today we'll be looking more closely at the Enron dataset. One skill in computational linguistics, though often overlooked, is to develop an intuition of what your program is telling you, and whether the output makes sense, even *before* you sit down to code. Specifically, looking at the dataset before tackling the homework will help with problems 2b, 2c, and 3c. 
+
+
+The Enron dataset contains some explicit content. Feel free to download a subset of the data [here](https://drive.google.com/file/d/1PrnTbLn1297SZsF4M96_66ew0c8WPWU-/view?usp=sharing) if you would prefer to not encounter it. 
+
+## In Class Exericse
+
+We'll be looking at some features of spam vs. ham emails. Some things to look out for include: lexical items, orthography, content, structure, how the email is addressed to the reader, and anything else you could think of. 
+
+1. Open the dataset in Excel/Google Sheets/Libre Office
+
+
+2. On your own, pick a handful of spam and ham emails. 
+    1. Write down 1 - 2 specific things that seem to be characteristic of the subject line in spam emails. 
+    2. Write down 1 - 2 specific things that seem to be characteristic of the subject line in ham emails. 
+    3. Write down 1 - 2 specific things that seems to be common in the subject line to both spam and ham emails (if any).
+        - *Hint:* Perhaps there is at least one similarity, and this concerns a preprocessing step that we have discussed in class... 
+  
+
+
+
+3. With a partner, discuss what you've come up with. Do you agree with your partner? I will ask each group to share what you've discussed for exercise 2.1-2.3 to the class. 
+
+
+4. With your partner, do the same as exercise 2, but looking at the message body. 
+
+
+
+
+
